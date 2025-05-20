@@ -10,15 +10,32 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-
 		<style>
 			html {
 				scroll-behavior: smooth;
-				--scroll-duration: 5s; /* Slower scroll duration */
+				--scroll-duration: 1.5s; /* Slower scroll duration */
 				scroll-behavior: smooth;
 			}
+			
+			/* Footer wave styling */
+			.footer-wave {
+				position: relative;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 120px;
+				overflow: hidden;
+				margin-bottom: 20px;
+			}
+			
+			.footer-wave svg {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+			}
 		</style>
-		
 	</head>
 	<body class="is-preload">
 
@@ -33,8 +50,6 @@
 								<header id="header">
 									<a href="index.html" class="logo"><strong>Anna Galeano</strong> | Computer Science</a>
 									<ul class="icons">
-										<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
-										<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
 										<li><a href="https://github.com/VersatileVariable" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 										<li><a href="https://www.linkedin.com/in/connectedanna/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 									</ul>
@@ -102,7 +117,7 @@
 									</header>
 									<div class="posts">
 										<article>
-											<a href="#" class="image"><img src="/api/placeholder/600/400" alt="" /></a>
+											<a href="#" class="image"><img src="images/project1.jpg" alt="AI Research Dashboard" /></a>
 											<h3>AI-Assisted Research Dashboard</h3>
 											<p>An interactive web platform that uses NLP to help researchers identify relevant papers, extract key findings, and visualize connections between research topics. Built with React, D3.js, and transformer-based language models.</p>
 											<ul class="actions">
@@ -110,7 +125,7 @@
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="/api/placeholder/600/400" alt="" /></a>
+											<a href="#" class="image"><img src="images/project2.jpg" alt="Decision Support System" /></a>
 											<h3>Collaborative Decision Support System</h3>
 											<p>A human-AI teaming platform that combines machine learning predictions with human expertise to improve decision-making in complex scenarios. Features transparent AI explanations and intuitive feedback mechanisms.</p>
 											<ul class="actions">
@@ -118,7 +133,7 @@
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="/api/placeholder/600/400" alt="" /></a>
+											<a href="#" class="image"><img src="images/project3.jpg" alt="Healthcare Analytics" /></a>
 											<h3>Predictive Healthcare Analytics</h3>
 											<p>A data science project using electronic health records to predict patient readmission risks. Includes interactive visualizations for healthcare providers and explainable AI components to build appropriate trust.</p>
 											<ul class="actions">
@@ -126,7 +141,7 @@
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="/api/placeholder/600/400" alt="" /></a>
+											<a href="#" class="image"><img src="images/project4.jpg" alt="Learning Platform" /></a>
 											<h3>Adaptive Learning Platform</h3>
 											<p>A web-based education tool that personalizes content delivery based on student performance data. Incorporates AI recommendations while keeping instructors in the loop for intervention and curriculum adjustments.</p>
 											<ul class="actions">
@@ -134,7 +149,7 @@
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="/api/placeholder/600/400" alt="" /></a>
+											<a href="#" class="image"><img src="images/project5.jpg" alt="Urban Mobility" /></a>
 											<h3>Urban Mobility Visualization</h3>
 											<p>An interactive data dashboard analyzing transportation patterns in urban environments. Uses geospatial analysis and predictive modeling to help city planners optimize public transit and reduce congestion.</p>
 											<ul class="actions">
@@ -142,7 +157,7 @@
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="/api/placeholder/600/400" alt="" /></a>
+											<a href="#" class="image"><img src="images/project6.jpg" alt="AI Feedback Interface" /></a>
 											<h3>AI Feedback Interface</h3>
 											<p>A research project exploring optimal ways for humans to provide feedback to machine learning systems. Designed intuitive correction mechanisms that improve model performance while minimizing human effort.</p>
 											<ul class="actions">
@@ -178,10 +193,10 @@
 										<li>
 											<span class="opener">Technical Areas</span>
 											<ul>
-												<li><a href="#">Artificial Intelligence</a></li>
-												<li><a href="#">Data Structures & Algorithms</a></li>
+												<li><a href="#">Data Science</a></li>
 												<li><a href="#">Web Development</a></li>
-												<li><a href="#">Distributed Systems</a></li>
+												<li><a href="#">Human-AI Teaming</a></li>
+												<li><a href="#">Cross-Domain Integration</a></li>
 											</ul>
 										</li>
 										<li><a href="research.html">Research Papers</a></li>
@@ -208,48 +223,14 @@
 									</header>
 									<div class="mini-posts">
 										<article>
+											<a href="#" class="image"><img src="images/pub1.jpg" alt="Graph Neural Networks" /></a>
 											<p>Optimizing Graph Neural Networks for Large-Scale Social Network Analysis - Published in ACM Conference on Web Science.</p>
 										</article>
 										<article>
-											<p>A Comparative Study of Sorting Algorithms on Modern Hardware Architectures - Journal of Algorithms and Computational Theory.</p>
-										</article>
-										<article>
+											<a href="#" class="image"><img src="images/pub2.jpg" alt="Collaborative Machine Learning" /></a>
 											<p>Privacy-Preserving Methods for Collaborative Machine Learning - Symposium on Security and Privacy.</p>
 										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">All Publications</a></li>
-									</ul>
-								</section>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>I'm open to research collaborations, internship opportunities, and discussing interesting problems in computer science. Feel free to reach out through any of the channels below.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">agalean@clemson.edu</a></li>
-										<li class="icon solid fa-phone">(864) 765-6952</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Anna Galeano. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
-						</div>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+										<article>
+											<a href="#" class="image"><img src="images/pub3.jpg" alt="Human-AI Collaboration" /></a>
+											<p>Effective Human-AI Collaboration in Decision Support Systems - International Conference on Human-Computer Interaction.</p>
+										</article>
