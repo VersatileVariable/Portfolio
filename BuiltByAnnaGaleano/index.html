@@ -35,6 +35,16 @@
 				width: 100%;
 				height: 100%;
 			}
+
+			/* Hide sections as requested */
+			#menu ul li a[href="blog.html"],
+			#menu ul li a[href="projects.html"],
+			#menu ul li:has(span.opener:contains("Academic Resources")),
+			section#projects,
+			section#skills,
+			section#experience {
+				display: none !important;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -64,106 +74,12 @@
 										</header>
 										<p>Welcome to my portfolio! I'm passionate about data science applications, creating effective web experiences, and designing human-AI collaborative systems. My academic journey has equipped me with strong foundations in analyzing complex data, building user-friendly interfaces, and creating AI systems that augment human capabilities. I strive to create solutions that combine technical excellence with a deep understanding of human factors.</p>
 										<ul class="actions">
-											<li><a href="#projects" class="button big">View Projects</a></li>
+											<li><a href="research.html" class="button big">View Research</a></li>
 											<li><a href="files/anna_galeano_resume.pdf" download class="button primary big">Download Resume</a></li>
 										</ul>
 									</div>
-									<span class="image object">
-										<img src="images/pic10.jpg" alt="Anna Galeano" />
-									</span>
-								</section>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Technical Skills</h2>
-									</header>
-									<div class="features">
-										<article>
-											<span class="icon solid fa-database"></span>
-											<div class="content">
-												<h3>Data Science</h3>
-												<p>Skilled in statistical analysis, machine learning, and data visualization. Experienced with Python's data ecosystem (pandas, NumPy, scikit-learn) and creating actionable insights from complex datasets. Specialized in predictive modeling and natural language processing.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-laptop-code"></span>
-											<div class="content">
-												<h3>Web Development</h3>
-												<p>Full-stack web developer proficient in modern frameworks and technologies including React, Node.js, and responsive design principles. Experience building interactive data dashboards, API integrations, and user-focused interfaces with emphasis on accessibility and performance.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-robot"></span>
-											<div class="content">
-												<h3>Human-AI Teaming</h3>
-												<p>Specialized in designing collaborative AI systems that enhance human capabilities rather than replace them. Focused on creating intuitive interfaces for AI tools, developing appropriate trust calibration, and building systems that leverage both human expertise and machine efficiency.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-project-diagram"></span>
-											<div class="content">
-												<h3>Cross-Domain Integration</h3>
-												<p>Experienced in bridging technical implementations with human-centered design. Skilled at translating between technical and non-technical stakeholders and developing solutions that balance algorithmic performance with practical usability.</p>
-											</div>
-										</article>
-									</div>
-								</section>
-
-							<!-- Section -->
-								<section id="projects">
-									<header class="major">
-										<h2>Featured Projects</h2>
-									</header>
-									<div class="posts">
-										<article>
-											<a href="#" class="image"><img src="images/project1.jpg" alt="AI Research Dashboard" /></a>
-											<h3>AI-Assisted Research Dashboard</h3>
-											<p>An interactive web platform that uses NLP to help researchers identify relevant papers, extract key findings, and visualize connections between research topics. Built with React, D3.js, and transformer-based language models.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">View Project</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/project2.jpg" alt="Decision Support System" /></a>
-											<h3>Collaborative Decision Support System</h3>
-											<p>A human-AI teaming platform that combines machine learning predictions with human expertise to improve decision-making in complex scenarios. Features transparent AI explanations and intuitive feedback mechanisms.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">View Project</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/project3.jpg" alt="Healthcare Analytics" /></a>
-											<h3>Predictive Healthcare Analytics</h3>
-											<p>A data science project using electronic health records to predict patient readmission risks. Includes interactive visualizations for healthcare providers and explainable AI components to build appropriate trust.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">View Project</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/project4.jpg" alt="Learning Platform" /></a>
-											<h3>Adaptive Learning Platform</h3>
-											<p>A web-based education tool that personalizes content delivery based on student performance data. Incorporates AI recommendations while keeping instructors in the loop for intervention and curriculum adjustments.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">View Project</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/project5.jpg" alt="Urban Mobility" /></a>
-											<h3>Urban Mobility Visualization</h3>
-											<p>An interactive data dashboard analyzing transportation patterns in urban environments. Uses geospatial analysis and predictive modeling to help city planners optimize public transit and reduce congestion.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">View Project</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/project6.jpg" alt="AI Feedback Interface" /></a>
-											<h3>AI Feedback Interface</h3>
-											<p>A research project exploring optimal ways for humans to provide feedback to machine learning systems. Designed intuitive correction mechanisms that improve model performance while minimizing human effort.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">View Project</a></li>
-											</ul>
-										</article>
+									<div class="image main">
+										<div id="terminal-container" style="height: 400px; width: 100%; margin: 0; border-radius: 8px; overflow: hidden;"></div>
 									</div>
 								</section>
 
@@ -189,7 +105,8 @@
 									<ul>
 										<li><a href="index.html">Home</a></li>
 										<li><a href="about.html">About Me</a></li>
-										<li><a href="projects.html">All Projects</a></li>
+										<!-- Hidden items -->
+										<!-- <li><a href="projects.html">All Projects</a></li> -->
 										<li>
 											<span class="opener">Technical Areas</span>
 											<ul>
@@ -200,8 +117,8 @@
 											</ul>
 										</li>
 										<li><a href="research.html">Research Papers</a></li>
-										<li><a href="blog.html">Tech Blog</a></li>
-										<li>
+										<!-- <li><a href="blog.html">Tech Blog</a></li> -->
+										<!-- <li>
 											<span class="opener">Academic Resources</span>
 											<ul>
 												<li><a href="#">Course Notes</a></li>
@@ -209,7 +126,7 @@
 												<li><a href="#">Study Materials</a></li>
 												<li><a href="#">Recommended Books</a></li>
 											</ul>
-										</li>
+										</li> -->
 										<li><a href="resume.html">Resume</a></li>
 										<li><a href="certifications.html">Certifications</a></li>
 										<li><a href="contact.html">Contact</a></li>
@@ -223,14 +140,241 @@
 									</header>
 									<div class="mini-posts">
 										<article>
-											<a href="#" class="image"><img src="images/pub1.jpg" alt="Graph Neural Networks" /></a>
-											<p>Optimizing Graph Neural Networks for Large-Scale Social Network Analysis - Published in ACM Conference on Web Science.</p>
+											<a href="https://doi.org/10.1177/10711813241274425" class="image"><img src="images/pub1.jpg" alt="Human-AI Team Training" /></a>
+											<p><strong>Human-AI Team Training</strong> (2024)<br>
+											Co-Author, DOI: 10.1177/10711813241274425<br>
+											Article demonstrates experiments with 120+ participants on training methodologies. Researchers show 25% improvement in task efficiency.</p>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pub2.jpg" alt="Collaborative Machine Learning" /></a>
-											<p>Privacy-Preserving Methods for Collaborative Machine Learning - Symposium on Security and Privacy.</p>
+											<a href="https://doi.org/10.1007/s13278-021-00748-w" class="image"><img src="images/pub2.jpg" alt="COVID-19 Misinformation Analysis" /></a>
+											<p><strong>COVID-19 Misinformation Analysis</strong> (2021)<br>
+											Co-Author, Social Network Analysis and Mining 11, Springer<br>
+											Developed real-time misinformation detection methodologies. Created publicly accessible database cited 50+ times.</p>
 										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pub3.jpg" alt="Human-AI Collaboration" /></a>
-											<p>Effective Human-AI Collaboration in Decision Support Systems - International Conference on Human-Computer Interaction.</p>
-										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="research.html" class="button">More Publications</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in Touch</h2>
+									</header>
+									<p>I'm always open to discussing new projects, research opportunities, or potential collaborations.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="mailto:agalean@clemson.edu">agalean@clemson.edu</a></li>
+										<li class="icon solid fa-home">Clemson University<br />
+										Clemson, SC 29634</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Anna Galeano. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+			<!-- Terminal Script -->
+			<script>
+			// Wait for the page to fully load
+			document.addEventListener('DOMContentLoaded', function() {
+				console.log('DOM loaded, checking for terminal container...');
+				
+				// Check if the terminal container exists
+				const terminalContainer = document.getElementById('terminal-container');
+				
+				if (terminalContainer) {
+					console.log('Terminal container found, initializing...');
+					
+					// Create and apply the terminal directly
+					terminalContainer.style.backgroundColor = '#1a1a1a';
+					terminalContainer.style.color = '#33ff33';
+					terminalContainer.style.fontFamily = 'monospace';
+					terminalContainer.style.padding = '10px';
+					terminalContainer.style.overflow = 'auto';
+					
+					// Create header
+					const header = document.createElement('div');
+					header.style.backgroundColor = '#333';
+					header.style.padding = '5px';
+					header.style.borderTopLeftRadius = '5px';
+					header.style.borderTopRightRadius = '5px';
+					header.style.marginBottom = '10px';
+					header.style.display = 'flex';
+					header.style.alignItems = 'center';
+					
+					// Create terminal circles
+					const circles = document.createElement('div');
+					circles.style.display = 'flex';
+					circles.style.gap = '5px';
+					
+					['#ff5f56', '#ffbd2e', '#27c93f'].forEach(color => {
+						const circle = document.createElement('div');
+						circle.style.width = '12px';
+						circle.style.height = '12px';
+						circle.style.borderRadius = '50%';
+						circle.style.backgroundColor = color;
+						circles.appendChild(circle);
+					});
+					
+					const title = document.createElement('div');
+					title.style.marginLeft = '10px';
+					title.style.color = '#ccc';
+					title.textContent = 'anna@portfolio:~';
+					
+					header.appendChild(circles);
+					header.appendChild(title);
+					terminalContainer.appendChild(header);
+					
+					// Create terminal content
+					const content = document.createElement('div');
+					terminalContainer.appendChild(content);
+					
+					// Add welcome message
+					addLine(content, "Welcome to Anna Galeano's Interactive Terminal", 'system');
+					addLine(content, "Type 'help' to see available commands", 'system');
+					
+					// Create input line
+					const inputLine = document.createElement('div');
+					inputLine.style.display = 'flex';
+					inputLine.style.alignItems = 'center';
+					inputLine.style.marginTop = '10px';
+					
+					const prompt = document.createElement('span');
+					prompt.textContent = '$ ';
+					prompt.style.color = '#33ff33';
+					inputLine.appendChild(prompt);
+					
+					const input = document.createElement('input');
+					input.style.backgroundColor = 'transparent';
+					input.style.border = 'none';
+					input.style.outline = 'none';
+					input.style.color = '#33ff33';
+					input.style.fontFamily = 'monospace';
+					input.style.fontSize = '14px';
+					input.style.width = '100%';
+					input.style.caretColor = '#33ff33';
+					
+					input.addEventListener('keydown', function(e) {
+						if (e.key === 'Enter') {
+							const command = input.value.trim().toLowerCase();
+							
+							if (command) {
+								addLine(content, `$ ${command}`, 'input');
+								
+								// Process commands
+								if (command === 'help') {
+									addLine(content, 'Available commands:', 'output');
+									addLine(content, '  about       - Learn about me', 'output');
+									addLine(content, '  skills      - View my technical skills', 'output');
+									addLine(content, '  experience  - Show my work experience', 'output');
+									addLine(content, '  projects    - List my notable projects', 'output');
+									addLine(content, '  research    - View my research publications', 'output');
+									addLine(content, '  resume      - Download my resume', 'output');
+									addLine(content, '  contact     - Show my contact information', 'output');
+									addLine(content, '  clear       - Clear the terminal', 'output');
+								} else if (command === 'about') {
+									addLine(content, '━━━ ABOUT ME ━━━', 'heading');
+									addLine(content, "I'm Anna Galeano, a Computer Science student at Clemson University.", 'output');
+									addLine(content, "I specialize in data science, web development, and human-AI teaming.", 'output');
+									addLine(content, "My passion lies in creating AI systems that augment human capabilities", 'output');
+									addLine(content, "while maintaining a deep understanding of human factors.", 'output');
+								} else if (command === 'skills') {
+									addLine(content, '━━━ TECHNICAL SKILLS ━━━', 'heading');
+									addLine(content, '• Research Areas: AI, Machine Learning, Computer Vision, Human-AI Interaction', 'output');
+									addLine(content, '• Languages: Java, C++, C, JavaScript, Python', 'output');
+									addLine(content, '• Tools: Linux, Applied Data Science, Web Development', 'output');
+									addLine(content, '• Domains: Additive Manufacturing, Research Methodologies', 'output');
+									addLine(content, '• Human Languages: English, German', 'output');
+								} else if (command === 'experience') {
+									addLine(content, '━━━ WORK EXPERIENCE ━━━', 'heading');
+									addLine(content, '• Clemson University TRACE Lab (Jan 2024 - Present)', 'output');
+									addLine(content, '  Research Assistant - Human-AI interaction experiments', 'output');
+									addLine(content, '• Clemson University Makerspace (Jan 2024 - May 2025)', 'output');
+									addLine(content, '  Corporate Liaison & Makerspace Intern', 'output');
+									addLine(content, '• Special Operations Command Europe (May 2024 - Aug 2024)', 'output');
+									addLine(content, '  Academic Intern - J6X, Computer Vision Implementation', 'output');
+									addLine(content, '• University of Arkansas at Little Rock (2021-2023)', 'output');
+									addLine(content, '  COVID-19 Database Specialist', 'output');
+								} else if (command === 'projects') {
+									addLine(content, '━━━ NOTABLE PROJECTS ━━━', 'heading');
+									addLine(content, '1. Human-AI Collaborative System', 'output');
+									addLine(content, '2. COVID-19 Misinformation Tracker', 'output');
+									addLine(content, '3. YOLOv8 Target Identification System', 'output');
+									addLine(content, '4. Interactive Portfolio Website', 'output');
+								} else if (command === 'research') {
+									addLine(content, '━━━ RESEARCH PUBLICATIONS ━━━', 'heading');
+									addLine(content, '• Human-AI Team Training (2024)', 'output');
+									addLine(content, '  Co-Author, DOI: 10.1177/10711813241274425', 'output');
+									addLine(content, '• COVID-19 Misinformation Analysis (2021)', 'output');
+									addLine(content, '  Co-Author, Social Network Analysis and Mining 11, Springer', 'output');
+								} else if (command === 'resume') {
+									addLine(content, '━━━ RESUME ━━━', 'heading');
+									addLine(content, 'Downloading resume...', 'output');
+									window.location.href = 'files/anna_galeano_resume.pdf';
+								} else if (command === 'contact') {
+									addLine(content, '━━━ CONTACT INFO ━━━', 'heading');
+									addLine(content, '• Email: agalean@clemson.edu', 'output');
+									addLine(content, '• LinkedIn: linkedin.com/in/connectedanna', 'output');
+									addLine(content, '• GitHub: github.com/VersatileVariable', 'output');
+								} else if (command === 'clear') {
+									content.innerHTML = '';
+								} else {
+									addLine(content, `Command not found: ${command}. Type 'help' for available commands.`, 'output');
+								}
+							}
+							
+							input.value = '';
+							terminalContainer.scrollTop = terminalContainer.scrollHeight;
+						}
+					});
+					
+					inputLine.appendChild(input);
+					terminalContainer.appendChild(inputLine);
+					
+					// Focus the input
+					setTimeout(function() {
+						input.focus();
+					}, 100);
+				} else {
+					console.error('Terminal container not found!');
+				}
+			});
+
+			// Helper function to add a line to the terminal
+			function addLine(content, text, type) {
+				const line = document.createElement('div');
+				line.textContent = text;
+				line.style.marginBottom = '5px';
+				
+				if (type === 'system') {
+					line.style.color = '#5b9bd5';
+				} else if (type === 'input') {
+					line.style.color = '#33ff33';
+				} else if (type === 'output') {
+					line.style.color = '#ddd';
+				} else if (type === 'heading') {
+					line.style.color = '#ffbd2e';
+					line.style.fontWeight = 'bold';
+					line.style.marginTop = '10px';
+				}
+				
+				content.appendChild(line);
+			}
+			</script>
+
+	</body>
+</html>

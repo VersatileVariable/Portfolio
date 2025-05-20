@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Research Papers | Anna Galeano</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			html {
+				scroll-behavior: smooth;
+				--scroll-duration: 1.5s; /* Slower scroll duration */
+				scroll-behavior: smooth;
+			}
+			
+			/* Footer wave styling */
+			.footer-wave {
+				position: relative;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 120px;
+				overflow: hidden;
+				margin-bottom: 20px;
+			}
+			
+			.footer-wave svg {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			/* Hide sections as requested */
+			#menu ul li a[href="blog.html"],
+			#menu ul li a[href="projects.html"],
+			#menu ul li:has(span.opener:contains("Academic Resources")),
+			section#projects {
+				display: none !important;
+			}
+			
+			/* Publication styling */
+			.publication {
+				border-left: 4px solid #f56a6a;
+				padding-left: 1.5em;
+				margin-bottom: 2em;
+				position: relative;
+			}
+			
+			.publication:before {
+				content: "";
+				position: absolute;
+				left: -8px;
+				top: 0;
+				width: 12px;
+				height: 12px;
+				background-color: #f56a6a;
+				border-radius: 50%;
+			}
+			
+			.publication h3 {
+				margin-bottom: 0.5em;
+			}
+			
+			.publication .meta {
+				color: #7f888f;
+				font-size: 0.9em;
+				margin-bottom: 1em;
+			}
+			
+			.publication .abstract {
+				margin-top: 1em;
+				padding: 1em;
+				background-color: #f5f5f5;
+				border-radius: 4px;
+			}
+			
+			.publication .tags {
+				margin-top: 1em;
+			}
+			
+			.publication .tags span {
+				display: inline-block;
+				background-color: #e0e0e0;
+				padding: 0.3em 0.8em;
+				border-radius: 3px;
+				margin-right: 0.5em;
+				margin-bottom: 0.5em;
+				font-size: 0.8em;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Anna Galeano</strong> | Computer Science</a>
+									<ul class="icons">
+										<li><a href="https://github.com/VersatileVariable" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="https://www.linkedin.com/in/connectedanna/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Research Papers</h1>
+									</header>
+
+									<p>My research focuses on human-AI interaction, collaborative AI systems, medical data analysis, cybersecurity, and misinformation detection. I've contributed to publications in various conferences and journals, exploring how AI and data analysis can augment human capabilities and address complex problems in healthcare and security.</p>
+									
+									<!-- Publication 1 - Newest -->
+                                    <div class="publication">
+										<h3>Clemson Versus Chagas</h3>
+										<div class="meta">
+											<strong>Conference:</strong> 2025 George B. Moody PhysioNet Challenge, 2025<br>
+											<strong>Authors:</strong> Toby Cox, <strong>Anna Galeano</strong>, Varun Sethi, Aaron J. Masino<br>
+											<strong>Affiliation:</strong> Clemson University, Clemson, South Carolina
+										</div>
+										
+										<p>This research addresses Chagas disease detection using 12-lead electrocardiogram (ECG) data, employing machine learning techniques to improve identification accuracy despite significant class imbalance.</p>
+										
+										<div class="abstract">
+											<strong>Abstract:</strong> This project addresses the 2025 George B. Moody PhysioNet Challenge focusing on Chagas detection using 12-lead electrocardiogram (ECG) data. Our approach used a balanced random forest classification (BRFC) with SMOTE to address class imbalance. Feature engineering extracted metrics including R-R peak distances, QRS widths, and FFT components from standardized ECG signals. After training in the CODE-15% data set, the model achieved 60% true positive identification while maintaining fewer than 13% false positives, with an AUC of approximately 0.82. Feature importance analysis revealed that variance in FFT magnitude and average QRS distance, particularly in AVR and DI leads, were the most significant predictors. While establishing a useful baseline, we determined BRFC is insufficient for optimal Chagas detection and are developing a Kolmogorov-Arnold Network (KAN) model that leverages grid extension techniques, B-spline architecture, and interpretable results for improved medical applications with diverse patient populations.
+										</div>
+										
+										<div class="tags">
+											<span>Medical Data Analysis</span>
+											<span>ECG Signal Processing</span>
+											<span>Machine Learning</span>
+											<span>Chagas Disease Detection</span>
+											<span>Kolmogorov-Arnold Networks</span>
+										</div>
+									</div>
+                                    
+                                    <!-- Publication 2 -->
+									<div class="publication">
+										<h3>Human-AI Team Training: Optimizing Collaborative Performance in Mixed-Intelligence Environments</h3>
+										<div class="meta">
+											<strong>Journal:</strong> Journal of Human Factors and Ergonomics Society, 2024<br>
+											<strong>DOI:</strong> <a href="https://doi.org/10.1177/10711813241274425" target="_blank">10.1177/10711813241274425</a><br>
+											<strong>Authors:</strong> Christopher Flathmann (<a href="https://orcid.org/0000-0002-5448-2610" target="_blank">ORCID</a>, <a href="mailto:cflathm@clemson.edu">cflathm@clemson.edu</a>), Beau G. Schelble (<a href="https://orcid.org/0000-0003-3704-697X" target="_blank">ORCID</a>), <strong>Anna Galeano</strong>
+										</div>
+										
+										<p>This study demonstrates novel training methodologies for human-AI teams across 120+ participants, showing a 25% improvement in task efficiency when using our structured collaborative learning approach.</p>
+										
+										<div class="abstract">
+											<strong>Abstract:</strong> As artificial intelligence becomes increasingly integrated into workplace decision-making, effective training for human-AI collaboration becomes essential. This paper presents results from a series of experiments involving 127 participants engaged in collaborative problem-solving with AI assistants. We introduce a structured training protocol that emphasizes mutual understanding, appropriate trust calibration, and efficient communication patterns. Results demonstrate significant performance improvements (25% reduction in time-to-solution, p&lt;0.01) and higher satisfaction ratings compared to traditional training approaches. We provide guidelines for implementing effective human-AI training programs across domains and discuss implications for organizational adoption of collaborative intelligence systems.
+										</div>
+										
+										<div class="tags">
+											<span>Human-AI Collaboration</span>
+											<span>Team Training</span>
+											<span>Trust Calibration</span>
+											<span>Mixed-Initiative Systems</span>
+										</div>
+									</div>
+
+                                    <!-- Publication 3 -->
+									<div class="publication">
+										<h3>Chasing Bread Crumbs: How Sharing Seemingly Irrelevant Information May Prove to be a Vulnerability</h3>
+										<div class="meta">
+											<strong>Status:</strong> Research Paper, 2023<br>
+											<strong>Word Count:</strong> 3642<br>
+											<strong>Author:</strong> <strong>Anna Galeano</strong>
+										</div>
+										
+										<p>This paper examines how seemingly innocuous information shared on social media and professional platforms can create security vulnerabilities when analyzed collectively, particularly for military personnel and their families.</p>
+										
+										<div class="abstract">
+											<strong>Abstract:</strong> This study investigates how small pieces of information shared online can act as "breadcrumbs" that adversaries may follow to access sensitive or critical information. Using web scraping techniques to analyze LinkedIn profiles of U.S. military personnel, the research demonstrates how Operations Security (OPSEC) can be compromised through the aggregation of publicly available data. The paper follows the OPSEC process to identify critical information and indicators, assess threats, analyze vulnerabilities, assess risk, and recommend appropriate countermeasures. Results showed that 75.5% of sampled accounts posed potential security risks, with 12% classified as high-risk. The research highlights the importance of comprehensive OPSEC awareness among military personnel and their families, who are often identified as the weakest link in information security.
+										</div>
+										
+										<div class="tags">
+											<span>Operations Security</span>
+											<span>Open Source Intelligence</span>
+											<span>Social Media Analysis</span>
+											<span>Cybersecurity</span>
+											<span>Information Vulnerability</span>
+										</div>
+									</div>
+									
+									<!-- Publication 4 - Oldest -->
+									<div class="publication">
+										<h3>COVID-19 Misinformation Analysis: Detection and Classification of Misleading Health Content on Social Media</h3>
+										<div class="meta">
+											<strong>Journal:</strong> Social Network Analysis and Mining 11, Springer, 2021<br>
+											<strong>DOI:</strong> <a href="https://doi.org/10.1007/s13278-021-00748-w" target="_blank">https://doi.org/10.1007/s13278-021-00748-w</a><br>
+											<strong>Authors:</strong> Thomas Marcoux, Katrin Galeano, Rick Galeano, Karen DiCicco, Hayder Al Rubaye, Esther Mead, Nitin Agarwal, <strong>Anna Galeano</strong>
+										</div>
+										
+										<p>This paper presents methodologies for real-time misinformation detection during the COVID-19 pandemic, resulting in a public database that has been cited over 50 times in subsequent research.</p>
+										
+										<div class="abstract">
+											<strong>Abstract:</strong> The COVID-19 pandemic has been accompanied by an "infodemic" of misleading and false information spreading across social media platforms. This paper presents a multi-modal approach to misinformation detection, combining natural language processing, network analysis, and behavioral pattern recognition to identify and classify misleading health information. Our system achieved 87% accuracy in identifying misinformation from mixed-media posts across Twitter, Facebook, and Instagram. We provide an open-access database of over 10,000 classified posts that researchers can use for further analysis. Additionally, we identify key propagation patterns that differentiate how accurate versus misleading information spreads through social networks, offering insights for intervention strategies to combat health misinformation.
+										</div>
+										
+										<div class="tags">
+											<span>Misinformation Detection</span>
+											<span>COVID-19</span>
+											<span>Social Media Analysis</span>
+											<span>Public Health</span>
+										</div>
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Home</a></li>
+										<li><a href="about.html">About Me</a></li>
+										<!-- Hidden items -->
+										<!-- <li><a href="projects.html">All Projects</a></li> -->
+										<li>
+											<span class="opener">Technical Areas</span>
+											<ul>
+												<li><a href="#">Data Science</a></li>
+												<li><a href="#">Web Development</a></li>
+												<li><a href="#">Human-AI Teaming</a></li>
+												<li><a href="#">Cross-Domain Integration</a></li>
+											</ul>
+										</li>
+										<li><a href="research.html">Research Papers</a></li>
+										<!-- <li><a href="blog.html">Tech Blog</a></li> -->
+										<!-- <li>
+											<span class="opener">Academic Resources</span>
+											<ul>
+												<li><a href="#">Course Notes</a></li>
+												<li><a href="#">Programming Tutorials</a></li>
+												<li><a href="#">Study Materials</a></li>
+												<li><a href="#">Recommended Books</a></li>
+											</ul>
+										</li> -->
+										<li><a href="resume.html">Resume</a></li>
+										<li><a href="certifications.html">Certifications</a></li>
+										<li><a href="contact.html">Contact</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Research Focus Areas</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="images/research-area1.jpg" alt="Human-AI Collaboration" /></a>
+											<p><strong>Human-AI Collaboration</strong><br>
+											Investigating effective interaction patterns and trust development between humans and AI systems.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/research-area2.jpg" alt="Medical AI" /></a>
+											<p><strong>Medical AI</strong><br>
+											Applying machine learning techniques to medical diagnostics and healthcare data analysis.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/research-area3.jpg" alt="Information Security" /></a>
+											<p><strong>Information Security</strong><br>
+											Exploring digital footprints and how publicly shared information can create security vulnerabilities.</p>
+										</article>
+									</div>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Anna Galeano. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
