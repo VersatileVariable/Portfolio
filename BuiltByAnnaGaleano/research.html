@@ -11,10 +11,54 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
+			:root {
+				--light-bg: #f5f2e9;
+				--lighter-bg: #fcf9f2;
+				--main-accent: #739b6f;
+				--darker-accent: #5a7a57;
+				--lighter-accent: #b8aa8c;
+				--text-dark: #3a3a3a;
+				--text-darker: #212121;
+				--card-bg: #ffffff;
+				--card-border: #e6e0d0;
+				--sidebar-bg: #eee9dd;
+				--highlight: #d8c9a7;
+			}
+			
 			html {
 				scroll-behavior: smooth;
 				--scroll-duration: 1.5s; /* Slower scroll duration */
-				scroll-behavior: smooth;
+			}
+			
+			body {
+				background-color: var(--light-bg);
+				color: var(--text-dark);
+			}
+			
+			#main > .inner {
+				background-color: var(--light-bg);
+			}
+			
+			#sidebar {
+				background-color: var(--sidebar-bg);
+			}
+			
+			h1, h2, h3, h4, h5, h6 {
+				color: var(--text-darker);
+			}
+			
+			strong, b {
+				color: var(--text-darker);
+			}
+			
+			a {
+				color: var(--main-accent);
+				border-bottom-color: var(--main-accent);
+			}
+			
+			a:hover {
+				color: var(--darker-accent) !important;
+				border-bottom-color: var(--darker-accent);
 			}
 			
 			/* Footer wave styling */
@@ -44,31 +88,71 @@
 				display: none !important;
 			}
 			
+			/* ASCII Logo Styling */
+			.ascii-logo {
+				font-family: monospace;
+				white-space: pre;
+				font-size: 1.5em;
+				text-align: center;
+				padding: 0;
+				margin: 0 auto;
+				cursor: pointer;
+				background-color: var(--sidebar-bg);
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 150px; /* Fixed height for vertical centering */
+				transition: color 0.2s ease-in-out;
+			}
+			
+			.logo-content {
+				line-height: 1.2;
+			}
+			
+			.ascii-logo .paren {
+				color: var(--main-accent); /* Accent color for the parentheses */
+			}
+			
+			.ascii-logo .cup {
+				color: var(--main-accent); /* Accent color for the cup */
+			}
+			
+			.ascii-logo:hover .cup,
+			.ascii-logo:hover .paren {
+				color: var(--darker-accent); /* Darker accent on hover */
+			}
+			
 			/* Publication styling */
 			.publication {
-				border-left: 4px solid #f56a6a;
+				border-left: 4px solid var(--main-accent);
 				padding-left: 1.5em;
 				margin-bottom: 2em;
 				position: relative;
+				background-color: var(--card-bg);
+				padding: 1.5em;
+				padding-left: 2em;
+				border-radius: 8px;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				border: 1px solid var(--card-border);
 			}
 			
-			.publication:before {
-				content: "";
-				position: absolute;
-				left: -8px;
-				top: 0;
-				width: 12px;
-				height: 12px;
-				background-color: #f56a6a;
-				border-radius: 50%;
+			.publication:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+				border-color: var(--main-accent);
 			}
+			
+			
 			
 			.publication h3 {
 				margin-bottom: 0.5em;
+				color: var(--main-accent);
 			}
 			
 			.publication .meta {
-				color: #7f888f;
+				color: var(--text-dark);
 				font-size: 0.9em;
 				margin-bottom: 1em;
 			}
@@ -76,8 +160,9 @@
 			.publication .abstract {
 				margin-top: 1em;
 				padding: 1em;
-				background-color: #f5f5f5;
+				background-color: var(--lighter-bg);
 				border-radius: 4px;
+				border: 1px solid var(--card-border);
 			}
 			
 			.publication .tags {
@@ -86,12 +171,41 @@
 			
 			.publication .tags span {
 				display: inline-block;
-				background-color: #e0e0e0;
-				padding: 0.3em 0.8em;
+				background-color: var(--highlight);
+				color: var(--text-darker);
+				padding: 0.3em 0.7em;
 				border-radius: 3px;
 				margin-right: 0.5em;
 				margin-bottom: 0.5em;
 				font-size: 0.8em;
+				border: 1px solid var(--card-border);
+			}
+			
+			/* Header styling */
+			#header {
+				border-bottom: solid 5px var(--main-accent);
+			}
+			
+			/* Button styling */
+			.button {
+				background-color: transparent;
+				box-shadow: inset 0 0 0 2px var(--main-accent);
+				color: var(--main-accent) !important;
+			}
+			
+			.button:hover {
+				background-color: rgba(155, 141, 111, 0.1);
+				box-shadow: inset 0 0 0 2px var(--darker-accent);
+				color: var(--darker-accent) !important;
+			}
+			
+			.button.primary {
+				background-color: var(--main-accent);
+				color: white !important;
+			}
+			
+			.button.primary:hover {
+				background-color: var(--darker-accent);
 			}
 		</style>
 	</head>
@@ -115,8 +229,8 @@
 
 							<!-- Content -->
 								<section>
-									<header class="main">
-										<h1>Research Papers</h1>
+									<header class="major">
+										<h2>Research Papers</h2>
 									</header>
 
 									<p>My research focuses on human-AI interaction, collaborative AI systems, medical data analysis, cybersecurity, and misinformation detection. I've contributed to publications in various conferences and journals, exploring how AI and data analysis can augment human capabilities and address complex problems in healthcare and security.</p>
@@ -137,11 +251,11 @@
 										</div>
 										
 										<div class="tags">
-											<span>Medical Data Analysis</span>
-											<span>ECG Signal Processing</span>
 											<span>Machine Learning</span>
-											<span>Chagas Disease Detection</span>
-											<span>Kolmogorov-Arnold Networks</span>
+											<span>Medical Data</span>
+											<span>Python</span>
+											<span>Chagas Disease</span>
+											<span>ECG Analysis</span>
 										</div>
 									</div>
                                     
@@ -161,10 +275,10 @@
 										</div>
 										
 										<div class="tags">
-											<span>Human-AI Collaboration</span>
-											<span>Team Training</span>
+											<span>Human-AI Teaming</span>
+											<span>Collaborative Systems</span>
 											<span>Trust Calibration</span>
-											<span>Mixed-Initiative Systems</span>
+											<span>Training Methodologies</span>
 										</div>
 									</div>
 
@@ -184,11 +298,11 @@
 										</div>
 										
 										<div class="tags">
-											<span>Operations Security</span>
-											<span>Open Source Intelligence</span>
+											<span>Web Scraping</span>
+											<span>OSINT</span>
+											<span>Python</span>
+											<span>Security</span>
 											<span>Social Media Analysis</span>
-											<span>Cybersecurity</span>
-											<span>Information Vulnerability</span>
 										</div>
 									</div>
 									
@@ -208,9 +322,10 @@
 										</div>
 										
 										<div class="tags">
-											<span>Misinformation Detection</span>
+											<span>Misinformation</span>
 											<span>COVID-19</span>
-											<span>Social Media Analysis</span>
+											<span>Data Analysis</span>
+											<span>Social Networks</span>
 											<span>Public Health</span>
 										</div>
 									</div>
@@ -223,12 +338,10 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
+							<!-- ASCII Logo -->
+							<a href="index.html" class="ascii-logo"><div class="logo-content">   <span class="paren">(</span>
+    <span class="paren">)</span>
+ <span class="cup">c[_]</span></div></a>
 
 							<!-- Menu -->
 								<nav id="menu">
@@ -236,33 +349,23 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Home</a></li>
-										<li><a href="about.html">About Me</a></li>
-										<!-- Hidden items -->
-										<!-- <li><a href="projects.html">All Projects</a></li> -->
-										<li>
-											<span class="opener">Technical Areas</span>
+										<li><a href="index.html">HOME</a></li>
+										<li><a href="about.html">ABOUT ME</a></li>
+										<!-- Show projects link -->
+										<li><a href="projects.html">PROJECTS</a></li>
+										<li id="technical-areas">
+											<span class="opener">TECHNICAL AREAS</span>
 											<ul>
-												<li><a href="#">Data Science</a></li>
-												<li><a href="#">Web Development</a></li>
-												<li><a href="#">Human-AI Teaming</a></li>
-												<li><a href="#">Cross-Domain Integration</a></li>
+												<li><a href="technical-areas.html#data-science">Data Science</a></li>
+												<li><a href="technical-areas.html#web-development">Web Development</a></li>
+												<li><a href="technical-areas.html#human-ai-teaming">Human-AI Teaming</a></li>
+												<li><a href="technical-areas.html#cross-domain">Cross-Domain Integration</a></li>
 											</ul>
 										</li>
-										<li><a href="research.html">Research Papers</a></li>
-										<!-- <li><a href="blog.html">Tech Blog</a></li> -->
-										<!-- <li>
-											<span class="opener">Academic Resources</span>
-											<ul>
-												<li><a href="#">Course Notes</a></li>
-												<li><a href="#">Programming Tutorials</a></li>
-												<li><a href="#">Study Materials</a></li>
-												<li><a href="#">Recommended Books</a></li>
-											</ul>
-										</li> -->
-										<li><a href="resume.html">Resume</a></li>
-										<li><a href="certifications.html">Certifications</a></li>
-										<li><a href="contact.html">Contact</a></li>
+										<li><a href="research.html">RESEARCH PAPERS</a></li>
+										<li><a href="resume.html">RESUME</a></li>
+										<li><a href="certifications.html">CERTIFICATIONS</a></li>
+										<li><a href="contact.html">CONTACT</a></li>
 									</ul>
 								</nav>
 
@@ -288,6 +391,22 @@
 											Exploring digital footprints and how publicly shared information can create security vulnerabilities.</p>
 										</article>
 									</div>
+									<ul class="actions">
+										<li><a href="research.html" class="button">All Research</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in Touch</h2>
+									</header>
+									<p>I'm always open to discussing new projects, research opportunities, or potential collaborations.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="mailto:agalean@clemson.edu">agalean@clemson.edu</a></li>
+										<li class="icon solid fa-home">Clemson University<br />
+										Clemson, SC 29634</li>
+									</ul>
 								</section>
 
 							<!-- Footer -->
@@ -306,6 +425,38 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<!-- Added script for dropdown functionality -->
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					// Enhanced dropdown functionality
+					document.querySelectorAll('#menu ul li .opener').forEach(opener => {
+						opener.addEventListener('click', function(e) {
+							e.preventDefault();
+							const parent = this.parentNode;
+							
+							// Toggle active class
+							if (parent.classList.contains('active')) {
+								parent.classList.remove('active');
+							} else {
+								// Close any open dropdowns first
+								document.querySelectorAll('#menu ul li.active').forEach(item => {
+									if (item !== parent) {
+										item.classList.remove('active');
+									}
+								});
+								parent.classList.add('active');
+							}
+						});
+					});
+					
+					// ASCII logo click handler
+					document.querySelector('.ascii-logo').addEventListener('click', function(e) {
+						e.preventDefault();
+						window.location.href = 'index.html';
+					});
+				});
+			</script>
 
 	</body>
 </html>

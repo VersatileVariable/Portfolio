@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Terminal | Anna Galeano</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+		<link rel="stylesheet" href="assets/css/terminal.css" />
+	</head>
+	<body>
+		<!-- Terminal Window -->
+		<div class="terminal-window">
+			<div class="terminal-header">
+				<div class="circles-container">
+					<div class="circle red-circle"></div>
+					<div class="circle yellow-circle"></div>
+					<div class="circle green-circle"></div>
+				</div>
+				<div class="terminal-title">anna@portfolio: ~/projects</div>
+			</div>
+			<div id="terminal-container">
+				<div id="terminal-content"></div>
+				<div id="terminal-input-line" style="display: flex; align-items: center;">
+					<span style="color: #33ff33;">$ </span>
+					<input type="text" id="terminal-input" class="user-input" autofocus spellcheck="false">
+				</div>
+				
+				<!-- JAR Container (Hidden initially) -->
+				<div id="jar-container">
+					<div id="jar-output"></div>
+					<div id="jar-prompt"></div>
+					<input type="text" id="jar-input" spellcheck="false">
+				</div>
+			</div>
+		</div>
+
+		<script src="assets/js/terminal.js"></script>
+	</body>
+</html>

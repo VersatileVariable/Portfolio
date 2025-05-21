@@ -1,209 +1,222 @@
-// Simplified terminal.js version for debugging
-// This version has minimal dependencies and should work in most environments
-
-class SimpleTerminal {
-    constructor(container) {
-      this.container = container;
-      this.init();
-    }
+// Terminal Script for Anna Galeano's Portfolio
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM loaded, checking for terminal container...');
   
-    init() {
-      // Create terminal elements
-      this.container.innerHTML = '';
-      this.container.style.backgroundColor = '#1a1a1a';
-      this.container.style.color = '#33ff33';
-      this.container.style.fontFamily = 'monospace';
-      this.container.style.padding = '10px';
-      this.container.style.overflow = 'auto';
+  // Check if the terminal container exists
+  const terminalContainer = document.getElementById('terminal-container');
+  
+  if (terminalContainer) {
+      console.log('Terminal container found, initializing...');
       
-      // Create header
+      // Clear any existing content
+      terminalContainer.innerHTML = '';
+      
+      // Create terminal header
       const header = document.createElement('div');
-      header.style.backgroundColor = '#333';
-      header.style.padding = '5px';
-      header.style.borderTopLeftRadius = '5px';
-      header.style.borderTopRightRadius = '5px';
-      header.style.marginBottom = '10px';
-      header.style.display = 'flex';
-      header.style.alignItems = 'center';
+      header.className = 'terminal-header';
+      header.textContent = 'anna@portfolio:~';
+      terminalContainer.appendChild(header);
       
-      // Create terminal circles
-      const circles = document.createElement('div');
-      circles.style.display = 'flex';
-      circles.style.gap = '5px';
-      
-      ['#ff5f56', '#ffbd2e', '#27c93f'].forEach(color => {
-        const circle = document.createElement('div');
-        circle.style.width = '12px';
-        circle.style.height = '12px';
-        circle.style.borderRadius = '50%';
-        circle.style.backgroundColor = color;
-        circles.appendChild(circle);
-      });
-      
-      const title = document.createElement('div');
-      title.style.marginLeft = '10px';
-      title.style.color = '#ccc';
-      title.textContent = 'anna@portfolio:~';
-      
-      header.appendChild(circles);
-      header.appendChild(title);
-      this.container.appendChild(header);
-      
-      // Create terminal content
-      this.content = document.createElement('div');
-      this.container.appendChild(this.content);
+      // Create content area
+      const content = document.createElement('div');
+      content.className = 'terminal-content';
+      terminalContainer.appendChild(content);
       
       // Add welcome message
-      this.addLine("Welcome to Anna Galeano's Interactive Terminal", 'system');
-      this.addLine("Type 'help' to see available commands", 'system');
+      addLine(content, "Welcome to Anna Galeano's Interactive Terminal", 'system');
+      addLine(content, "Type 'help' to see available commands", 'system');
       
-      // Create input line
-      this.inputLine = document.createElement('div');
-      this.inputLine.style.display = 'flex';
-      this.inputLine.style.alignItems = 'center';
-      this.inputLine.style.marginTop = '10px';
+      // Command history tracking
+      let commandHistory = [];
+      let historyIndex = -1;
+      
+      // Create input area
+      const inputLine = document.createElement('div');
+      inputLine.className = 'terminal-input-line';
       
       const prompt = document.createElement('span');
-      prompt.textContent = '$ ';
-      prompt.style.color = '#33ff33';
-      this.inputLine.appendChild(prompt);
+      prompt.className = 'terminal-prompt';
+      prompt.textContent = ';
+      inputLine.appendChild(prompt);
       
-      this.input = document.createElement('input');
-      this.input.style.backgroundColor = 'transparent';
-      this.input.style.border = 'none';
-      this.input.style.outline = 'none';
-      this.input.style.color = '#33ff33';
-      this.input.style.fontFamily = 'monospace';
-      this.input.style.fontSize = '14px';
-      this.input.style.width = '100%';
-      this.input.style.caretColor = '#33ff33';
-      this.input.addEventListener('keydown', this.handleInput.bind(this));
+      const input = document.createElement('input');
+      input.className = 'terminal-input';
+      input.type = 'text';
+      input.autocomplete = 'off';
+      input.spellcheck = false;
+      input.placeholder = ''; // Clear placeholder
       
-      this.inputLine.appendChild(this.input);
-      this.container.appendChild(this.inputLine);
+      // Handle input events
+      input.addEventListener('keydown', function(e) {
+          // Handle arrow keys for command history
+          if (e.key === 'ArrowUp') {
+              e.preventDefault();
+              if (commandHistory.length > 0) {
+                  historyIndex = Math.min(historyIndex + 1, commandHistory.length - 1);
+                  input.value = commandHistory[commandHistory.length - 1 - historyIndex];
+                  // Move cursor to end
+                  setTimeout(() => {
+                      input.selectionStart = input.value.length;
+                      input.selectionEnd = input.value.length;
+                  }, 0);
+              }
+              return;
+          } else if (e.key === 'ArrowDown') {
+              e.preventDefault();
+              if (historyIndex > 0) {
+                  historyIndex--;
+                  input.value = commandHistory[commandHistory.length - 1 - historyIndex];
+              } else if (historyIndex === 0) {
+                  historyIndex = -1;
+                  input.value = '';
+              }
+              return;
+          }
+          
+          // Process command on Enter
+          if (e.key === 'Enter') {
+              const command = input.value.trim().toLowerCase();
+              
+              if (command) {
+                  // Add to history (avoid duplicates at the end)
+                  if (commandHistory.length === 0 || 
+                      commandHistory[commandHistory.length - 1] !== command) {
+                      commandHistory.push(command);
+                  }
+                  historyIndex = -1;
+                  
+                  // Display command
+                  addLine(content, `$ ${command}`, 'input');
+                  
+                  // Process commands
+                  processCommand(content, command);
+              }
+              
+              input.value = '';
+              scrollToBottom();
+          }
+      });
+      
+      inputLine.appendChild(input);
+      terminalContainer.appendChild(inputLine);
       
       // Focus the input
-      this.input.focus();
+      setTimeout(function() {
+          input.focus();
+      }, 100);
       
-      // Define commands
-      this.commands = {
-        help: () => {
-          this.addLine('Available commands:', 'output');
-          this.addLine('  about       - Learn about me', 'output');
-          this.addLine('  skills      - View my technical skills', 'output');
-          this.addLine('  experience  - Show my work experience', 'output');
-          this.addLine('  projects    - List my notable projects', 'output');
-          this.addLine('  research    - View my research publications', 'output');
-          this.addLine('  resume      - Download my resume', 'output');
-          this.addLine('  contact     - Show my contact information', 'output');
-          this.addLine('  clear       - Clear the terminal', 'output');
-        },
-        about: () => {
-          this.addLine('━━━ ABOUT ME ━━━', 'heading');
-          this.addLine("I'm Anna Galeano, a Computer Science student at Clemson University.", 'output');
-          this.addLine("I specialize in data science, web development, and human-AI teaming.", 'output');
-          this.addLine("My passion lies in creating AI systems that augment human capabilities", 'output');
-          this.addLine("while maintaining a deep understanding of human factors.", 'output');
-        },
-        skills: () => {
-          this.addLine('━━━ TECHNICAL SKILLS ━━━', 'heading');
-          this.addLine('• Research Areas: AI, Machine Learning, Computer Vision, Human-AI Interaction', 'output');
-          this.addLine('• Languages: Java, C++, C, JavaScript, Python', 'output');
-          this.addLine('• Tools: Linux, Applied Data Science, Web Development', 'output');
-          this.addLine('• Domains: Additive Manufacturing, Research Methodologies', 'output');
-          this.addLine('• Human Languages: English, German', 'output');
-        },
-        experience: () => {
-          this.addLine('━━━ WORK EXPERIENCE ━━━', 'heading');
-          this.addLine('• Clemson University TRACE Lab (Jan 2024 - Present)', 'output');
-          this.addLine('  Research Assistant - Human-AI interaction experiments', 'output');
-          this.addLine('• Clemson University Makerspace (Jan 2024 - May 2025)', 'output');
-          this.addLine('  Corporate Liaison & Makerspace Intern', 'output');
-          this.addLine('• Special Operations Command Europe (May 2024 - Aug 2024)', 'output');
-          this.addLine('  Academic Intern - J6X, Computer Vision Implementation', 'output');
-          this.addLine('• University of Arkansas at Little Rock (2021-2023)', 'output');
-          this.addLine('  COVID-19 Database Specialist', 'output');
-        },
-        projects: () => {
-          this.addLine('━━━ NOTABLE PROJECTS ━━━', 'heading');
-          this.addLine('1. Human-AI Collaborative System', 'output');
-          this.addLine('2. COVID-19 Misinformation Tracker', 'output');
-          this.addLine('3. YOLOv8 Target Identification System', 'output');
-          this.addLine('4. Interactive Portfolio Website', 'output');
-        },
-        research: () => {
-          this.addLine('━━━ RESEARCH PUBLICATIONS ━━━', 'heading');
-          this.addLine('• Human-AI Team Training (2024)', 'output');
-          this.addLine('  Co-Author, DOI: 10.1177/10711813241274425', 'output');
-          this.addLine('• COVID-19 Misinformation Analysis (2021)', 'output');
-          this.addLine('  Co-Author, Social Network Analysis and Mining 11, Springer', 'output');
-        },
-        resume: () => {
-          this.addLine('━━━ RESUME ━━━', 'heading');
-          this.addLine('Downloading resume...', 'output');
-          window.location.href = 'files/anna_galeano_resume.pdf';
-        },
-        contact: () => {
-          this.addLine('━━━ CONTACT INFO ━━━', 'heading');
-          this.addLine('• Email: agalean@clemson.edu', 'output');
-          this.addLine('• LinkedIn: linkedin.com/in/connectedanna', 'output');
-          this.addLine('• GitHub: github.com/annagaleano', 'output');
-        },
-        clear: () => {
-          this.content.innerHTML = '';
-        }
-      };
-    }
-    
-    addLine(text, type) {
-      const line = document.createElement('div');
-      line.textContent = text;
-      line.style.marginBottom = '5px';
-      
-      if (type === 'system') {
-        line.style.color = '#5b9bd5';
-      } else if (type === 'input') {
-        line.style.color = '#33ff33';
-      } else if (type === 'output') {
-        line.style.color = '#ddd';
-      } else if (type === 'heading') {
-        line.style.color = '#ffbd2e';
-        line.style.fontWeight = 'bold';
-        line.style.marginTop = '10px';
-      }
-      
-      this.content.appendChild(line);
-      this.container.scrollTop = this.container.scrollHeight;
-    }
-    
-    handleInput(e) {
-      if (e.key === 'Enter') {
-        const command = this.input.value.trim().toLowerCase();
-        
-        if (command) {
-          this.addLine(`$ ${command}`, 'input');
-          
-          if (this.commands[command]) {
-            this.commands[command]();
-          } else {
-            this.addLine(`Command not found: ${command}. Type 'help' for available commands.`, 'output');
+      // Refocus input when clicking on terminal
+      terminalContainer.addEventListener('click', function(e) {
+          if (e.target !== input) {
+              input.focus();
           }
-        }
-        
-        this.input.value = '';
-        this.container.scrollTop = this.container.scrollHeight;
+      });
+      
+      // Function to scroll to the bottom of the terminal
+      function scrollToBottom() {
+          content.scrollTop = content.scrollHeight;
       }
-    }
-  }
-  
-  // Initialize terminal when DOM is loaded
-  window.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded, initializing terminal...');
-    const container = document.getElementById('terminal-container');
-    if (container) {
-      console.log('Terminal container found, creating terminal...');
-      new SimpleTerminal(container);
-    } else {
+      
+      // Function to process commands
+      function processCommand(content, command) {
+          switch(command) {
+              case 'help':
+                  addLine(content, '━━━ AVAILABLE COMMANDS ━━━', 'heading');
+                  addLine(content, '  about       - Learn about me', 'output');
+                  addLine(content, '  skills      - View my technical skills', 'output');
+                  addLine(content, '  experience  - Show my work experience', 'output');
+                  addLine(content, '  projects    - List my notable projects', 'output');
+                  addLine(content, '  research    - View my research publications', 'output');
+                  addLine(content, '  resume      - Download my resume', 'output');
+                  addLine(content, '  contact     - Show my contact information', 'output');
+                  addLine(content, '  clear       - Clear the terminal', 'output');
+                  break;
+                  
+              case 'about':
+                  addLine(content, '━━━ ABOUT ME ━━━', 'heading');
+                  addLine(content, "I'm Anna Galeano, a Computer Science student at Clemson University.", 'output');
+                  addLine(content, "I specialize in data science, web development, and human-AI teaming.", 'output');
+                  addLine(content, "My passion lies in creating AI systems that augment human capabilities", 'output');
+                  addLine(content, "while maintaining a deep understanding of human factors.", 'output');
+                  break;
+                  
+              case 'skills':
+                  addLine(content, '━━━ TECHNICAL SKILLS ━━━', 'heading');
+                  addLine(content, '• Research Areas: AI, Machine Learning, Computer Vision, Human-AI Interaction', 'output');
+                  addLine(content, '• Languages: Java, C++, C, JavaScript, Python', 'output');
+                  addLine(content, '• Tools: Linux, Applied Data Science, Web Development', 'output');
+                  addLine(content, '• Domains: Additive Manufacturing, Research Methodologies', 'output');
+                  addLine(content, '• Human Languages: English, German', 'output');
+                  break;
+                  
+              case 'experience':
+                  addLine(content, '━━━ WORK EXPERIENCE ━━━', 'heading');
+                  addLine(content, '• Clemson University TRACE Lab (Jan 2024 - Present)', 'output');
+                  addLine(content, '  Research Assistant - Human-AI interaction experiments', 'output');
+                  addLine(content, '• Clemson University Makerspace (Jan 2024 - May 2025)', 'output');
+                  addLine(content, '  Corporate Liaison & Makerspace Intern', 'output');
+                  addLine(content, '• Special Operations Command Europe (May 2024 - Aug 2024)', 'output');
+                  addLine(content, '  Academic Intern - J6X, Computer Vision Implementation', 'output');
+                  addLine(content, '• University of Arkansas at Little Rock (2021-2023)', 'output');
+                  addLine(content, '  COVID-19 Database Specialist', 'output');
+                  break;
+                  
+              case 'projects':
+                  addLine(content, '━━━ NOTABLE PROJECTS ━━━', 'heading');
+                  addLine(content, '1. Chagas Disease Detection', 'output');
+                  addLine(content, '   Machine learning system for 12-lead ECG data analysis', 'output');
+                  addLine(content, '2. Security Breadcrumbs Analyzer', 'output');
+                  addLine(content, '   Web scraping and analysis of LinkedIn profiles', 'output');
+                  addLine(content, '3. Command-Line Checkers', 'output');
+                  addLine(content, '   Text-based checkers game with AI opponent', 'output');
+                  addLine(content, '4. Interactive Portfolio Website', 'output');
+                  addLine(content, '   Responsive web design with terminal emulation', 'output');
+                  break;
+                  
+              case 'research':
+                  addLine(content, '━━━ RESEARCH PUBLICATIONS ━━━', 'heading');
+                  addLine(content, '• Human-AI Team Training (2024)', 'output');
+                  addLine(content, '  Co-Author, DOI: 10.1177/10711813241274425', 'output');
+                  addLine(content, '• COVID-19 Misinformation Analysis (2021)', 'output');
+                  addLine(content, '  Co-Author, Social Network Analysis and Mining 11, Springer', 'output');
+                  break;
+                  
+              case 'resume':
+                  addLine(content, '━━━ RESUME ━━━', 'heading');
+                  addLine(content, 'Downloading resume...', 'output');
+                  window.location.href = 'files/anna_galeano_resume.pdf';
+                  break;
+                  
+              case 'contact':
+                  addLine(content, '━━━ CONTACT INFO ━━━', 'heading');
+                  addLine(content, '• Email: agalean@clemson.edu', 'output');
+                  addLine(content, '• LinkedIn: linkedin.com/in/connectedanna', 'output');
+                  addLine(content, '• GitHub: github.com/VersatileVariable', 'output');
+                  break;
+                  
+              case 'clear':
+                  // Clear all content except the welcome message
+                  content.innerHTML = '';
+                  addLine(content, "Welcome to Anna Galeano's Interactive Terminal", 'system');
+                  addLine(content, "Type 'help' to see available commands", 'system');
+                  break;
+                  
+              default:
+                  addLine(content, `Command not found: ${command}. Type 'help' for available commands.`, 'error');
+          }
+          
+          // Auto-scroll to the bottom
+          scrollToBottom();
+      }
+  } else {
       console.error('Terminal container not found!');
-    }
-  });
+  }
+});
+
+// Helper function to add a line to the terminal
+function addLine(content, text, type) {
+  const line = document.createElement('div');
+  line.textContent = text;
+  line.className = `${type}-text`;
+  content.appendChild(line);
+}

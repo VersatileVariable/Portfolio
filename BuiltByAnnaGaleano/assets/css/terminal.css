@@ -1,0 +1,182 @@
+:root {
+	--terminal-bg: #1a1a1a;
+	--accent-color: #e55757;
+	--text-color: #f0f0f0;
+	--header-bg: #2d2d2d;
+	--green-text: #33ff33;
+	--error-text: #ff5f56;
+	--yellow-circle: #ffbd2e;
+	--green-circle: #27c93f;
+	--heading-color: #ffbd2e;
+	--system-color: #5b9bd5;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+	background-color: var(--terminal-bg);
+	color: var(--text-color);
+}
+
+/* Terminal window */
+.terminal-window {
+	width: 100%;
+	height: 100vh;
+	background-color: var(--terminal-bg);
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #333;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+	background-color: var(--header-bg);
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #333;
+}
+
+.circles-container {
+	display: flex;
+	gap: 8px;
+}
+
+.circle {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+}
+
+.red-circle {
+	background-color: var(--accent-color);
+}
+
+.yellow-circle {
+	background-color: var(--yellow-circle);
+}
+
+.green-circle {
+	background-color: var(--green-circle);
+}
+
+.terminal-title {
+	margin-left: 20px;
+	color: #aaa;
+	flex-grow: 1;
+	text-align: center;
+	font-size: 14px;
+}
+
+#terminal-container {
+	flex-grow: 1;
+	padding: 20px;
+	overflow-y: auto;
+	font-size: 16px;
+	font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+#terminal-container::-webkit-scrollbar {
+	width: 8px;
+}
+
+#terminal-container::-webkit-scrollbar-track {
+	background: #1a1a1a;
+}
+
+#terminal-container::-webkit-scrollbar-thumb {
+	background: #444;
+	border-radius: 4px;
+}
+
+/* Text styles */
+.system-text {
+	color: var(--system-color);
+}
+
+.output-text {
+	color: var(--text-color);
+}
+
+.input-text {
+	color: var(--green-text);
+	font-weight: bold;
+}
+
+.error-text {
+	color: var(--error-text);
+}
+
+.heading-text {
+	color: var(--heading-color);
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+/* Input fields */
+.user-input {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--green-text);
+	font-family: inherit;
+	font-size: inherit;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+/* Blinking cursor effect */
+.cursor {
+	display: inline-block;
+	width: 8px;
+	height: 16px;
+	background-color: var(--accent-color);
+	animation: blink 1s infinite;
+	vertical-align: middle;
+}
+
+@keyframes blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+/* JAR application container */
+#jar-container {
+	display: none;
+	font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+	color: var(--text-color);
+	margin: 0;
+	padding: 0;
+	white-space: pre-wrap;
+}
+
+/* JAR input prompt */
+#jar-prompt {
+	color: var(--accent-color);
+	margin-bottom: 5px;
+}
+
+/* JAR input field */
+#jar-input {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--green-text);
+	font-family: inherit;
+	font-size: inherit;
+	caret-color: var(--accent-color);
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+/* JAR output area */
+#jar-output {
+	margin-bottom: 15px;
+	line-height: 1.3;
+}

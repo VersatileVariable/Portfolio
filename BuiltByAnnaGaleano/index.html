@@ -11,10 +11,81 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
+			:root {
+				--light-bg: #f5f2e9;
+				--lighter-bg: #fcf9f2;
+				--main-accent: #739b6f;
+				--darker-accent: #5a7a57;
+				--lighter-accent: #b8aa8c;
+				--text-dark: #3a3a3a;
+				--text-darker: #212121;
+				--card-bg: #ffffff;
+				--card-border: #e6e0d0;
+				--sidebar-bg: #eee9dd;
+				--highlight: #d8c9a7;
+			}
+			
 			html {
 				scroll-behavior: smooth;
-				--scroll-duration: 1.5s; /* Slower scroll duration */
-				scroll-behavior: smooth;
+				--scroll-duration: 1.5s;
+			}
+			
+			body {
+				background-color: var(--light-bg);
+				color: var(--text-dark);
+			}
+			
+			#main > .inner {
+				background-color: var(--light-bg);
+			}
+			
+			#sidebar {
+				background-color: var(--sidebar-bg);
+			}
+			
+			h1, h2, h3, h4, h5, h6 {
+				color: var(--text-darker);
+			}
+			
+			strong, b {
+				color: var(--text-darker);
+			}
+			
+			a {
+				color: var(--main-accent);
+				border-bottom-color: var(--main-accent);
+			}
+			
+			a:hover {
+				color: var(--darker-accent) !important;
+				border-bottom-color: var(--darker-accent);
+			}
+			
+			/* Button styling */
+			.button {
+				background-color: transparent;
+				box-shadow: inset 0 0 0 2px var(--main-accent);
+				color: var(--main-accent) !important;
+			}
+			
+			.button:hover {
+				background-color: rgba(155, 141, 111, 0.1);
+				box-shadow: inset 0 0 0 2px var(--darker-accent);
+				color: var(--darker-accent) !important;
+			}
+			
+			.button.primary {
+				background-color: var(--main-accent);
+				color: white !important;
+			}
+			
+			.button.primary:hover {
+				background-color: var(--darker-accent);
+			}
+			
+			/* Header styling */
+			#header {
+				border-bottom: solid 5px var(--main-accent);
 			}
 			
 			/* Footer wave styling */
@@ -36,14 +107,146 @@
 				height: 100%;
 			}
 
-			/* Hide sections as requested */
+			/* Hide sections as requested - MODIFIED: Removed projects from hidden list */
 			#menu ul li a[href="blog.html"],
-			#menu ul li a[href="projects.html"],
 			#menu ul li:has(span.opener:contains("Academic Resources")),
-			section#projects,
 			section#skills,
 			section#experience {
 				display: none !important;
+			}
+			
+			/* ASCII Logo Styling */
+			.ascii-logo {
+				font-family: monospace;
+				white-space: pre;
+				font-size: 1.5em;
+				text-align: center;
+				padding: 0;
+				margin: 0 auto;
+				cursor: pointer;
+				background-color: var(--sidebar-bg);
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 150px; /* Fixed height for vertical centering */
+				transition: color 0.2s ease-in-out;
+			}
+			
+			.logo-content {
+				line-height: 1.2;
+			}
+			
+			.ascii-logo .paren {
+				color: var(--main-accent); /* Accent color for the parentheses */
+			}
+			
+			.ascii-logo .cup {
+				color: var(--main-accent); /* Accent color for the cup */
+			}
+			
+			.ascii-logo:hover .cup,
+			.ascii-logo:hover .paren {
+				color: var(--darker-accent); /* Darker accent on hover */
+			}
+			
+			/* Dropdown content styling */
+			#menu ul li ul {
+				transition: max-height 0.3s ease-out;
+				overflow: hidden;
+			}
+			
+			/* Ensure dropdown visibility */
+			#menu ul li.active ul {
+				display: block !important;
+				max-height: 500px;
+			}
+			
+			/* Project card styling */
+			.project-card {
+				border: 1px solid var(--card-border);
+				border-radius: 10px;
+				overflow: hidden;
+				margin-bottom: 2em;
+				box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				background-color: var(--card-bg);
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				position: relative;
+			}
+			
+			.project-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+				border-color: var(--main-accent);
+			}
+			
+			.project-card .content {
+				padding: 1.5em;
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.project-card .image {
+				height: 200px;
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				position: relative;
+			}
+			
+			.project-card .image::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(to bottom, rgba(245, 242, 233, 0) 70%, var(--card-bg) 100%);
+			}
+			
+			.project-card h3 {
+				margin: 0 0 0.5em 0;
+				color: var(--main-accent);
+			}
+			
+			.project-card .tags {
+				margin-top: auto;
+				padding-top: 1em;
+			}
+			
+			.project-card .tags span {
+				display: inline-block;
+				background-color: var(--highlight);
+				color: var(--text-darker);
+				padding: 0.3em 0.7em;
+				border-radius: 3px;
+				margin-right: 0.5em;
+				margin-bottom: 0.5em;
+				font-size: 0.8em;
+				border: 1px solid var(--card-border);
+			}
+			
+			/* Add a subtle glow effect for cards */
+			.project-card::before {
+				content: '';
+				position: absolute;
+				top: -2px;
+				left: -2px;
+				right: -2px;
+				bottom: -2px;
+				background: linear-gradient(45deg, var(--main-accent), transparent, var(--lighter-accent));
+				z-index: -1;
+				border-radius: 12px;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
+			
+			.project-card:hover::before {
+				opacity: 0.3;
 			}
 		</style>
 	</head>
@@ -70,18 +273,88 @@
 									<div class="content">
 										<header>
 											<h1>Hi, I'm Anna Galeano</h1>
-											<p>Specializing in Data Science, Web Development, and Human-AI Teaming</p>
+											<p>Specializing in Human Centered Computing</p>
 										</header>
-										<p>Welcome to my portfolio! I'm passionate about data science applications, creating effective web experiences, and designing human-AI collaborative systems. My academic journey has equipped me with strong foundations in analyzing complex data, building user-friendly interfaces, and creating AI systems that augment human capabilities. I strive to create solutions that combine technical excellence with a deep understanding of human factors.</p>
+										<p>I'm a Computer Science student in the Honors College with a passion for research. My focus is on interactive systems, beginning with web development and applications. I'm also gaining valuable experience with unmanned systems. I'm excited to share my projects and learning journey with you.RetryClaude can make mistakes. Please double-check responses.</p>
 										<ul class="actions">
 											<li><a href="research.html" class="button big">View Research</a></li>
-											<li><a href="files/anna_galeano_resume.pdf" download class="button primary big">Download Resume</a></li>
+											<li><a href="#projects" class="button primary big">View Projects</a></li>
+											<li><a href="files/anna_galeano_resume.pdf" download class="button big">Download Resume</a></li>
 										</ul>
 									</div>
 									<div class="image main">
 										<div id="terminal-container" style="height: 400px; width: 100%; margin: 0; border-radius: 8px; overflow: hidden;"></div>
 									</div>
 								</section>
+								
+							<!-- Projects Section -->
+							<section id="projects">
+								<header class="major">
+									<h2>Featured Projects</h2>
+								</header>
+								
+								<div class="row">
+									<!-- Project 1: Chagas Disease Detection -->
+									<div class="col-4 col-12-medium">
+										<div class="project-card">
+											<div class="image" style="background-image: url('images/pub1.jpg');"></div>
+											<div class="content">
+												<h3>Chagas Disease Detection</h3>
+												<p>Machine learning system for detecting Chagas disease from 12-lead ECG data, using balanced random forest classification with SMOTE to address class imbalance. This project achieved 60% true positive identification with fewer than 13% false positives.</p>
+												<div class="tags">
+													<span>Machine Learning</span>
+													<span>Medical Data</span>
+													<span>Python</span>
+												</div>
+												<ul class="actions">
+													<li><a href="research.html" class="button">View Research</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Project 2: LinkedIn Data Analysis -->
+									<div class="col-4 col-12-medium">
+										<div class="project-card">
+											<div class="image" style="background-image: url('images/research-area3.jpg');"></div>
+											<div class="content">
+												<h3>Security Breadcrumbs Analyzer</h3>
+												<p>Web scraping and analysis tool that examines LinkedIn profiles to identify potential security vulnerabilities from seemingly innocuous information. This project demonstrated how 75.5% of sampled accounts posed potential security risks, with 12% classified as high-risk.</p>
+												<div class="tags">
+													<span>Web Scraping</span>
+													<span>OSINT</span>
+													<span>Python</span>
+													<span>Security</span>
+												</div>
+												<ul class="actions">
+													<li><a href="research.html" class="button">View Research</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Project 3: Text-based Checkers -->
+									<div class="col-4 col-12-medium">
+										<div class="project-card">
+											<div class="image" style="background-image: url('images/checkers.jpg');"></div>
+											<div class="content">
+												<h3>Command-Line Checkers</h3>
+												<p>A fully-featured text-based checkers game implemented in C++. Features include AI opponent with multiple difficulty levels, save/load game functionality, move validation, king piece mechanics, and a clean ASCII interface for terminal play.</p>
+												<div class="tags">
+													<span>C++</span>
+													<span>Game Development</span>
+													<span>Command-Line</span>
+													<span>AI</span>
+												</div>
+												<ul class="actions">
+													<li><a href="https://github.com/VersatileVariable" class="button">Demo to come</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</section>
 
 						</div>
 					</div>
@@ -90,12 +363,10 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
+							<!-- ASCII Logo -->
+							<a href="index.html" class="ascii-logo"><div class="logo-content">   <span class="paren">(</span>
+    <span class="paren">)</span>
+ <span class="cup">c[_]</span></div></a>
 
 							<!-- Menu -->
 								<nav id="menu">
@@ -103,20 +374,20 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Home</a></li>
-										<li><a href="about.html">About Me</a></li>
-										<!-- Hidden items -->
-										<!-- <li><a href="projects.html">All Projects</a></li> -->
-										<li>
-											<span class="opener">Technical Areas</span>
+										<li><a href="index.html">HOME</a></li>
+										<li><a href="about.html">ABOUT ME</a></li>
+										<!-- Show projects link -->
+										<li><a href="projects.html">PROJECTS</a></li>
+										<li id="technical-areas">
+											<span class="opener">TECHNICAL AREAS</span>
 											<ul>
-												<li><a href="#">Data Science</a></li>
-												<li><a href="#">Web Development</a></li>
-												<li><a href="#">Human-AI Teaming</a></li>
-												<li><a href="#">Cross-Domain Integration</a></li>
+												<li><a href="technical-areas.html#data-science">Data Science</a></li>
+												<li><a href="technical-areas.html#web-development">Web Development</a></li>
+												<li><a href="technical-areas.html#human-ai-teaming">Human-AI Teaming</a></li>
+												<li><a href="technical-areas.html#cross-domain">Cross-Domain Integration</a></li>
 											</ul>
 										</li>
-										<li><a href="research.html">Research Papers</a></li>
+										<li><a href="research.html">RESEARCH PAPERS</a></li>
 										<!-- <li><a href="blog.html">Tech Blog</a></li> -->
 										<!-- <li>
 											<span class="opener">Academic Resources</span>
@@ -127,9 +398,9 @@
 												<li><a href="#">Recommended Books</a></li>
 											</ul>
 										</li> -->
-										<li><a href="resume.html">Resume</a></li>
-										<li><a href="certifications.html">Certifications</a></li>
-										<li><a href="contact.html">Contact</a></li>
+										<li><a href="resume.html">RESUME</a></li>
+										<li><a href="certifications.html">CERTIFICATIONS</a></li>
+										<li><a href="contact.html">CONTACT</a></li>
 									</ul>
 								</nav>
 
@@ -186,6 +457,38 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<!-- Added script for dropdown functionality -->
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					// Enhanced dropdown functionality
+					document.querySelectorAll('#menu ul li .opener').forEach(opener => {
+						opener.addEventListener('click', function(e) {
+							e.preventDefault();
+							const parent = this.parentNode;
+							
+							// Toggle active class
+							if (parent.classList.contains('active')) {
+								parent.classList.remove('active');
+							} else {
+								// Close any open dropdowns first
+								document.querySelectorAll('#menu ul li.active').forEach(item => {
+									if (item !== parent) {
+										item.classList.remove('active');
+									}
+								});
+								parent.classList.add('active');
+							}
+						});
+					});
+					
+					// ASCII logo click handler
+					document.querySelector('.ascii-logo').addEventListener('click', function(e) {
+						e.preventDefault();
+						window.location.href = 'index.html';
+					});
+				});
+			</script>
 			
 			<!-- Terminal Script -->
 			<script>
@@ -311,10 +614,14 @@
 									addLine(content, '  COVID-19 Database Specialist', 'output');
 								} else if (command === 'projects') {
 									addLine(content, '━━━ NOTABLE PROJECTS ━━━', 'heading');
-									addLine(content, '1. Human-AI Collaborative System', 'output');
-									addLine(content, '2. COVID-19 Misinformation Tracker', 'output');
-									addLine(content, '3. YOLOv8 Target Identification System', 'output');
+									addLine(content, '1. Chagas Disease Detection', 'output');
+									addLine(content, '   Machine learning system for 12-lead ECG data analysis', 'output');
+									addLine(content, '2. Security Breadcrumbs Analyzer', 'output');
+									addLine(content, '   Web scraping and analysis of LinkedIn profiles', 'output');
+									addLine(content, '3. Command-Line Checkers', 'output');
+									addLine(content, '   Text-based checkers game with AI opponent', 'output');
 									addLine(content, '4. Interactive Portfolio Website', 'output');
+									addLine(content, '   Responsive web design with terminal emulation', 'output');
 								} else if (command === 'research') {
 									addLine(content, '━━━ RESEARCH PUBLICATIONS ━━━', 'heading');
 									addLine(content, '• Human-AI Team Training (2024)', 'output');
@@ -375,6 +682,7 @@
 				content.appendChild(line);
 			}
 			</script>
+			<script src="https://cjrtnc.leaningtech.com/4.0/cj4.js"></script>
 
 	</body>
 </html>
