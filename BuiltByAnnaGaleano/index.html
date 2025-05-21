@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 		<style>
 			:root {
 				--light-bg: #f5f2e9;
@@ -135,6 +136,7 @@
 			
 			.logo-content {
 				line-height: 1.2;
+				padding-top: 20px; /* Added padding on top of the coffee cup */
 			}
 			
 			.ascii-logo .paren {
@@ -248,6 +250,34 @@
 			.project-card:hover::before {
 				opacity: 0.3;
 			}
+			
+			/* Paper logo styling for publications */
+			.paper-logo {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: var(--light-bg);
+				width: 100%;
+				height: 100%;
+				font-size: 2em;
+				color: var(--main-accent);
+			}
+			
+			.paper-logo i {
+				margin-right: 10px;
+			}
+			
+			/* Project logo styling */
+			.project-logo {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: var(--lighter-bg);
+				width: 100%;
+				height: 100%;
+				font-size: 3em;
+				color: var(--main-accent);
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -297,7 +327,11 @@
 									<!-- Project 1: Chagas Disease Detection -->
 									<div class="col-4 col-12-medium">
 										<div class="project-card">
-											<div class="image" style="background-image: url('images/pub1.jpg');"></div>
+											<div class="image">
+												<div class="project-logo">
+													<i class="fas fa-heartbeat"></i>
+												</div>
+											</div>
 											<div class="content">
 												<h3>Chagas Disease Detection</h3>
 												<p>Machine learning system for detecting Chagas disease from 12-lead ECG data, using balanced random forest classification with SMOTE to address class imbalance. This project achieved 60% true positive identification with fewer than 13% false positives.</p>
@@ -316,7 +350,11 @@
 									<!-- Project 2: LinkedIn Data Analysis -->
 									<div class="col-4 col-12-medium">
 										<div class="project-card">
-											<div class="image" style="background-image: url('images/research-area3.jpg');"></div>
+											<div class="image">
+												<div class="project-logo">
+													<i class="fas fa-shield-alt"></i>
+												</div>
+											</div>
 											<div class="content">
 												<h3>Security Breadcrumbs Analyzer</h3>
 												<p>Web scraping and analysis tool that examines LinkedIn profiles to identify potential security vulnerabilities from seemingly innocuous information. This project demonstrated how 75.5% of sampled accounts posed potential security risks, with 12% classified as high-risk.</p>
@@ -336,7 +374,11 @@
 									<!-- Project 3: Text-based Checkers -->
 									<div class="col-4 col-12-medium">
 										<div class="project-card">
-											<div class="image" style="background-image: url('images/checkers.jpg');"></div>
+											<div class="image">
+												<div class="project-logo">
+													<i class="fas fa-chess-board"></i>
+												</div>
+											</div>
 											<div class="content">
 												<h3>Command-Line Checkers</h3>
 												<p>A fully-featured text-based checkers game implemented in C++. Features include AI opponent with multiple difficulty levels, save/load game functionality, move validation, king piece mechanics, and a clean ASCII interface for terminal play.</p>
@@ -344,7 +386,6 @@
 													<span>C++</span>
 													<span>Game Development</span>
 													<span>Command-Line</span>
-													<span>AI</span>
 												</div>
 												<ul class="actions">
 													<li><a href="https://github.com/VersatileVariable" class="button">Demo to come</a></li>
@@ -411,13 +452,21 @@
 									</header>
 									<div class="mini-posts">
 										<article>
-											<a href="https://doi.org/10.1177/10711813241274425" class="image"><img src="images/pub1.jpg" alt="Human-AI Team Training" /></a>
+											<a href="https://doi.org/10.1177/10711813241274425" class="image">
+												<div class="paper-logo">
+													<i class="fas fa-file-pdf"></i>
+												</div>
+											</a>
 											<p><strong>Human-AI Team Training</strong> (2024)<br>
 											Co-Author, DOI: 10.1177/10711813241274425<br>
 											Article demonstrates experiments with 120+ participants on training methodologies. Researchers show 25% improvement in task efficiency.</p>
 										</article>
 										<article>
-											<a href="https://doi.org/10.1007/s13278-021-00748-w" class="image"><img src="images/pub2.jpg" alt="COVID-19 Misinformation Analysis" /></a>
+											<a href="https://doi.org/10.1007/s13278-021-00748-w" class="image">
+												<div class="paper-logo">
+													<i class="fas fa-file-pdf"></i>
+												</div>
+											</a>
 											<p><strong>COVID-19 Misinformation Analysis</strong> (2021)<br>
 											Co-Author, Social Network Analysis and Mining 11, Springer<br>
 											Developed real-time misinformation detection methodologies. Created publicly accessible database cited 50+ times.</p>
@@ -597,7 +646,7 @@
 									addLine(content, "while maintaining a deep understanding of human factors.", 'output');
 								} else if (command === 'skills') {
 									addLine(content, '━━━ TECHNICAL SKILLS ━━━', 'heading');
-									addLine(content, '• Research Areas: AI, Machine Learning, Computer Vision, Human-AI Interaction', 'output');
+									addLine(content, '• Research Areas: Machine Learning, Computer Vision, Human Factors', 'output');
 									addLine(content, '• Languages: Java, C++, C, JavaScript, Python', 'output');
 									addLine(content, '• Tools: Linux, Applied Data Science, Web Development', 'output');
 									addLine(content, '• Domains: Additive Manufacturing, Research Methodologies', 'output');
@@ -605,7 +654,7 @@
 								} else if (command === 'experience') {
 									addLine(content, '━━━ WORK EXPERIENCE ━━━', 'heading');
 									addLine(content, '• Clemson University TRACE Lab (Jan 2024 - Present)', 'output');
-									addLine(content, '  Research Assistant - Human-AI interaction experiments', 'output');
+									addLine(content, '  Research Assistant - Human-centered interactive systems', 'output');
 									addLine(content, '• Clemson University Makerspace (Jan 2024 - May 2025)', 'output');
 									addLine(content, '  Corporate Liaison & Makerspace Intern', 'output');
 									addLine(content, '• Special Operations Command Europe (May 2024 - Aug 2024)', 'output');
@@ -619,7 +668,7 @@
 									addLine(content, '2. Security Breadcrumbs Analyzer', 'output');
 									addLine(content, '   Web scraping and analysis of LinkedIn profiles', 'output');
 									addLine(content, '3. Command-Line Checkers', 'output');
-									addLine(content, '   Text-based checkers game with AI opponent', 'output');
+									addLine(content, '   Text-based checkers game with opponent', 'output');
 									addLine(content, '4. Interactive Portfolio Website', 'output');
 									addLine(content, '   Responsive web design with terminal emulation', 'output');
 								} else if (command === 'research') {
