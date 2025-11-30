@@ -1,737 +1,571 @@
 <!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Anna Galeano | Computer Science Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-		<style>
-			:root {
-				--light-bg: #f5f2e9;
-				--lighter-bg: #fcf9f2;
-				--main-accent: #739b6f;
-				--darker-accent: #5a7a57;
-				--lighter-accent: #b8aa8c;
-				--text-dark: #3a3a3a;
-				--text-darker: #212121;
-				--card-bg: #ffffff;
-				--card-border: #e6e0d0;
-				--sidebar-bg: #eee9dd;
-				--highlight: #d8c9a7;
-			}
-			
-			html {
-				scroll-behavior: smooth;
-				--scroll-duration: 1.5s;
-			}
-			
-			body {
-				background-color: var(--light-bg);
-				color: var(--text-dark);
-			}
-			
-			#main > .inner {
-				background-color: var(--light-bg);
-			}
-			
-			#sidebar {
-				background-color: var(--sidebar-bg);
-			}
-			
-			h1, h2, h3, h4, h5, h6 {
-				color: var(--text-darker);
-			}
-			
-			strong, b {
-				color: var(--text-darker);
-			}
-			
-			a {
-				color: var(--main-accent);
-				border-bottom-color: var(--main-accent);
-			}
-			
-			a:hover {
-				color: var(--darker-accent) !important;
-				border-bottom-color: var(--darker-accent);
-			}
-			
-			/* Button styling */
-			.button {
-				background-color: transparent;
-				box-shadow: inset 0 0 0 2px var(--main-accent);
-				color: var(--main-accent) !important;
-			}
-			
-			.button:hover {
-				background-color: rgba(155, 141, 111, 0.1);
-				box-shadow: inset 0 0 0 2px var(--darker-accent);
-				color: var(--darker-accent) !important;
-			}
-			
-			.button.primary {
-				background-color: var(--main-accent);
-				color: white !important;
-			}
-			
-			.button.primary:hover {
-				background-color: var(--darker-accent);
-			}
-			
-			/* Header styling */
-			#header {
-				border-bottom: solid 5px var(--main-accent);
-			}
-			
-			/* Footer wave styling */
-			.footer-wave {
-				position: relative;
-				left: 0;
-				bottom: 0;
-				width: 100%;
-				height: 120px;
-				overflow: hidden;
-				margin-bottom: 20px;
-			}
-			
-			.footer-wave svg {
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				width: 100%;
-				height: 100%;
-			}
-
-			/* Hide sections as requested - MODIFIED: Removed projects from hidden list */
-			#menu ul li a[href="blog.html"],
-			#menu ul li:has(span.opener:contains("Academic Resources")),
-			section#skills,
-			section#experience {
-				display: none !important;
-			}
-			
-			/* ASCII Logo Styling */
-			.ascii-logo {
-				font-family: monospace;
-				white-space: pre;
-				font-size: 1.5em;
-				text-align: center;
-				padding: 0;
-				margin: 0 auto;
-				cursor: pointer;
-				background-color: var(--sidebar-bg);
-				width: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				height: 150px; /* Fixed height for vertical centering */
-				transition: color 0.2s ease-in-out;
-			}
-			
-			.logo-content {
-				line-height: 1.2;
-				padding-top: 20px; /* Added padding on top of the coffee cup */
-			}
-			
-			.ascii-logo .paren {
-				color: var(--main-accent); /* Accent color for the parentheses */
-			}
-			
-			.ascii-logo .cup {
-				color: var(--main-accent); /* Accent color for the cup */
-			}
-			
-			.ascii-logo:hover .cup,
-			.ascii-logo:hover .paren {
-				color: var(--darker-accent); /* Darker accent on hover */
-			}
-			
-			/* Dropdown content styling */
-			#menu ul li ul {
-				transition: max-height 0.3s ease-out;
-				overflow: hidden;
-			}
-			
-			/* Ensure dropdown visibility */
-			#menu ul li.active ul {
-				display: block !important;
-				max-height: 500px;
-			}
-			
-			/* Project card styling */
-			.project-card {
-				border: 1px solid var(--card-border);
-				border-radius: 10px;
-				overflow: hidden;
-				margin-bottom: 2em;
-				box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
-				background-color: var(--card-bg);
-				height: 100%;
-				display: flex;
-				flex-direction: column;
-				position: relative;
-			}
-			
-			.project-card:hover {
-				transform: translateY(-5px);
-				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-				border-color: var(--main-accent);
-			}
-			
-			.project-card .content {
-				padding: 1.5em;
-				flex: 1;
-				display: flex;
-				flex-direction: column;
-			}
-			
-			.project-card .image {
-				height: 200px;
-				background-position: center;
-				background-size: cover;
-				background-repeat: no-repeat;
-				position: relative;
-			}
-			
-			.project-card .image::after {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background: linear-gradient(to bottom, rgba(245, 242, 233, 0) 70%, var(--card-bg) 100%);
-			}
-			
-			.project-card h3 {
-				margin: 0 0 0.5em 0;
-				color: var(--main-accent);
-			}
-			
-			.project-card .tags {
-				margin-top: auto;
-				padding-top: 1em;
-			}
-			
-			.project-card .tags span {
-				display: inline-block;
-				background-color: var(--highlight);
-				color: var(--text-darker);
-				padding: 0.3em 0.7em;
-				border-radius: 3px;
-				margin-right: 0.5em;
-				margin-bottom: 0.5em;
-				font-size: 0.8em;
-				border: 1px solid var(--card-border);
-			}
-			
-			/* Add a subtle glow effect for cards */
-			.project-card::before {
-				content: '';
-				position: absolute;
-				top: -2px;
-				left: -2px;
-				right: -2px;
-				bottom: -2px;
-				background: linear-gradient(45deg, var(--main-accent), transparent, var(--lighter-accent));
-				z-index: -1;
-				border-radius: 12px;
-				opacity: 0;
-				transition: opacity 0.3s ease;
-			}
-			
-			.project-card:hover::before {
-				opacity: 0.3;
-			}
-			
-			/* Paper logo styling for publications */
-			.paper-logo {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				background-color: var(--light-bg);
-				width: 100%;
-				height: 100%;
-				font-size: 2em;
-				color: var(--main-accent);
-			}
-			
-			.paper-logo i {
-				margin-right: 10px;
-			}
-			
-			/* Project logo styling */
-			.project-logo {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				background-color: var(--lighter-bg);
-				width: 100%;
-				height: 100%;
-				font-size: 3em;
-				color: var(--main-accent);
-			}
-		</style>
 	</head>
 	<body class="is-preload">
+		<div id="wrapper">
+			<div id="main">
+				<div class="inner">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"><strong>Anna Galeano</strong> | Computer Science</a>
-									<ul class="icons">
-										<li><a href="https://github.com/VersatileVariable" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-										<li><a href="https://www.linkedin.com/in/connectedanna/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									</ul>
-								</header>
-
-							<!-- Banner -->
-								<section id="banner">
-									<div class="content">
-										<header>
-											<h1>Hi, I'm Anna Galeano</h1>
-											<p>Specializing in Human Centered Computing</p>
-										</header>
-										<p>I'm a Computer Science student in the Honors College with a passion for research. My focus is on interactive systems, beginning with web development and applications. I'm also gaining valuable experience with unmanned systems. I'm excited to share my projects and learning journey with you.RetryClaude can make mistakes. Please double-check responses.</p>
-										<ul class="actions">
-											<li><a href="research.html" class="button big">View Research</a></li>
-											<li><a href="#projects" class="button primary big">View Projects</a></li>
-											<li><a href="files/anna_galeano_resume.pdf" download class="button big">Download Resume</a></li>
-										</ul>
-									</div>
-									<div class="image main">
-										<div id="terminal-container" style="height: 400px; width: 100%; margin: 0; border-radius: 8px; overflow: hidden;"></div>
-									</div>
-								</section>
-								
-							<!-- Projects Section -->
-							<section id="projects">
-								<header class="major">
-									<h2>Featured Projects</h2>
-								</header>
-								
-								<div class="row">
-									<!-- Project 1: Chagas Disease Detection -->
-									<div class="col-4 col-12-medium">
-										<div class="project-card">
-											<div class="image">
-												<div class="project-logo">
-													<i class="fas fa-heartbeat"></i>
-												</div>
-											</div>
-											<div class="content">
-												<h3>Chagas Disease Detection</h3>
-												<p>Machine learning system for detecting Chagas disease from 12-lead ECG data, using balanced random forest classification with SMOTE to address class imbalance. This project achieved 60% true positive identification with fewer than 13% false positives.</p>
-												<div class="tags">
-													<span>Machine Learning</span>
-													<span>Medical Data</span>
-													<span>Python</span>
-												</div>
-												<ul class="actions">
-													<li><a href="research.html" class="button">View Research</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									
-									<!-- Project 2: LinkedIn Data Analysis -->
-									<div class="col-4 col-12-medium">
-										<div class="project-card">
-											<div class="image">
-												<div class="project-logo">
-													<i class="fas fa-shield-alt"></i>
-												</div>
-											</div>
-											<div class="content">
-												<h3>Security Breadcrumbs Analyzer</h3>
-												<p>Web scraping and analysis tool that examines LinkedIn profiles to identify potential security vulnerabilities from seemingly innocuous information. This project demonstrated how 75.5% of sampled accounts posed potential security risks, with 12% classified as high-risk.</p>
-												<div class="tags">
-													<span>Web Scraping</span>
-													<span>OSINT</span>
-													<span>Python</span>
-													<span>Security</span>
-												</div>
-												<ul class="actions">
-													<li><a href="research.html" class="button">View Research</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									
-									<!-- Project 3: Text-based Checkers -->
-									<div class="col-4 col-12-medium">
-										<div class="project-card">
-											<div class="image">
-												<div class="project-logo">
-													<i class="fas fa-chess-board"></i>
-												</div>
-											</div>
-											<div class="content">
-												<h3>Command-Line Checkers</h3>
-												<p>A fully-featured text-based checkers game implemented in C++. Features include AI opponent with multiple difficulty levels, save/load game functionality, move validation, king piece mechanics, and a clean ASCII interface for terminal play.</p>
-												<div class="tags">
-													<span>C++</span>
-													<span>Game Development</span>
-													<span>Command-Line</span>
-												</div>
-												<ul class="actions">
-													<li><a href="https://github.com/VersatileVariable" class="button">Demo to come</a></li>
-												</ul>
-											</div>
-										</div>
+					<!-- Hero Banner with Terminal -->
+					<section id="hero-banner">
+						<div class="particles" id="particles-js"></div>
+						<div class="hero-content">
+							<h1 class="hero-title">Anna Galeano</h1>
+							<p class="hero-subtitle">Human-Centered Computing & Autonomous Systems</p>
+							<p class="hero-description">
+								Crafting the future of human-AI collaboration through research-driven innovation. 
+								From autonomous vessels navigating NATO exercises to privacy-preserving technologies, 
+								I bridge the gap between cutting-edge AI and human needs.
+							</p>
+						<div class="hero-cta">
+							<a href="research.html" class="button big primary">Explore Research</a>
+							<a href="#featured-work" class="button secondary">View Projects</a>
+							<a href="files/anna_galeano_resume.pdf" download class="button secondary">Resume ↓</a>
+						</div>
+						</div>
+						<div class="hero-terminal">
+							<div id="terminal-container">
+								<div class="terminal-header">
+									<div class="terminal-dot red"></div>
+									<div class="terminal-dot yellow"></div>
+									<div class="terminal-dot green"></div>
+									<span class="terminal-title">anna@portfolio:~</span>
+								</div>
+								<div class="terminal-content" id="terminal-output">
+									<div class="terminal-line terminal-system">Welcome to Anna Galeano's Interactive Terminal</div>
+									<div class="terminal-line terminal-system">Type 'help' to see available commands</div>
+									<div class="terminal-line" style="height: 10px;"></div>
+									<div class="terminal-input-line">
+										<span class="terminal-prompt">$ </span>
+										<input type="text" class="terminal-input-field" id="terminal-input" autocomplete="off" spellcheck="false">
 									</div>
 								</div>
-								
-							</section>
+							</div>
+						</div>
+					</section>
 
+					<!-- Achievement Badges -->
+					<section>
+						<div class="achievement-grid">
+							<div class="achievement-badge">
+								<div class="achievement-icon">
+									<i class="fas fa-shield-halved"></i>
+								</div>
+								<span class="achievement-value">NATO</span>
+								<span class="achievement-label">Defense Innovation</span>
+							</div>
+							<div class="achievement-badge">
+								<div class="achievement-icon">
+									<i class="fas fa-award"></i>
+								</div>
+								<span class="achievement-value">Military</span>
+								<span class="achievement-label">Child of the Year 2024</span>
+							</div>
+							<div class="achievement-badge">
+								<div class="achievement-icon">
+									<i class="fas fa-trophy"></i>
+								</div>
+								<span class="achievement-value">AP</span>
+								<span class="achievement-label">Capstone Diploma</span>
+							</div>
+							<div class="achievement-badge">
+								<div class="achievement-icon">
+									<i class="fas fa-language"></i>
+								</div>
+								<span class="achievement-value">Bilingual</span>
+								<span class="achievement-label">English & German</span>
+							</div>
+						</div>
+					</section>
+
+				<!-- Featured Work - Bento Grid -->
+				<section id="featured-work">
+					<header class="major">
+						<h2>Featured Work</h2>
+						<p class="tagline">Where Innovation Meets Impact</p>
+					</header>						<div class="bento-grid">
+							<!-- Featured Project 1 -->
+							<div class="bento-item featured">
+								<i class="fas fa-satellite bento-icon"></i>
+								<h3>NASA FLARESat</h3>
+								<p><strong>NASA Space Apps Challenge 2025 Winner</strong></p>
+								<p>Award-winning satellite monitoring platform developed in 48 hours. Created complete satellite constellation with CAD model, simulated data, and working dashboard comparing against NASA FIRMS satellites.</p>
+								<div class="skill-container">
+									<span class="skill-pill">Satellite Systems</span>
+									<span class="skill-pill">Data Viz</span>
+									<span class="skill-pill">CAD Design</span>
+									<span class="skill-pill">3D Modeling</span>
+								</div>
+								<ul class="actions" style="margin-top: 1.5em;">
+									<li><a href="https://versatilevariable.github.io/NASA_FLARE-Sat/" class="button primary">View Project</a></li>
+								</ul>
+							</div>
+
+							<!-- Project 2 -->
+							<div class="bento-item">
+								<i class="fas fa-ship bento-icon"></i>
+								<h3>NATO Autonomous USV</h3>
+								<p>Designed autonomous vessel for NATO's Bold Machina 2025. YOLOv8 computer vision, LUA navigation, Fusion 360 CAD design.</p>
+								<ul class="actions" style="margin-top: 1em;">
+									<li><a href="projects.html#usv" class="button">Learn More</a></li>
+								</ul>
+							</div>
+
+							<!-- Project 3 -->
+							<div class="bento-item">
+								<i class="fas fa-shield-alt bento-icon"></i>
+								<h3>Privacy Assessment</h3>
+								<p>TigerSec Laboratory research analyzing automotive data collection practices and security protocols.</p>
+								<ul class="actions" style="margin-top: 1em;">
+									<li><a href="research.html#privacy" class="button">View Research</a></li>
+								</ul>
+							</div>
+
+							<!-- Project 4 -->
+							<div class="bento-item">
+								<i class="fas fa-heartbeat bento-icon"></i>
+								<h3>Chagas Disease Detection</h3>
+								<p>ML system using balanced random forest classification. 60% true positive rate with <13% false positives.</p>
+								<ul class="actions" style="margin-top: 1em;">
+									<li><a href="research.html#chagas" class="button">View Research</a></li>
+								</ul>
+							</div>
+
+							<!-- Project 5 -->
+							<div class="bento-item">
+								<i class="fas fa-map-marked-alt bento-icon"></i>
+								<h3>Death Valley Dash</h3>
+								<p>AI-powered campus scavenger hunt with real-time GPS tracking and intelligent hint system.</p>
+								<ul class="actions" style="margin-top: 1em;">
+									<li><a href="#" class="button">View Demo</a></li>
+								</ul>
+							</div>
+
+							<!-- Project 6 -->
+							<div class="bento-item">
+								<i class="fas fa-user-secret bento-icon"></i>
+								<h3>Security Breadcrumbs</h3>
+								<p>OSINT research tool. Found 75.5% of LinkedIn profiles posed security risks, 12% high-risk.</p>
+								<ul class="actions" style="margin-top: 1em;">
+									<li><a href="research.html#linkedin" class="button">View Research</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+				<!-- Experience Timeline -->
+				<section>
+					<header class="major">
+						<h2>Professional Journey</h2>
+						<p class="tagline">Building Experience Across Industry & Academia</p>
+					</header>
+
+					<div class="timeline-container">
+						<!-- Left column: Timeline axis -->
+						<div class="timeline-axis">
+							<div class="year-marker">Present</div>
+							<div class="month-marker" data-month="22">Nov 2025</div>
+							<div class="month-marker" data-month="21">Oct</div>
+							<div class="month-marker" data-month="20">Sep</div>
+							<div class="month-marker" data-month="19">Aug</div>
+							<div class="month-marker" data-month="18">Jul</div>
+							<div class="month-marker" data-month="17">Jun</div>
+							<div class="month-marker" data-month="16">May</div>
+							<div class="month-marker" data-month="15">Apr</div>
+							<div class="month-marker" data-month="14">Mar</div>
+							<div class="month-marker" data-month="13">Feb</div>
+							<div class="month-marker" data-month="12">Jan</div>
+							<div class="year-marker">2024</div>
+							<div class="month-marker" data-month="11">Dec</div>
+							<div class="month-marker" data-month="10">Nov</div>
+							<div class="month-marker" data-month="9">Oct</div>
+							<div class="month-marker" data-month="8">Sep</div>
+							<div class="month-marker" data-month="7">Aug</div>
+							<div class="month-marker" data-month="6">Jul</div>
+							<div class="month-marker" data-month="5">Jun</div>
+							<div class="month-marker" data-month="4">May</div>
+							<div class="month-marker" data-month="3">Apr</div>
+							<div class="month-marker" data-month="2">Mar</div>
+							<div class="month-marker" data-month="1">Feb</div>
+							<div class="month-marker" data-month="0">Jan 2024</div>
+							<div class="vertical-line"></div>
+						</div>
+
+						<!-- Right column: Jobs area -->
+						<div class="jobs-area">
+							<!-- Undergraduate Research (Oct 2025 - ongoing) - Column 2 -->
+							<div class="job-card ongoing" style="top: 0px; left: 700px; height: 60px;">
+								<h3>Undergraduate Research</h3>
+								<p class="duration">Oct 2025 - Present</p>
+								<p class="company">TigerSec Laboratory - Clemson</p>
+								<p class="description">Privacy assessments for automotive companies, data analysis.</p>
+								<div class="skills-tags">
+									<span>Privacy Research</span>
+									<span>Data Analysis</span>
+									<span>Cybersecurity</span>
+								</div>
+							</div>
+
+							<!-- Adobe Intern (Sep 2025 - ongoing) - Column 1 -->
+							<div class="job-card ongoing" style="top: 30px; left: 350px; height: 90px;">
+								<h3>Adobe Intern</h3>
+								<p class="duration">Sep 2025 - Present</p>
+								<p class="company">Adobe Creative Studio</p>
+								<p class="description">Supporting Creative Suite users, studio equipment assistance.</p>
+								<div class="skills-tags">
+									<span>Adobe CC</span>
+									<span>User Support</span>
+									<span>Training</span>
+								</div>
+							</div>
+
+							<!-- DIU Fellow (Jun 2025 - Aug 2025) - Column 0 -->
+							<div class="job-card" style="top: 150px; left: 0px; height: 90px;">
+								<h3>DIU Fellow & TEIL Intern</h3>
+								<p class="duration">Jun - Aug 2025</p>
+								<p class="company">Special Operations Command Europe</p>
+								<p class="description">Built autonomous USV for NATO Bold Machina 2025 exercise.</p>
+								<div class="skills-tags">
+									<span>Autonomous Navigation</span>
+									<span>YOLOv8</span>
+									<span>CAD Design</span>
+								</div>
+							</div>
+
+							<!-- Student Research Assistant (Feb 2024 - May 2025) - Column 1 -->
+							<div class="job-card" style="top: 180px; left: 350px; height: 450px;">
+								<h3>Student Research Assistant</h3>
+								<p class="duration">Feb 2024 - May 2025</p>
+								<p class="company">TRACE Lab - Clemson University</p>
+								<p class="description">Human-AI teaming research, data collection, academic writing.</p>
+								<div class="skills-tags">
+									<span>Research</span>
+									<span>Data Analysis</span>
+									<span>Writing</span>
+								</div>
+							</div>
+
+							<!-- AI Research Intern (Jun 2024 - Aug 2024) - Column 2 -->
+							<div class="job-card" style="top: 420px; left: 700px; height: 90px;">
+								<h3>AI Research Intern</h3>
+								<p class="duration">Jun - Aug 2024</p>
+								<p class="company">Special Operations Command Europe</p>
+								<p class="description">Computer vision, target identification, aerial systems research.</p>
+								<div class="skills-tags">
+									<span>Computer Vision</span>
+									<span>AI/ML</span>
+									<span>Linux</span>
+								</div>
+							</div>
+
+							<!-- Makerspace Intern (Jan 2024 - Jun 2025) - Column 0 -->
+							<div class="job-card" style="top: 270px; left: 0px; height: 540px;">
+								<h3>Makerspace Intern</h3>
+								<p class="duration">Jan 2024 - Jun 2025</p>
+								<p class="company">Clemson University Makerspace</p>
+								<p class="description">Assisted users with equipment, maintained cumaker.space website, and led workshops.</p>
+								<div class="skills-tags">
+									<span>3D Printing</span>
+									<span>Web Dev</span>
+									<span>Workshops</span>
+								</div>
+							</div>
 						</div>
 					</div>
+				</section>
+					<!-- Skills Section -->
+					<section>
+						<header class="major">
+							<h2>Technical Arsenal</h2>
+							<p>Tools & Technologies I Work With</p>
+						</header>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
-
-							<!-- ASCII Logo -->
-							<a href="index.html" class="ascii-logo"><div class="logo-content">   <span class="paren">(</span>
-    <span class="paren">)</span>
- <span class="cup">c[_]</span></div></a>
-
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">HOME</a></li>
-										<li><a href="about.html">ABOUT ME</a></li>
-										<!-- Show projects link -->
-										<li><a href="projects.html">PROJECTS</a></li>
-										<li id="technical-areas">
-											<span class="opener">TECHNICAL AREAS</span>
-											<ul>
-												<li><a href="technical-areas.html#data-science">Data Science</a></li>
-												<li><a href="technical-areas.html#web-development">Web Development</a></li>
-												<li><a href="technical-areas.html#human-ai-teaming">Human-AI Teaming</a></li>
-												<li><a href="technical-areas.html#cross-domain">Cross-Domain Integration</a></li>
-											</ul>
-										</li>
-										<li><a href="research.html">RESEARCH PAPERS</a></li>
-										<!-- <li><a href="blog.html">Tech Blog</a></li> -->
-										<!-- <li>
-											<span class="opener">Academic Resources</span>
-											<ul>
-												<li><a href="#">Course Notes</a></li>
-												<li><a href="#">Programming Tutorials</a></li>
-												<li><a href="#">Study Materials</a></li>
-												<li><a href="#">Recommended Books</a></li>
-											</ul>
-										</li> -->
-										<li><a href="resume.html">RESUME</a></li>
-										<li><a href="certifications.html">CERTIFICATIONS</a></li>
-										<li><a href="contact.html">CONTACT</a></li>
-									</ul>
-								</nav>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Recent Publications</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="https://doi.org/10.1177/10711813241274425" class="image">
-												<div class="paper-logo">
-													<i class="fas fa-file-pdf"></i>
-												</div>
-											</a>
-											<p><strong>Human-AI Team Training</strong> (2024)<br>
-											Co-Author, DOI: 10.1177/10711813241274425<br>
-											Article demonstrates experiments with 120+ participants on training methodologies. Researchers show 25% improvement in task efficiency.</p>
-										</article>
-										<article>
-											<a href="https://doi.org/10.1007/s13278-021-00748-w" class="image">
-												<div class="paper-logo">
-													<i class="fas fa-file-pdf"></i>
-												</div>
-											</a>
-											<p><strong>COVID-19 Misinformation Analysis</strong> (2021)<br>
-											Co-Author, Social Network Analysis and Mining 11, Springer<br>
-											Developed real-time misinformation detection methodologies. Created publicly accessible database cited 50+ times.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="research.html" class="button">More Publications</a></li>
-									</ul>
-								</section>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in Touch</h2>
-									</header>
-									<p>I'm always open to discussing new projects, research opportunities, or potential collaborations.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="mailto:agalean@clemson.edu">agalean@clemson.edu</a></li>
-										<li class="icon solid fa-home">Clemson University<br />
-										Clemson, SC 29634</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Anna Galeano. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
+						<h3 style="color: var(--secondary-accent); margin-top: 2em;">Programming Languages</h3>
+						<div class="skill-container">
+							<span class="skill-pill">Java</span>
+							<span class="skill-pill">C++</span>
+							<span class="skill-pill">C</span>
+							<span class="skill-pill">Python</span>
+							<span class="skill-pill">JavaScript</span>
+							<span class="skill-pill">HTML/CSS</span>
 						</div>
-					</div>
 
+						<h3 style="color: var(--secondary-accent); margin-top: 2em;">Research & AI</h3>
+						<div class="skill-container">
+							<span class="skill-pill">Machine Learning</span>
+							<span class="skill-pill">Computer Vision</span>
+							<span class="skill-pill">YOLOv8</span>
+							<span class="skill-pill">Human Factors</span>
+							<span class="skill-pill">Data Science</span>
+							<span class="skill-pill">Privacy Assessment</span>
+						</div>
+
+						<h3 style="color: var(--secondary-accent); margin-top: 2em;">Tools & Platforms</h3>
+						<div class="skill-container">
+							<span class="skill-pill">Linux</span>
+							<span class="skill-pill">Git</span>
+							<span class="skill-pill">Fusion 360</span>
+							<span class="skill-pill">Web Development</span>
+							<span class="skill-pill">CAD Design</span>
+							<span class="skill-pill">OSINT</span>
+						</div>
+					</section>
+
+					<!-- CTA Section -->
+					<section style="text-align: center; padding: 4em 0; background: linear-gradient(135deg, var(--highlight), var(--card-bg)); border-radius: var(--radius-xl); margin-top: 4em;">
+						<h2 style="font-size: 2.5em;">Let's Create Something Amazing</h2>
+						<p style="font-size: 1.2em; color: var(--text-muted); margin-bottom: 2em;">
+							Open to research collaborations, project discussions, and new opportunities
+						</p>
+						<ul class="actions" style="justify-content: center;">
+							<li><a href="contact.html" class="button primary big">Get In Touch</a></li>
+							<li><a href="research.html" class="button big">View Publications</a></li>
+						</ul>
+					</section>
+
+				</div>
 			</div>
 
+			<!-- Sidebar -->
+			<div id="sidebar">
+				<div class="inner">
+					<a href="index.html" class="ascii-logo">
+						<div class="logo-content">    <span class="paren">(</span>
+     <span class="paren">)</span>
+  <span class="cup">c[_]</span></div>
+					</a>
+
+					<nav id="menu">
+						<header class="major">
+							<h2>Menu</h2>
+						</header>
+						<ul>
+							<li><a href="index.html">HOME</a></li>
+							<li><a href="about.html">ABOUT ME</a></li>
+							<li><a href="projects.html">PROJECTS</a></li>
+							<li id="technical-areas">
+								<span class="opener">TECHNICAL AREAS</span>
+								<ul>
+									<li><a href="technical-areas.html#data-science">Data Science</a></li>
+									<li><a href="technical-areas.html#web-development">Web Development</a></li>
+									<li><a href="technical-areas.html#human-ai-teaming">Human-AI Teaming</a></li>
+									<li><a href="technical-areas.html#autonomous-systems">Autonomous Systems</a></li>
+								</ul>
+							</li>
+							<li><a href="research.html">RESEARCH PAPERS</a></li>
+							<li><a href="resume.html">RESUME</a></li>
+							<li><a href="certifications.html">CERTIFICATIONS</a></li>
+							<li><a href="contact.html">CONTACT</a></li>
+						</ul>
+					</nav>
+
+					<section>
+						<header class="major">
+							<h2>Recent Publications</h2>
+						</header>
+						<div class="mini-posts">
+							<article>
+								<a href="https://doi.org/10.1177/10711813241274425" class="image">
+									<div class="paper-logo">
+										<i class="fas fa-file-pdf"></i>
+									</div>
+								</a>
+							<p><strong>Human-AI Team Training</strong> <span class="publication-year">(2024)</span><br>
+							Co-Author, DOI: 10.1177/10711813241274425<br>
+							25% improvement in task efficiency with 120+ participants.</p>
+							</article>
+							<article>
+								<a href="https://doi.org/10.1007/s13278-021-00748-w" class="image">
+									<div class="paper-logo">
+										<i class="fas fa-file-pdf"></i>
+									</div>
+								</a>
+							<p><strong>COVID-19 Misinformation</strong> <span class="publication-year">(2021)</span><br>
+							Co-Author, Springer. Database cited 50+ times.</p>
+							</article>
+						</div>
+						<ul class="actions">
+							<li><a href="research.html" class="button">More Publications</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<header class="major">
+							<h2>Get in Touch</h2>
+						</header>
+						<p>Open to discussing new projects, research opportunities, or collaborations.</p>
+						<ul class="contact">
+							<li class="icon solid fa-envelope"><a href="mailto:agalean@clemson.edu">agalean@clemson.edu</a></li>
+							<li class="icon solid fa-home">Clemson University<br />Clemson, SC 29634</li>
+						</ul>
+					</section>
+
+					<footer id="footer">
+						<p class="copyright">&copy; Anna Galeano. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>. Color palette inspired by <a href="https://pinterest.com" target="_blank">Madysen on Pinterest</a>.</p>
+					</footer>
+				</div>
+			</div>
+		</div>
+
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			
-			<!-- Added script for dropdown functionality -->
-			<script>
-				document.addEventListener('DOMContentLoaded', function() {
-					// Enhanced dropdown functionality
-					document.querySelectorAll('#menu ul li .opener').forEach(opener => {
-						opener.addEventListener('click', function(e) {
-							e.preventDefault();
-							const parent = this.parentNode;
-							
-							// Toggle active class
-							if (parent.classList.contains('active')) {
-								parent.classList.remove('active');
-							} else {
-								// Close any open dropdowns first
-								document.querySelectorAll('#menu ul li.active').forEach(item => {
-									if (item !== parent) {
-										item.classList.remove('active');
-									}
-								});
-								parent.classList.add('active');
-							}
-						});
-					});
-					
-					// ASCII logo click handler
-					document.querySelector('.ascii-logo').addEventListener('click', function(e) {
-						e.preventDefault();
-						window.location.href = 'index.html';
-					});
-				});
-			</script>
-			
-			<!-- Terminal Script -->
-			<script>
-			// Wait for the page to fully load
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		
+		<script>
 			document.addEventListener('DOMContentLoaded', function() {
-				console.log('DOM loaded, checking for terminal container...');
-				
-				// Check if the terminal container exists
-				const terminalContainer = document.getElementById('terminal-container');
-				
-				if (terminalContainer) {
-					console.log('Terminal container found, initializing...');
-					
-					// Create and apply the terminal directly
-					terminalContainer.style.backgroundColor = '#1a1a1a';
-					terminalContainer.style.color = '#33ff33';
-					terminalContainer.style.fontFamily = 'monospace';
-					terminalContainer.style.padding = '10px';
-					terminalContainer.style.overflow = 'auto';
-					
-					// Create header
-					const header = document.createElement('div');
-					header.style.backgroundColor = '#333';
-					header.style.padding = '5px';
-					header.style.borderTopLeftRadius = '5px';
-					header.style.borderTopRightRadius = '5px';
-					header.style.marginBottom = '10px';
-					header.style.display = 'flex';
-					header.style.alignItems = 'center';
-					
-					// Create terminal circles
-					const circles = document.createElement('div');
-					circles.style.display = 'flex';
-					circles.style.gap = '5px';
-					
-					['#ff5f56', '#ffbd2e', '#27c93f'].forEach(color => {
-						const circle = document.createElement('div');
-						circle.style.width = '12px';
-						circle.style.height = '12px';
-						circle.style.borderRadius = '50%';
-						circle.style.backgroundColor = color;
-						circles.appendChild(circle);
-					});
-					
-					const title = document.createElement('div');
-					title.style.marginLeft = '10px';
-					title.style.color = '#ccc';
-					title.textContent = 'anna@portfolio:~';
-					
-					header.appendChild(circles);
-					header.appendChild(title);
-					terminalContainer.appendChild(header);
-					
-					// Create terminal content
-					const content = document.createElement('div');
-					terminalContainer.appendChild(content);
-					
-					// Add welcome message
-					addLine(content, "Welcome to Anna Galeano's Interactive Terminal", 'system');
-					addLine(content, "Type 'help' to see available commands", 'system');
-					
-					// Create input line
-					const inputLine = document.createElement('div');
-					inputLine.style.display = 'flex';
-					inputLine.style.alignItems = 'center';
-					inputLine.style.marginTop = '10px';
-					
-					const prompt = document.createElement('span');
-					prompt.textContent = '$ ';
-					prompt.style.color = '#33ff33';
-					inputLine.appendChild(prompt);
-					
-					const input = document.createElement('input');
-					input.style.backgroundColor = 'transparent';
-					input.style.border = 'none';
-					input.style.outline = 'none';
-					input.style.color = '#33ff33';
-					input.style.fontFamily = 'monospace';
-					input.style.fontSize = '14px';
-					input.style.width = '100%';
-					input.style.caretColor = '#33ff33';
-					
-					input.addEventListener('keydown', function(e) {
-						if (e.key === 'Enter') {
-							const command = input.value.trim().toLowerCase();
-							
-							if (command) {
-								addLine(content, `$ ${command}`, 'input');
-								
-								// Process commands
-								if (command === 'help') {
-									addLine(content, 'Available commands:', 'output');
-									addLine(content, '  about       - Learn about me', 'output');
-									addLine(content, '  skills      - View my technical skills', 'output');
-									addLine(content, '  experience  - Show my work experience', 'output');
-									addLine(content, '  projects    - List my notable projects', 'output');
-									addLine(content, '  research    - View my research publications', 'output');
-									addLine(content, '  resume      - Download my resume', 'output');
-									addLine(content, '  contact     - Show my contact information', 'output');
-									addLine(content, '  clear       - Clear the terminal', 'output');
-								} else if (command === 'about') {
-									addLine(content, '━━━ ABOUT ME ━━━', 'heading');
-									addLine(content, "I'm Anna Galeano, a Computer Science student at Clemson University.", 'output');
-									addLine(content, "I specialize in data science, web development, and human-AI teaming.", 'output');
-									addLine(content, "My passion lies in creating AI systems that augment human capabilities", 'output');
-									addLine(content, "while maintaining a deep understanding of human factors.", 'output');
-								} else if (command === 'skills') {
-									addLine(content, '━━━ TECHNICAL SKILLS ━━━', 'heading');
-									addLine(content, '• Research Areas: Machine Learning, Computer Vision, Human Factors', 'output');
-									addLine(content, '• Languages: Java, C++, C, JavaScript, Python', 'output');
-									addLine(content, '• Tools: Linux, Applied Data Science, Web Development', 'output');
-									addLine(content, '• Domains: Additive Manufacturing, Research Methodologies', 'output');
-									addLine(content, '• Human Languages: English, German', 'output');
-								} else if (command === 'experience') {
-									addLine(content, '━━━ WORK EXPERIENCE ━━━', 'heading');
-									addLine(content, '• Clemson University TRACE Lab (Jan 2024 - Present)', 'output');
-									addLine(content, '  Research Assistant - Human-centered interactive systems', 'output');
-									addLine(content, '• Clemson University Makerspace (Jan 2024 - May 2025)', 'output');
-									addLine(content, '  Corporate Liaison & Makerspace Intern', 'output');
-									addLine(content, '• Special Operations Command Europe (May 2024 - Aug 2024)', 'output');
-									addLine(content, '  Academic Intern - J6X, Computer Vision Implementation', 'output');
-									addLine(content, '• University of Arkansas at Little Rock (2021-2023)', 'output');
-									addLine(content, '  COVID-19 Database Specialist', 'output');
-								} else if (command === 'projects') {
-									addLine(content, '━━━ NOTABLE PROJECTS ━━━', 'heading');
-									addLine(content, '1. Chagas Disease Detection', 'output');
-									addLine(content, '   Machine learning system for 12-lead ECG data analysis', 'output');
-									addLine(content, '2. Security Breadcrumbs Analyzer', 'output');
-									addLine(content, '   Web scraping and analysis of LinkedIn profiles', 'output');
-									addLine(content, '3. Command-Line Checkers', 'output');
-									addLine(content, '   Text-based checkers game with opponent', 'output');
-									addLine(content, '4. Interactive Portfolio Website', 'output');
-									addLine(content, '   Responsive web design with terminal emulation', 'output');
-								} else if (command === 'research') {
-									addLine(content, '━━━ RESEARCH PUBLICATIONS ━━━', 'heading');
-									addLine(content, '• Human-AI Team Training (2024)', 'output');
-									addLine(content, '  Co-Author, DOI: 10.1177/10711813241274425', 'output');
-									addLine(content, '• COVID-19 Misinformation Analysis (2021)', 'output');
-									addLine(content, '  Co-Author, Social Network Analysis and Mining 11, Springer', 'output');
-								} else if (command === 'resume') {
-									addLine(content, '━━━ RESUME ━━━', 'heading');
-									addLine(content, 'Downloading resume...', 'output');
-									window.location.href = 'files/anna_galeano_resume.pdf';
-								} else if (command === 'contact') {
-									addLine(content, '━━━ CONTACT INFO ━━━', 'heading');
-									addLine(content, '• Email: agalean@clemson.edu', 'output');
-									addLine(content, '• LinkedIn: linkedin.com/in/connectedanna', 'output');
-									addLine(content, '• GitHub: github.com/VersatileVariable', 'output');
-								} else if (command === 'clear') {
-									content.innerHTML = '';
-								} else {
-									addLine(content, `Command not found: ${command}. Type 'help' for available commands.`, 'output');
+				// Dropdown functionality
+				document.querySelectorAll('#menu ul li .opener').forEach(opener => {
+					opener.addEventListener('click', function(e) {
+						e.preventDefault();
+						const parent = this.parentNode;
+						
+						if (parent.classList.contains('active')) {
+							parent.classList.remove('active');
+						} else {
+							document.querySelectorAll('#menu ul li.active').forEach(item => {
+								if (item !== parent) {
+									item.classList.remove('active');
 								}
-							}
-							
-							input.value = '';
-							terminalContainer.scrollTop = terminalContainer.scrollHeight;
+							});
+							parent.classList.add('active');
 						}
 					});
+				});
+				
+			// Floating particles
+			const particlesContainer = document.getElementById('particles-js');
+			if (particlesContainer) {
+				for (let i = 0; i < 40; i++) {
+					const particle = document.createElement('div');
+					particle.className = 'particle';
+					const size = Math.random() * 4 + 2;
+					particle.style.width = size + 'px';
+					particle.style.height = size + 'px';
+					particle.style.left = Math.random() * 100 + '%';
+					particle.style.animationDuration = Math.random() * 15 + 10 + 's';
+					particle.style.animationDelay = Math.random() * 8 + 's';
 					
-					inputLine.appendChild(input);
-					terminalContainer.appendChild(inputLine);
+					// Use copper rose variations
+					if (Math.random() > 0.3) {
+						particle.style.background = 'rgba(146, 104, 104, 0.5)';
+						particle.style.boxShadow = '0 0 8px rgba(146, 104, 104, 0.3)';
+					} else {
+						particle.style.background = 'rgba(78, 55, 66, 0.4)';
+						particle.style.boxShadow = '0 0 6px rgba(78, 55, 66, 0.2)';
+					}
 					
-					// Focus the input
-					setTimeout(function() {
-						input.focus();
-					}, 100);
-				} else {
-					console.error('Terminal container not found!');
+					particlesContainer.appendChild(particle);
 				}
+			}				// Terminal functionality
+				const terminalInput = document.getElementById('terminal-input');
+				const terminalOutput = document.getElementById('terminal-output');
+
+				if (terminalInput) {
+					terminalInput.addEventListener('keydown', function(e) {
+						if (e.key === 'Enter') {
+							const command = terminalInput.value.trim().toLowerCase();
+							
+							if (command) {
+								addTerminalLine(`$ ${command}`, 'terminal-input');
+								processCommand(command);
+							}
+							
+							terminalInput.value = '';
+							terminalOutput.scrollTop = terminalOutput.scrollHeight;
+						}
+					});
+
+					// Focus terminal on load
+					setTimeout(() => terminalInput.focus(), 500);
+				}
+
+				function addTerminalLine(text, className) {
+					const line = document.createElement('div');
+					line.className = `terminal-line ${className}`;
+					line.textContent = text;
+					
+					// Insert before input line
+					const inputLine = terminalOutput.querySelector('.terminal-input-line');
+					terminalOutput.insertBefore(line, inputLine);
+				}
+
+				function processCommand(command) {
+					if (command === 'help') {
+						addTerminalLine('Available commands:', 'terminal-output');
+						addTerminalLine('  about       - Learn about me', 'terminal-output');
+						addTerminalLine('  skills      - View my technical skills', 'terminal-output');
+						addTerminalLine('  experience  - Show my work experience', 'terminal-output');
+						addTerminalLine('  projects    - List my notable projects', 'terminal-output');
+						addTerminalLine('  research    - View my research publications', 'terminal-output');
+						addTerminalLine('  resume      - Download my resume', 'terminal-output');
+						addTerminalLine('  contact     - Show my contact information', 'terminal-output');
+						addTerminalLine('  clear       - Clear the terminal', 'terminal-output');
+					} else if (command === 'about') {
+						addTerminalLine('━━━ ABOUT ME ━━━', 'terminal-heading');
+						addTerminalLine("I'm Anna Galeano, a Computer Science student at Clemson University.", 'terminal-output');
+						addTerminalLine("Specializing in human-centered computing and autonomous systems.", 'terminal-output');
+					} else if (command === 'skills') {
+						addTerminalLine('━━━ TECHNICAL SKILLS ━━━', 'terminal-heading');
+						addTerminalLine('• Languages: Java, C++, C, JavaScript, Python', 'terminal-output');
+						addTerminalLine('• Research: Machine Learning, Computer Vision, Human Factors', 'terminal-output');
+						addTerminalLine('• Tools: Linux, Git, Fusion 360, Web Development', 'terminal-output');
+					} else if (command === 'experience') {
+						addTerminalLine('━━━ WORK EXPERIENCE ━━━', 'terminal-heading');
+						addTerminalLine('• Adobe Intern (Sep 2025 - Present)', 'terminal-output');
+						addTerminalLine('• TigerSec Laboratory (Sep 2025 - Present)', 'terminal-output');
+						addTerminalLine('• SOCEUR - DIU Fellow (Jun 2025 - Aug 2025)', 'terminal-output');
+					} else if (command === 'projects') {
+						addTerminalLine('━━━ NOTABLE PROJECTS ━━━', 'terminal-heading');
+						addTerminalLine('1. NASA FLARESat - Award-winning hackathon project', 'terminal-output');
+						addTerminalLine('2. NATO Autonomous USV - Bold Machina 2025', 'terminal-output');
+						addTerminalLine('3. Automotive Privacy Assessment - TigerSec Lab', 'terminal-output');
+					} else if (command === 'research') {
+						addTerminalLine('━━━ RESEARCH PUBLICATIONS ━━━', 'terminal-heading');
+						addTerminalLine('• Human-AI Team Training (2024)', 'terminal-output');
+						addTerminalLine('• COVID-19 Misinformation Analysis (2021)', 'terminal-output');
+					} else if (command === 'resume') {
+						addTerminalLine('Downloading resume...', 'terminal-output');
+						window.location.href = 'files/anna_galeano_resume.pdf';
+					} else if (command === 'contact') {
+						addTerminalLine('━━━ CONTACT INFO ━━━', 'terminal-heading');
+						addTerminalLine('• Email: agalean@clemson.edu', 'terminal-output');
+						addTerminalLine('• LinkedIn: linkedin.com/in/connectedanna', 'terminal-output');
+						addTerminalLine('• GitHub: github.com/VersatileVariable', 'terminal-output');
+					} else if (command === 'clear') {
+						// Clear all lines except welcome message and input
+						const lines = terminalOutput.querySelectorAll('.terminal-line:not(.terminal-input-line)');
+						lines.forEach(line => {
+							if (!line.classList.contains('terminal-system') && !line.classList.contains('terminal-input-line')) {
+								line.remove();
+							}
+						});
+					} else {
+						addTerminalLine(`Command not found: ${command}. Type 'help' for available commands.`, 'terminal-output');
+					}
+				}
+
+				// Smooth scroll for internal links
+				document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+					anchor.addEventListener('click', function (e) {
+						const href = this.getAttribute('href');
+						if (href !== '#' && document.querySelector(href)) {
+							e.preventDefault();
+							document.querySelector(href).scrollIntoView({
+								behavior: 'smooth'
+							});
+						}
+					});
+				});
 			});
-
-			// Helper function to add a line to the terminal
-			function addLine(content, text, type) {
-				const line = document.createElement('div');
-				line.textContent = text;
-				line.style.marginBottom = '5px';
-				
-				if (type === 'system') {
-					line.style.color = '#5b9bd5';
-				} else if (type === 'input') {
-					line.style.color = '#33ff33';
-				} else if (type === 'output') {
-					line.style.color = '#ddd';
-				} else if (type === 'heading') {
-					line.style.color = '#ffbd2e';
-					line.style.fontWeight = 'bold';
-					line.style.marginTop = '10px';
-				}
-				
-				content.appendChild(line);
-			}
-			</script>
-			<script src="https://cjrtnc.leaningtech.com/4.0/cj4.js"></script>
-
+		</script>
 	</body>
 </html>

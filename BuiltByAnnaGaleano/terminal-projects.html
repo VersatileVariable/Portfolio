@@ -1,39 +1,90 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Terminal | Anna Galeano</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
-		<link rel="stylesheet" href="assets/css/terminal.css" />
-	</head>
-	<body>
-		<!-- Terminal Window -->
-		<div class="terminal-window">
-			<div class="terminal-header">
-				<div class="circles-container">
-					<div class="circle red-circle"></div>
-					<div class="circle yellow-circle"></div>
-					<div class="circle green-circle"></div>
-				</div>
-				<div class="terminal-title">anna@portfolio: ~/projects</div>
-			</div>
-			<div id="terminal-container">
-				<div id="terminal-content"></div>
-				<div id="terminal-input-line" style="display: flex; align-items: center;">
-					<span style="color: #33ff33;">$ </span>
-					<input type="text" id="terminal-input" class="user-input" autofocus spellcheck="false">
-				</div>
-				
-				<!-- JAR Container (Hidden initially) -->
-				<div id="jar-container">
-					<div id="jar-output"></div>
-					<div id="jar-prompt"></div>
-					<input type="text" id="jar-input" spellcheck="false">
-				</div>
+<head>
+	<title>Terminal | Anna Galeano</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/terminal-console.css" />
+</head>
+<body class="is-preload">
+
+	<div id="wrapper">
+
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>Anna Galeano</strong> | Computer Science</a>
+					<ul class="icons">
+						<li><a href="https://github.com/VersatileVariable" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/connectedanna/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					</ul>
+				</header>
+
+				<!-- Terminal Section -->
+				<section>
+					<div class="terminal-window">
+						<div class="terminal-header">
+							<div class="circles-container">
+								<div class="circle red-circle"></div>
+								<div class="circle yellow-circle"></div>
+								<div class="circle green-circle"></div>
+							</div>
+							<div class="terminal-title">anna@portfolio: ~/projects</div>
+						</div>
+						<div id="terminal-container">
+							<div id="terminal-content"></div>
+							<div id="terminal-input-line" style="display: flex; align-items: center;">
+								<span style="color: #33ff33;">$ </span>
+								<input type="text" id="terminal-input" class="user-input" autofocus spellcheck="false">
+							</div>
+
+							<!-- JAR Container (Hidden initially) -->
+							<div id="jar-container">
+								<div id="jar-output"></div>
+								<div id="jar-prompt"></div>
+								<input type="text" id="jar-input" spellcheck="false">
+							</div>
+						</div>
+					</div>
+				</section>
+
 			</div>
 		</div>
 
-		<script src="assets/js/terminal.js"></script>
-	</body>
+		<!-- Sidebar (kept minimal to avoid layout shift) -->
+		<div id="sidebar">
+			<div class="inner">
+				<a href="index.html" class="ascii-logo"><div class="logo-content"> <span class="paren">(</span><span class="paren">)</span><span class="cup">c[_]</span></div></a>
+				<nav id="menu">
+					<header class="major"><h2>Menu</h2></header>
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="about.html">ABOUT ME</a></li>
+						<li><a href="projects.html">PROJECTS</a></li>
+						<li><a href="research.html">RESEARCH PAPERS</a></li>
+						<li><a href="contact.html">CONTACT</a></li>
+					</ul>
+				</nav>
+				<footer id="footer">
+					<p class="copyright">&copy; Anna Galeano. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				</footer>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/terminal.js"></script>
+
+</body>
 </html>

@@ -1,0 +1,217 @@
+/* ========================================
+   SIMPLE CONSOLE TERMINAL STYLES
+   ======================================== */
+
+:root {
+    /* Console Terminal Colors */
+    --console-bg: #0C0C0C;
+    --console-text: #CCCCCC;
+    --console-green: #0DBC79;
+    --console-blue: #3B82F6;
+    --console-yellow: #FDE047;
+    --console-red: #DC2626;
+    --console-purple: #9333EA;
+    --console-cyan: #06B6D4;
+    --console-border: #404040;
+    --console-header: #1F1F1F;
+}
+
+/* Terminal Window */
+.terminal-window {
+    background: var(--console-bg);
+    border: 1px solid var(--console-border);
+    border-radius: 8px;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace;
+    font-size: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+}
+
+/* Terminal Header */
+.terminal-header {
+    background: var(--console-header);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--console-border);
+}
+
+/* Terminal Dots */
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.terminal-dot.red {
+    background: var(--console-red);
+}
+
+.terminal-dot.yellow {
+    background: var(--console-yellow);
+}
+
+.terminal-dot.green {
+    background: var(--console-green);
+}
+
+/* Terminal Title */
+.terminal-title {
+    color: var(--console-text);
+    font-size: 12px;
+    margin-left: 12px;
+    opacity: 0.7;
+}
+
+/* Terminal Content */
+.terminal-content,
+#terminal-container {
+    background: var(--console-bg);
+    padding: 16px;
+    color: var(--console-text);
+    min-height: 200px;
+    overflow-y: auto;
+    line-height: 1.4;
+}
+
+/* Terminal Lines */
+.terminal-line {
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Terminal Prompt */
+.terminal-prompt,
+.terminal-input-line span {
+    color: #7FFFD4;
+    font-weight: bold;
+}
+
+/* Terminal Input */
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.terminal-input-field,
+.user-input,
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: var(--console-text);
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    flex: 1;
+    margin-left: 4px;
+    caret-color: var(--console-green);
+}
+
+/* Terminal Output Types */
+.terminal-output {
+    color: var(--console-text);
+}
+
+.terminal-system {
+    color: var(--console-blue);
+}
+
+.terminal-heading {
+    color: var(--console-cyan);
+    font-weight: bold;
+}
+
+.terminal-error {
+    color: var(--console-red);
+}
+
+.terminal-warning {
+    color: var(--console-yellow);
+}
+
+.terminal-success {
+    color: var(--console-green);
+}
+
+.terminal-info {
+    color: var(--console-purple);
+}
+
+/* Terminal Cursor Animation */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.terminal-cursor::after {
+    content: '▋';
+    color: var(--console-green);
+    animation: blink 1s infinite;
+}
+
+/* Scrollbar Styling */
+.terminal-content::-webkit-scrollbar,
+#terminal-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-content::-webkit-scrollbar-track,
+#terminal-container::-webkit-scrollbar-track {
+    background: var(--console-bg);
+}
+
+.terminal-content::-webkit-scrollbar-thumb,
+#terminal-container::-webkit-scrollbar-thumb {
+    background: var(--console-border);
+    border-radius: 4px;
+}
+
+.terminal-content::-webkit-scrollbar-thumb:hover,
+#terminal-container::-webkit-scrollbar-thumb:hover {
+    background: #555555;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .terminal-window {
+        font-size: 12px;
+    }
+    
+    .terminal-content,
+    #terminal-container {
+        padding: 12px;
+        min-height: 150px;
+    }
+    
+    .terminal-header {
+        padding: 8px 12px;
+    }
+    
+    .terminal-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Clean, minimal focus styles */
+.terminal-input-field:focus,
+.user-input:focus,
+#terminal-input:focus {
+    outline: 1px solid var(--console-green);
+    outline-offset: -1px;
+    border-radius: 2px;
+}
+
+/* Hide original terminal styles when using console */
+.console-mode .terminal-window {
+    background: var(--console-bg) !important;
+}
+
+.console-mode .terminal-header {
+    background: var(--console-header) !important;
+}

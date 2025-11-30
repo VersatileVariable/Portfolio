@@ -9,205 +9,81 @@
 		<title>Research Papers | Anna Galeano</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			:root {
-				--light-bg: #f5f2e9;
-				--lighter-bg: #fcf9f2;
-				--main-accent: #739b6f;
-				--darker-accent: #5a7a57;
-				--lighter-accent: #b8aa8c;
-				--text-dark: #3a3a3a;
-				--text-darker: #212121;
-				--card-bg: #ffffff;
-				--card-border: #e6e0d0;
-				--sidebar-bg: #eee9dd;
-				--highlight: #d8c9a7;
-			}
-			
-			html {
-				scroll-behavior: smooth;
-				--scroll-duration: 1.5s; /* Slower scroll duration */
-			}
-			
-			body {
-				background-color: var(--light-bg);
-				color: var(--text-dark);
-			}
-			
-			#main > .inner {
-				background-color: var(--light-bg);
-			}
-			
-			#sidebar {
-				background-color: var(--sidebar-bg);
-			}
-			
-			h1, h2, h3, h4, h5, h6 {
-				color: var(--text-darker);
-			}
-			
-			strong, b {
-				color: var(--text-darker);
-			}
-			
-			a {
-				color: var(--main-accent);
-				border-bottom-color: var(--main-accent);
-			}
-			
-			a:hover {
-				color: var(--darker-accent) !important;
-				border-bottom-color: var(--darker-accent);
-			}
-			
-			/* Footer wave styling */
-			.footer-wave {
-				position: relative;
-				left: 0;
-				bottom: 0;
-				width: 100%;
-				height: 120px;
-				overflow: hidden;
-				margin-bottom: 20px;
-			}
-			
-			.footer-wave svg {
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				width: 100%;
-				height: 100%;
-			}
-
-			/* Hide sections as requested */
-			#menu ul li a[href="blog.html"],
-			#menu ul li a[href="projects.html"],
-			#menu ul li:has(span.opener:contains("Academic Resources")),
-			section#projects {
-				display: none !important;
-			}
-			
-			/* ASCII Logo Styling */
-			.ascii-logo {
-				font-family: monospace;
-				white-space: pre;
-				font-size: 1.5em;
-				text-align: center;
-				padding: 0;
-				margin: 0 auto;
-				cursor: pointer;
-				background-color: var(--sidebar-bg);
-				width: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				height: 150px; /* Fixed height for vertical centering */
-				transition: color 0.2s ease-in-out;
-			}
-			
-			.logo-content {
-				line-height: 1.2;
-			}
-			
-			.ascii-logo .paren {
-				color: var(--main-accent); /* Accent color for the parentheses */
-			}
-			
-			.ascii-logo .cup {
-				color: var(--main-accent); /* Accent color for the cup */
-			}
-			
-			.ascii-logo:hover .cup,
-			.ascii-logo:hover .paren {
-				color: var(--darker-accent); /* Darker accent on hover */
-			}
-			
-			/* Publication styling */
-			.publication {
-				border-left: 4px solid var(--main-accent);
-				padding-left: 1.5em;
-				margin-bottom: 2em;
-				position: relative;
-				background-color: var(--card-bg);
-				padding: 1.5em;
-				padding-left: 2em;
-				border-radius: 8px;
-				box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
-				border: 1px solid var(--card-border);
-			}
-			
-			.publication:hover {
-				transform: translateY(-3px);
-				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-				border-color: var(--main-accent);
-			}
-			
-			
-			
-			.publication h3 {
-				margin-bottom: 0.5em;
-				color: var(--main-accent);
-			}
-			
-			.publication .meta {
-				color: var(--text-dark);
-				font-size: 0.9em;
-				margin-bottom: 1em;
-			}
-			
-			.publication .abstract {
-				margin-top: 1em;
-				padding: 1em;
-				background-color: var(--lighter-bg);
-				border-radius: 4px;
-				border: 1px solid var(--card-border);
-			}
-			
-			.publication .tags {
-				margin-top: 1em;
-			}
-			
-			.publication .tags span {
-				display: inline-block;
-				background-color: var(--highlight);
-				color: var(--text-darker);
-				padding: 0.3em 0.7em;
-				border-radius: 3px;
-				margin-right: 0.5em;
-				margin-bottom: 0.5em;
-				font-size: 0.8em;
-				border: 1px solid var(--card-border);
-			}
-			
-			/* Header styling */
-			#header {
-				border-bottom: solid 5px var(--main-accent);
-			}
-			
-			/* Button styling */
-			.button {
-				background-color: transparent;
-				box-shadow: inset 0 0 0 2px var(--main-accent);
-				color: var(--main-accent) !important;
-			}
-			
-			.button:hover {
-				background-color: rgba(155, 141, 111, 0.1);
-				box-shadow: inset 0 0 0 2px var(--darker-accent);
-				color: var(--darker-accent) !important;
-			}
-			
-			.button.primary {
-				background-color: var(--main-accent);
-				color: white !important;
-			}
-			
-			.button.primary:hover {
-				background-color: var(--darker-accent);
-			}
-		</style>
+	<style>
+		/* Publication card styling - uses site theme colors */
+		.publication {
+			border-left: 4px solid #926868;
+			background-color: rgba(255, 255, 255, 0.9);
+			padding: 2em;
+			padding-left: 2.5em;
+			margin-bottom: 2.5em;
+			border-radius: var(--radius-lg);
+			box-shadow: 0 2px 10px rgba(146, 104, 104, 0.1);
+			transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+			border: 1px solid rgba(146, 104, 104, 0.2);
+		}
+		
+		.publication:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 8px 25px rgba(146, 104, 104, 0.2);
+			border-color: #926868;
+		}
+		
+		.publication h3 {
+			margin-top: 0;
+			margin-bottom: 0.7em;
+			color: #926868;
+			font-size: 1.5em;
+			font-weight: 700;
+		}
+		
+		.publication .meta {
+			font-size: 0.9em;
+			margin-bottom: 1.2em;
+			line-height: 1.6;
+			color: #6b5a66;
+			opacity: 0.9;
+		}
+		
+		.publication .abstract {
+			margin-top: 1.2em;
+			padding: 1.5em;
+			background-color: rgba(146, 104, 104, 0.05);
+			border: 1px solid rgba(146, 104, 104, 0.2);
+			border-radius: var(--radius-md);
+			font-size: 0.95em;
+			line-height: 1.7;
+			border-left: 3px solid #926868;
+			color: #4e3742;
+		}
+		
+		.publication .tags {
+			margin-top: 1.5em;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.6em;
+		}
+		
+		.publication .tags span {
+			background: #EBDFDC;
+			color: #4e3742;
+			border: 1px solid #926868;
+			padding: 0.5em 1em;
+			border-radius: var(--radius-sm);
+			font-size: 0.85em;
+			font-weight: 600;
+			transition: transform var(--transition-fast), background-color var(--transition-fast);
+		}
+		
+		.publication .tags span:hover {
+			transform: translateY(-2px);
+			background: #926868;
+			color: #EBDFDC;
+			box-shadow: 0 4px 12px rgba(146, 104, 104, 0.3);
+		}
+	</style>
 	</head>
 	<body class="is-preload">
 
