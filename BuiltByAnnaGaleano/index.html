@@ -1,548 +1,622 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Anna Galeano | Computer Science Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="main">
-				<div class="inner">
+<head>
+    <title>Anna Galeano | Computer Science Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Anna Galeano - Computer Science Portfolio showcasing research in Human-AI teaming, autonomous systems, and cybersecurity">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#hero">Anna Galeano</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-					<!-- Hero Banner with Terminal -->
-					<section id="hero-banner">
-						<div class="particles" id="particles-js"></div>
-						<div class="hero-content">
-							<h1 class="hero-title">Anna Galeano</h1>
-							<p class="hero-subtitle">Human-Centered Computing & Autonomous Systems</p>
-							<p class="hero-description">
-								Crafting the future of human-AI collaboration through research-driven innovation. 
-								From autonomous vessels navigating NATO exercises to privacy-preserving technologies, 
-								I bridge the gap between cutting-edge AI and human needs.
-							</p>
-						<div class="hero-cta">
-							<a href="research.html" class="button big primary">Explore Research</a>
-							<a href="#featured-work" class="button secondary">View Projects</a>
-							<a href="files/anna_galeano_resume.pdf" download class="button secondary">Resume ↓</a>
-						</div>
-						</div>
-						<div class="hero-terminal">
-							<div id="terminal-container">
-								<div class="terminal-header">
-									<div class="terminal-dot red"></div>
-									<div class="terminal-dot yellow"></div>
-									<div class="terminal-dot green"></div>
-									<span class="terminal-title">anna@portfolio:~</span>
-								</div>
-								<div class="terminal-content" id="terminal-output">
-									<div class="terminal-line terminal-system">Welcome to Anna Galeano's Interactive Terminal</div>
-									<div class="terminal-line terminal-system">Type 'help' to see available commands</div>
-									<div class="terminal-line" style="height: 10px;"></div>
-									<div class="terminal-input-line">
-										<span class="terminal-prompt">$ </span>
-										<input type="text" class="terminal-input-field" id="terminal-input" autocomplete="off" spellcheck="false">
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-
-					<!-- Achievement Badges -->
-					<section>
-						<div class="achievement-grid">
-							<div class="achievement-badge">
-								<div class="achievement-icon">
-									<i class="fas fa-shield-halved"></i>
-								</div>
-								<span class="achievement-value">NATO</span>
-								<span class="achievement-label">Defense Innovation</span>
-							</div>
-							<div class="achievement-badge">
-								<div class="achievement-icon">
-									<i class="fas fa-award"></i>
-								</div>
-								<span class="achievement-value">Military</span>
-								<span class="achievement-label">Child of the Year 2024</span>
-							</div>
-							<div class="achievement-badge">
-								<div class="achievement-icon">
-									<i class="fas fa-trophy"></i>
-								</div>
-								<span class="achievement-value">AP</span>
-								<span class="achievement-label">Capstone Diploma</span>
-							</div>
-							<div class="achievement-badge">
-								<div class="achievement-icon">
-									<i class="fas fa-language"></i>
-								</div>
-								<span class="achievement-value">Bilingual</span>
-								<span class="achievement-label">English & German</span>
-							</div>
-						</div>
-					</section>
-
-				<!-- Featured Work - Bento Grid -->
-				<section id="featured-work">
-					<header class="major">
-						<h2>Featured Work</h2>
-						<p class="tagline">Where Innovation Meets Impact</p>
-					</header>						<div class="bento-grid">
-							<!-- Featured Project 1 -->
-							<div class="bento-item featured">
-								<i class="fas fa-satellite bento-icon"></i>
-								<h3>NASA FLARESat</h3>
-								<p><strong>NASA Space Apps Challenge 2025 Winner</strong></p>
-								<p>Award-winning satellite monitoring platform developed in 48 hours. Created complete satellite constellation with CAD model, simulated data, and working dashboard comparing against NASA FIRMS satellites.</p>
-								<div class="skill-container">
-									<span class="skill-pill">Satellite Systems</span>
-									<span class="skill-pill">Data Viz</span>
-									<span class="skill-pill">CAD Design</span>
-									<span class="skill-pill">3D Modeling</span>
-								</div>
-								<ul class="actions" style="margin-top: 1.5em;">
-									<li><a href="https://versatilevariable.github.io/NASA_FLARE-Sat/" class="button primary">View Project</a></li>
-								</ul>
-							</div>
-
-							<!-- Project 2 -->
-							<div class="bento-item">
-								<i class="fas fa-ship bento-icon"></i>
-								<h3>NATO Autonomous USV</h3>
-								<p>Designed autonomous vessel for NATO's Bold Machina 2025. YOLOv8 computer vision, LUA navigation, Fusion 360 CAD design.</p>
-								<ul class="actions" style="margin-top: 1em;">
-									<li><a href="projects.html#usv" class="button">Learn More</a></li>
-								</ul>
-							</div>
-
-							<!-- Project 3 -->
-							<div class="bento-item">
-								<i class="fas fa-shield-alt bento-icon"></i>
-								<h3>Privacy Assessment</h3>
-								<p>TigerSec Laboratory research analyzing automotive data collection practices and security protocols.</p>
-								<ul class="actions" style="margin-top: 1em;">
-									<li><a href="research.html#privacy" class="button">View Research</a></li>
-								</ul>
-							</div>
-
-							<!-- Project 4 -->
-							<div class="bento-item">
-								<i class="fas fa-heartbeat bento-icon"></i>
-								<h3>Chagas Disease Detection</h3>
-								<p>ML system using balanced random forest classification. 60% true positive rate with <13% false positives.</p>
-								<ul class="actions" style="margin-top: 1em;">
-									<li><a href="research.html#chagas" class="button">View Research</a></li>
-								</ul>
-							</div>
-
-							<!-- Project 5 -->
-							<div class="bento-item">
-								<i class="fas fa-map-marked-alt bento-icon"></i>
-								<h3>Death Valley Dash</h3>
-								<p>AI-powered campus scavenger hunt with real-time GPS tracking and intelligent hint system.</p>
-								<ul class="actions" style="margin-top: 1em;">
-									<li><a href="#" class="button">View Demo</a></li>
-								</ul>
-							</div>
-
-							<!-- Project 6 -->
-							<div class="bento-item">
-								<i class="fas fa-user-secret bento-icon"></i>
-								<h3>Security Breadcrumbs</h3>
-								<p>OSINT research tool. Found 75.5% of LinkedIn profiles posed security risks, 12% high-risk.</p>
-								<ul class="actions" style="margin-top: 1em;">
-									<li><a href="research.html#linkedin" class="button">View Research</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
-
-				<!-- Experience Timeline -->
-				<section>
-					<header class="major">
-						<h2>Professional Journey</h2>
-						<p class="tagline">Building Experience Across Industry & Academia</p>
-					</header>
-
-					<div class="timeline-container">
-						<!-- Left column: Timeline axis -->
-						<div class="timeline-axis">
-							<div class="timeline-bar"></div>
-							<div class="year-marker">Present</div>
-							<div class="month-marker" data-month="22">Nov 2025</div>
-							<div class="month-marker" data-month="21">Oct</div>
-							<div class="month-marker" data-month="20">Sep</div>
-							<div class="month-marker" data-month="19">Aug</div>
-							<div class="month-marker" data-month="18">Jul</div>
-							<div class="month-marker" data-month="17">Jun</div>
-							<div class="month-marker" data-month="16">May</div>
-							<div class="month-marker" data-month="15">Apr</div>
-							<div class="month-marker" data-month="14">Mar</div>
-							<div class="month-marker" data-month="13">Feb</div>
-							<div class="month-marker" data-month="12">Jan</div>
-						</div>
-
-						<!-- Right column: Jobs area -->
-						<div class="jobs-area">
-							<!-- Undergraduate Research (Oct 2025 - ongoing) - Column 2 -->
-							<div class="job-card ongoing" style="top: 75px; left: 700px; height: 60px;">
-								<h3>Undergraduate Research</h3>
-								<p class="duration">Oct 2025 - Present</p>
-								<p class="company">TigerSec Laboratory - Clemson</p>
-								<p class="description">Privacy assessments for automotive companies, data analysis.</p>
-								<div class="skills-tags">
-									<span>Privacy Research</span>
-									<span>Data Analysis</span>
-									<span>Cybersecurity</span>
-								</div>
-							</div>
-
-							<!-- Adobe Intern (Sep 2025 - ongoing) - Column 1 -->
-							<div class="job-card ongoing" style="top: 100px; left: 350px; height: 90px;">
-								<h3>Adobe Intern</h3>
-								<p class="duration">Sep 2025 - Present</p>
-								<p class="company">Adobe Creative Studio</p>
-								<p class="description">Supporting Creative Suite users with studio equipment and tools.</p>
-								<div class="skills-tags">
-									<span>Adobe CC</span>
-									<span>User Support</span>
-									<span>Training</span>
-								</div>
-							</div>
-
-							<!-- DIU Fellow (Jun 2025 - Aug 2025) - Column 0 -->
-							<div class="job-card" style="top: 175px; left: 0px; height: 90px;">
-								<h3>DIU Fellow & TEIL Intern</h3>
-								<p class="duration">Jun - Aug 2025</p>
-								<p class="company">Special Operations Command Europe</p>
-								<p class="description">Built autonomous USV for NATO Bold Machina 2025 exercise.</p>
-								<div class="skills-tags">
-									<span>Autonomous Navigation</span>
-									<span>YOLOv8</span>
-									<span>CAD Design</span>
-								</div>
-							</div>
-
-							<!-- Student Research Assistant (Feb 2024 - May 2025) - Column 1 -->
-							<div class="job-card" style="top: 250px; left: 350px; height: 375px;">
-								<h3>Student Research Assistant</h3>
-								<p class="duration">Feb 2024 - May 2025</p>
-								<p class="company">TRACE Lab - Clemson University</p>
-								<p class="description">Human-AI teaming research, data collection, academic writing.</p>
-								<div class="skills-tags">
-									<span>Research</span>
-									<span>Data Analysis</span>
-									<span>Writing</span>
-								</div>
-							</div>
-
-							<!-- AI Research Intern (Jun 2024 - Aug 2024) - Column 2 -->
-							<div class="job-card" style="top: 300px; left: 700px; height: 90px;">
-								<h3>AI Research Intern</h3>
-								<p class="duration">Jun - Aug 2024</p>
-								<p class="company">Special Operations Command Europe</p>
-								<p class="description">Computer vision, target identification, aerial systems research.</p>
-								<div class="skills-tags">
-									<span>Computer Vision</span>
-									<span>AI/ML</span>
-									<span>Linux</span>
-								</div>
-							</div>
-
-							<!-- Makerspace Intern (Jan 2024 - Jun 2025) - Column 0 -->
-							<div class="job-card" style="top: 275px; left: 0px; height: 375px;">
-								<h3>Makerspace Intern</h3>
-								<p class="duration">Jan 2024 - Jun 2025</p>
-								<p class="company">Clemson University Makerspace</p>
-								<p class="description">Assisted users with equipment, maintained cumaker.space website, and led workshops.</p>
-								<div class="skills-tags">
-									<span>3D Printing</span>
-									<span>Web Dev</span>
-									<span>Workshops</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-					<!-- Skills Section -->
-					<section>
-						<header class="major">
-							<h2>Technical Arsenal</h2>
-							<p>Tools & Technologies I Work With</p>
-						</header>
-
-						<h3 style="color: var(--secondary-accent); margin-top: 2em;">Programming Languages</h3>
-						<div class="skill-container">
-							<span class="skill-pill">Java</span>
-							<span class="skill-pill">C++</span>
-							<span class="skill-pill">C</span>
-							<span class="skill-pill">Python</span>
-							<span class="skill-pill">JavaScript</span>
-							<span class="skill-pill">HTML/CSS</span>
-						</div>
-
-						<h3 style="color: var(--secondary-accent); margin-top: 2em;">Research & AI</h3>
-						<div class="skill-container">
-							<span class="skill-pill">Machine Learning</span>
-							<span class="skill-pill">Computer Vision</span>
-							<span class="skill-pill">YOLOv8</span>
-							<span class="skill-pill">Human Factors</span>
-							<span class="skill-pill">Data Science</span>
-							<span class="skill-pill">Privacy Assessment</span>
-						</div>
-
-						<h3 style="color: var(--secondary-accent); margin-top: 2em;">Tools & Platforms</h3>
-						<div class="skill-container">
-							<span class="skill-pill">Linux</span>
-							<span class="skill-pill">Git</span>
-							<span class="skill-pill">Fusion 360</span>
-							<span class="skill-pill">Web Development</span>
-							<span class="skill-pill">CAD Design</span>
-							<span class="skill-pill">OSINT</span>
-						</div>
-					</section>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Anna <span class="hero-accent">Galeano</span>
+                    </h1>
+                    <p class="hero-description">
+                        I'm a passionate Computer Science student from Clemson University specializing in human-centered computing & autonomous systems.
+                    </p>
+                    
+                    <div class="hero-social">
+                        <a href="https://linkedin.com/in/connectedanna" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/VersatileVariable" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:agalean@clemson.edu" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="files/anna_galeano_resume.pdf" target="_blank" class="social-link">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="hero-shape-1"></div>
+                    <div class="hero-shape-2"></div>
+                    <div class="profile-image-container">
+                        <img src="images/anna-profile.jpg" alt="Anna Galeano" class="profile-image">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-terminal">
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <div class="terminal-dot red"></div>
+                            <div class="terminal-dot yellow"></div>
+                            <div class="terminal-dot green"></div>
+                        </div>
+                        <div class="terminal-title">anna@portfolio:~</div>
+                    </div>
+                    <div class="terminal-content" id="terminal-output">
+                        <div class="terminal-line system">Welcome to Anna Galeano's Interactive Portfolio Terminal</div>
+                        <div class="terminal-line system">Type 'help' to see available commands</div>
+                        <div class="terminal-line">&nbsp;</div>
+                        <div class="terminal-input-wrapper">
+                            <span class="terminal-prompt">anna@portfolio:~$ </span>
+                            <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type a command...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Geometric background shapes -->
+        <div class="hero-bg-shapes">
+            <div class="bg-shape-1"></div>
+            <div class="bg-shape-2"></div>
+            <div class="bg-shape-3"></div>
+        </div>
+    </section>
 
 
 
-				</div>
-			</div>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Bridging the gap between human needs and AI capabilities</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-main">
+                        <p>
+                            I'm a Computer Science student at Clemson University with a passion for human-centered 
+                            computing and autonomous systems. My work spans from developing autonomous vessels for 
+                            NATO exercises to conducting privacy assessments for automotive companies.
+                        </p>
+                        <p>
+                            Currently, I'm involved in cutting-edge research at TigerSec Laboratory focusing on 
+                            privacy assessments and data analysis. My experience includes internships with Special 
+                            Operations Command Europe, where I developed computer vision systems and autonomous 
+                            navigation solutions.
+                        </p>
+                    </div>
+                    <div class="about-highlights">
+                        <h3>Key Achievements</h3>
+                        <ul class="achievements-list">
+                            <li><i class="fas fa-award"></i> Military Child of the Year 2024</li>
+                            <li><i class="fas fa-trophy"></i> NASA Space Apps Challenge Winner</li>
+                            <li><i class="fas fa-shield-halved"></i> NATO Bold Machina 2025 Contributor</li>
+                            <li><i class="fas fa-graduation-cap"></i> AP Capstone Diploma Recipient</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-skills">
+                    <div class="skills-category">
+                        <h4>Programming Languages</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h4>Research & AI</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">YOLOv8</span>
+                            <span class="skill-tag">Human Factors</span>
+                            <span class="skill-tag">Data Science</span>
+                            <span class="skill-tag">Privacy Assessment</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h4>Tools & Platforms</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Fusion 360</span>
+                            <span class="skill-tag">Web Development</span>
+                            <span class="skill-tag">CAD Design</span>
+                            <span class="skill-tag">OSINT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<!-- Sidebar -->
-			<div id="sidebar">
-				<div class="inner">
-					<a href="index.html" class="ascii-logo">
-						<div class="logo-content">    <span class="paren">(</span>
-     <span class="paren">)</span>
-  <span class="cup">c[_]</span></div>
-					</a>
+    <!-- Experience Timeline -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">My journey through industry and academia</p>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-wrapper">
+                    <div class="timeline-line"></div>
+                    
+                    <!-- Experience Item 1 -->
+                    <div class="timeline-item active">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Sep 2025 - Present</div>
+                            <h3>Undergraduate Research Assistant</h3>
+                            <h4>TigerSec Laboratory - Clemson University</h4>
+                            <p>Conducting privacy assessments for automotive companies and analyzing data collection practices. Focus on cybersecurity research and data analysis methodologies.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Privacy Research</span>
+                                <span class="tag">Data Analysis</span>
+                                <span class="tag">Cybersecurity</span>
+                            </div>
+                        </div>
+                    </div>
 
-					<nav id="menu">
-						<header class="major">
-							<h2>Menu</h2>
-						</header>
-						<ul>
-							<li><a href="index.html">HOME</a></li>
-							<li><a href="about.html">ABOUT ME</a></li>
-							<li><a href="projects.html">PROJECTS</a></li>
-							<li id="technical-areas">
-								<span class="opener">TECHNICAL AREAS</span>
-								<ul>
-									<li><a href="technical-areas.html#data-science">Data Science</a></li>
-									<li><a href="technical-areas.html#web-development">Web Development</a></li>
-									<li><a href="technical-areas.html#human-ai-teaming">Human-AI Teaming</a></li>
-									<li><a href="technical-areas.html#autonomous-systems">Autonomous Systems</a></li>
-								</ul>
-							</li>
-							<li><a href="research.html">RESEARCH PAPERS</a></li>
-							<li><a href="resume.html">RESUME</a></li>
-							<li><a href="certifications.html">CERTIFICATIONS</a></li>
-							<li><a href="contact.html">CONTACT</a></li>
-						</ul>
-					</nav>
+                    <!-- Experience Item 2 -->
+                    <div class="timeline-item active">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Sep 2025 - Present</div>
+                            <h3>Adobe Creative Intern</h3>
+                            <h4>Adobe Creative Studio - Clemson</h4>
+                            <p>Supporting Creative Suite users with studio equipment and creative tools. Providing training and technical assistance to enhance user productivity.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Adobe CC</span>
+                                <span class="tag">User Support</span>
+                                <span class="tag">Training</span>
+                            </div>
+                        </div>
+                    </div>
 
-					<section>
-						<header class="major">
-							<h2>Recent Publications</h2>
-						</header>
-						<div class="mini-posts">
-							<article>
-								<a href="https://doi.org/10.1177/10711813241274425" class="image">
-									<div class="paper-logo">
-										<i class="fas fa-file-pdf"></i>
-									</div>
-								</a>
-							<p><strong>Human-AI Team Training</strong> <span class="publication-year">(2024)</span><br>
-							Co-Author, DOI: 10.1177/10711813241274425<br>
-							25% improvement in task efficiency with 120+ participants.</p>
-							</article>
-							<article>
-								<a href="https://doi.org/10.1007/s13278-021-00748-w" class="image">
-									<div class="paper-logo">
-										<i class="fas fa-file-pdf"></i>
-									</div>
-								</a>
-							<p><strong>COVID-19 Misinformation</strong> <span class="publication-year">(2021)</span><br>
-							Co-Author, Springer. Database cited 50+ times.</p>
-							</article>
-						</div>
-						<ul class="actions">
-							<li><a href="research.html" class="button">More Publications</a></li>
-						</ul>
-					</section>
+                    <!-- Experience Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jun - Aug 2025</div>
+                            <h3>DIU Fellow & TEIL Intern</h3>
+                            <h4>Special Operations Command Europe</h4>
+                            <p>Developed autonomous unmanned surface vessel (USV) for NATO's Bold Machina 2025 exercise. Implemented YOLOv8 computer vision, LUA navigation systems, and CAD design using Fusion 360.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Autonomous Navigation</span>
+                                <span class="tag">YOLOv8</span>
+                                <span class="tag">CAD Design</span>
+                                <span class="tag">NATO</span>
+                            </div>
+                        </div>
+                    </div>
 
-					<section>
-						<header class="major">
-							<h2>Get in Touch</h2>
-						</header>
-						<p>Open to discussing new projects, research opportunities, or collaborations.</p>
-						<ul class="contact">
-							<li class="icon solid fa-envelope"><a href="mailto:agalean@clemson.edu">agalean@clemson.edu</a></li>
-							<li class="icon solid fa-home">Clemson University<br />Clemson, SC 29634</li>
-						</ul>
-					</section>
+                    <!-- Experience Item 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Feb 2024 - May 2025</div>
+                            <h3>Student Research Assistant</h3>
+                            <h4>TRACE Lab - Clemson University</h4>
+                            <p>Conducted human-AI teaming research with 120+ participants, achieving 25% improvement in task efficiency. Specialized in data collection methodologies and academic writing.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Human-AI Teaming</span>
+                                <span class="tag">Research</span>
+                                <span class="tag">Data Analysis</span>
+                                <span class="tag">Academic Writing</span>
+                            </div>
+                        </div>
+                    </div>
 
-					<footer id="footer">
-						<p class="copyright">&copy; Anna Galeano. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>. Color palette inspired by <a href="https://pinterest.com" target="_blank">Madysen on Pinterest</a>.</p>
-					</footer>
-				</div>
-			</div>
-		</div>
+                    <!-- Experience Item 5 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jun - Aug 2024</div>
+                            <h3>AI Research Intern</h3>
+                            <h4>Special Operations Command Europe</h4>
+                            <p>Developed computer vision algorithms for target identification and aerial systems research. Worked extensively with Linux environments and AI/ML frameworks.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">AI/ML</span>
+                                <span class="tag">Linux</span>
+                                <span class="tag">Target Identification</span>
+                            </div>
+                        </div>
+                    </div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				// Dropdown functionality
-				document.querySelectorAll('#menu ul li .opener').forEach(opener => {
-					opener.addEventListener('click', function(e) {
-						e.preventDefault();
-						const parent = this.parentNode;
-						
-						if (parent.classList.contains('active')) {
-							parent.classList.remove('active');
-						} else {
-							document.querySelectorAll('#menu ul li.active').forEach(item => {
-								if (item !== parent) {
-									item.classList.remove('active');
-								}
-							});
-							parent.classList.add('active');
-						}
-					});
-				});
-				
-			// Floating particles
-			const particlesContainer = document.getElementById('particles-js');
-			if (particlesContainer) {
-				for (let i = 0; i < 40; i++) {
-					const particle = document.createElement('div');
-					particle.className = 'particle';
-					const size = Math.random() * 4 + 2;
-					particle.style.width = size + 'px';
-					particle.style.height = size + 'px';
-					particle.style.left = Math.random() * 100 + '%';
-					particle.style.animationDuration = Math.random() * 15 + 10 + 's';
-					particle.style.animationDelay = Math.random() * 8 + 's';
-					
-					// Use copper rose variations
-					if (Math.random() > 0.3) {
-						particle.style.background = 'rgba(146, 104, 104, 0.5)';
-						particle.style.boxShadow = '0 0 8px rgba(146, 104, 104, 0.3)';
-					} else {
-						particle.style.background = 'rgba(78, 55, 66, 0.4)';
-						particle.style.boxShadow = '0 0 6px rgba(78, 55, 66, 0.2)';
-					}
-					
-					particlesContainer.appendChild(particle);
-				}
-			}				// Terminal functionality
-				const terminalInput = document.getElementById('terminal-input');
-				const terminalOutput = document.getElementById('terminal-output');
+                    <!-- Experience Item 6 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jan 2024 - Jun 2025</div>
+                            <h3>Makerspace Intern</h3>
+                            <h4>Clemson University Makerspace</h4>
+                            <p>Assisted users with equipment including 3D printers and fabrication tools. Maintained the cumaker.space website and led technical workshops for students.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">3D Printing</span>
+                                <span class="tag">Web Development</span>
+                                <span class="tag">Technical Training</span>
+                                <span class="tag">Equipment Maintenance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				if (terminalInput) {
-					terminalInput.addEventListener('keydown', function(e) {
-						if (e.key === 'Enter') {
-							const command = terminalInput.value.trim().toLowerCase();
-							
-							if (command) {
-								addTerminalLine(`$ ${command}`, 'terminal-input');
-								processCommand(command);
-							}
-							
-							terminalInput.value = '';
-							terminalOutput.scrollTop = terminalOutput.scrollHeight;
-						}
-					});
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Innovation meets impact</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-satellite project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>NASA FLARESat</h3>
+                        <p>NASA Space Apps Challenge 2025 winner. Complete satellite constellation with CAD model, simulated data, and working dashboard comparing against NASA FIRMS satellites.</p>
+                        <div class="project-tags">
+                            <span class="tag">Satellite Systems</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">CAD Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://versatilevariable.github.io/NASA_FLARE-Sat/" class="btn btn-primary">View Project</a>
+                            <a href="#" class="btn btn-secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
 
-					// Focus terminal on load
-					setTimeout(() => terminalInput.focus(), 500);
-				}
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-ship project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>NATO Autonomous USV</h3>
+                        <p>Autonomous vessel for NATO's Bold Machina 2025. Features YOLOv8 computer vision, LUA navigation, and Fusion 360 CAD design.</p>
+                        <div class="project-tags">
+                            <span class="tag">Autonomous Systems</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">NATO</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="projects.html#usv" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
 
-				function addTerminalLine(text, className) {
-					const line = document.createElement('div');
-					line.className = `terminal-line ${className}`;
-					line.textContent = text;
-					
-					// Insert before input line
-					const inputLine = terminalOutput.querySelector('.terminal-input-line');
-					terminalOutput.insertBefore(line, inputLine);
-				}
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-shield-alt project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Automotive Privacy Assessment</h3>
+                        <p>TigerSec Laboratory research analyzing automotive data collection practices and security protocols for major automotive companies.</p>
+                        <div class="project-tags">
+                            <span class="tag">Privacy Research</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Cybersecurity</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="research.html#privacy" class="btn btn-primary">View Research</a>
+                        </div>
+                    </div>
+                </div>
 
-				function processCommand(command) {
-					if (command === 'help') {
-						addTerminalLine('Available commands:', 'terminal-output');
-						addTerminalLine('  about       - Learn about me', 'terminal-output');
-						addTerminalLine('  skills      - View my technical skills', 'terminal-output');
-						addTerminalLine('  experience  - Show my work experience', 'terminal-output');
-						addTerminalLine('  projects    - List my notable projects', 'terminal-output');
-						addTerminalLine('  research    - View my research publications', 'terminal-output');
-						addTerminalLine('  resume      - Download my resume', 'terminal-output');
-						addTerminalLine('  contact     - Show my contact information', 'terminal-output');
-						addTerminalLine('  clear       - Clear the terminal', 'terminal-output');
-					} else if (command === 'about') {
-						addTerminalLine('━━━ ABOUT ME ━━━', 'terminal-heading');
-						addTerminalLine("I'm Anna Galeano, a Computer Science student at Clemson University.", 'terminal-output');
-						addTerminalLine("Specializing in human-centered computing and autonomous systems.", 'terminal-output');
-					} else if (command === 'skills') {
-						addTerminalLine('━━━ TECHNICAL SKILLS ━━━', 'terminal-heading');
-						addTerminalLine('• Languages: Java, C++, C, JavaScript, Python', 'terminal-output');
-						addTerminalLine('• Research: Machine Learning, Computer Vision, Human Factors', 'terminal-output');
-						addTerminalLine('• Tools: Linux, Git, Fusion 360, Web Development', 'terminal-output');
-					} else if (command === 'experience') {
-						addTerminalLine('━━━ WORK EXPERIENCE ━━━', 'terminal-heading');
-						addTerminalLine('• Adobe Intern (Sep 2025 - Present)', 'terminal-output');
-						addTerminalLine('• TigerSec Laboratory (Sep 2025 - Present)', 'terminal-output');
-						addTerminalLine('• SOCEUR - DIU Fellow (Jun 2025 - Aug 2025)', 'terminal-output');
-					} else if (command === 'projects') {
-						addTerminalLine('━━━ NOTABLE PROJECTS ━━━', 'terminal-heading');
-						addTerminalLine('1. NASA FLARESat - Award-winning hackathon project', 'terminal-output');
-						addTerminalLine('2. NATO Autonomous USV - Bold Machina 2025', 'terminal-output');
-						addTerminalLine('3. Automotive Privacy Assessment - TigerSec Lab', 'terminal-output');
-					} else if (command === 'research') {
-						addTerminalLine('━━━ RESEARCH PUBLICATIONS ━━━', 'terminal-heading');
-						addTerminalLine('• Human-AI Team Training (2024)', 'terminal-output');
-						addTerminalLine('• COVID-19 Misinformation Analysis (2021)', 'terminal-output');
-					} else if (command === 'resume') {
-						addTerminalLine('Downloading resume...', 'terminal-output');
-						window.location.href = 'files/anna_galeano_resume.pdf';
-					} else if (command === 'contact') {
-						addTerminalLine('━━━ CONTACT INFO ━━━', 'terminal-heading');
-						addTerminalLine('• Email: agalean@clemson.edu', 'terminal-output');
-						addTerminalLine('• LinkedIn: linkedin.com/in/connectedanna', 'terminal-output');
-						addTerminalLine('• GitHub: github.com/VersatileVariable', 'terminal-output');
-					} else if (command === 'clear') {
-						// Clear all lines except welcome message and input
-						const lines = terminalOutput.querySelectorAll('.terminal-line:not(.terminal-input-line)');
-						lines.forEach(line => {
-							if (!line.classList.contains('terminal-system') && !line.classList.contains('terminal-input-line')) {
-								line.remove();
-							}
-						});
-					} else {
-						addTerminalLine(`Command not found: ${command}. Type 'help' for available commands.`, 'terminal-output');
-					}
-				}
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-heartbeat project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Chagas Disease Detection</h3>
+                        <p>ML system using balanced random forest classification. Achieved 60% true positive rate with less than 13% false positives.</p>
+                        <div class="project-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Healthcare</span>
+                            <span class="tag">Classification</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="research.html#chagas" class="btn btn-primary">View Research</a>
+                        </div>
+                    </div>
+                </div>
 
-				// Smooth scroll for internal links
-				document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-					anchor.addEventListener('click', function (e) {
-						const href = this.getAttribute('href');
-						if (href !== '#' && document.querySelector(href)) {
-							e.preventDefault();
-							document.querySelector(href).scrollIntoView({
-								behavior: 'smooth'
-							});
-						}
-					});
-				});
-			});
-		</script>
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-map-marked-alt project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Death Valley Dash</h3>
+                        <p>AI-powered campus scavenger hunt with real-time GPS tracking and intelligent hint system for enhanced user experience.</p>
+                        <div class="project-tags">
+                            <span class="tag">AI</span>
+                            <span class="tag">GPS Tracking</span>
+                            <span class="tag">Game Development</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">View Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-user-secret project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Security Breadcrumbs</h3>
+                        <p>OSINT research tool that found 75.5% of LinkedIn profiles posed security risks, with 12% classified as high-risk.</p>
+                        <div class="project-tags">
+                            <span class="tag">OSINT</span>
+                            <span class="tag">Security Research</span>
+                            <span class="tag">Data Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="research.html#linkedin" class="btn btn-primary">View Research</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Research Publications</h2>
+                <p class="section-subtitle">Contributing to the advancement of human-AI collaboration</p>
+            </div>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-header">
+                        <div class="research-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="research-year">2024</div>
+                    </div>
+                    <h3>Human-AI Team Training</h3>
+                    <p class="research-journal">Co-Author • DOI: 10.1177/10711813241274425</p>
+                    <p class="research-description">
+                        Research demonstrating 25% improvement in task efficiency through structured human-AI team training with 120+ participants.
+                    </p>
+                    <div class="research-metrics">
+                        <span class="metric">120+ Participants</span>
+                        <span class="metric">25% Efficiency Gain</span>
+                    </div>
+                    <a href="https://doi.org/10.1177/10711813241274425" class="btn btn-secondary">View Publication</a>
+                </div>
+
+                <div class="research-card">
+                    <div class="research-header">
+                        <div class="research-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="research-year">2021</div>
+                    </div>
+                    <h3>COVID-19 Misinformation Analysis</h3>
+                    <p class="research-journal">Co-Author • Springer • Social Network Analysis and Mining</p>
+                    <p class="research-description">
+                        Comprehensive database and analysis of COVID-19 misinformation patterns. Database has been cited 50+ times in academic literature.
+                    </p>
+                    <div class="research-metrics">
+                        <span class="metric">50+ Citations</span>
+                        <span class="metric">Springer Published</span>
+                    </div>
+                    <a href="https://doi.org/10.1007/s13278-021-00748-w" class="btn btn-secondary">View Publication</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Career Gallery</h2>
+                <p class="section-subtitle">Moments from my professional journey</p>
+            </div>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Gallery items will be populated via JavaScript -->
+                <div class="gallery-item">
+                    <img src="images/gallery/nato-usv.jpg" alt="NATO USV Development" data-caption="Working on autonomous USV for NATO Bold Machina 2025">
+                    <div class="gallery-overlay">
+                        <h4>NATO USV Project</h4>
+                        <p>Autonomous vessel development</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery/research-lab.jpg" alt="Research Lab" data-caption="Conducting research at TigerSec Laboratory">
+                    <div class="gallery-overlay">
+                        <h4>TigerSec Laboratory</h4>
+                        <p>Privacy assessment research</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery/nasa-hackathon.jpg" alt="NASA Space Apps Challenge" data-caption="NASA Space Apps Challenge 2025 - Winning team">
+                    <div class="gallery-overlay">
+                        <h4>NASA Space Apps Challenge</h4>
+                        <p>Award-winning FLARESat project</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery/makerspace.jpg" alt="Clemson Makerspace" data-caption="Leading workshops at Clemson University Makerspace">
+                    <div class="gallery-overlay">
+                        <h4>Makerspace Workshops</h4>
+                        <p>Technical training sessions</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery/presentation.jpg" alt="Research Presentation" data-caption="Presenting research findings at academic conference">
+                    <div class="gallery-overlay">
+                        <h4>Research Presentation</h4>
+                        <p>Academic conference</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery/team-meeting.jpg" alt="Team Meeting" data-caption="Collaborating with research team members">
+                    <div class="gallery-overlay">
+                        <h4>Team Collaboration</h4>
+                        <p>Research team meeting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gallery Modal -->
+        <div id="gallery-modal" class="gallery-modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <img id="modal-image" src="" alt="">
+                <div id="modal-caption" class="modal-caption"></div>
+                <div class="modal-nav">
+                    <button id="modal-prev" class="modal-nav-btn">❮</button>
+                    <button id="modal-next" class="modal-nav-btn">❯</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Open to discussing new opportunities and collaborations</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:agalean@clemson.edu">agalean@clemson.edu</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com/in/connectedanna" target="_blank">linkedin.com/in/connectedanna</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/VersatileVariable" target="_blank">github.com/VersatileVariable</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <span>Clemson, SC</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 Anna Galeano. All rights reserved.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/connectedanna" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/VersatileVariable" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:agalean@clemson.edu"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 	</body>
 </html>

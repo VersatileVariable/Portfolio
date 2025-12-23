@@ -5,7 +5,7 @@
 :root {
     /* Console Terminal Colors */
     --console-bg: #0C0C0C;
-    --console-text: #CCCCCC;
+    --console-text: #222222;
     --console-green: #0DBC79;
     --console-blue: #3B82F6;
     --console-yellow: #FDE047;
