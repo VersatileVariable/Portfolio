@@ -102,6 +102,124 @@ a:hover {
     color: var(--accent-secondary);
 }
 
+/* ========================================
+   SECTION COLOR TRANSITIONS
+   ======================================== */
+.about-section {
+    position: relative;
+}
+
+.about-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(to bottom, 
+        var(--dark-bg) 0%, 
+        var(--dark-bg) 20%, 
+        #4a3a4d 20%, 
+        #4a3a4d  40%, 
+        #6b5a6e 40%, 
+        #6b5a6e  60%, 
+        #7c6b7f 60%, 
+        #7c6b7f 80%, 
+        #8B7A8E 80%, 
+        #8B7A8E 100%);
+}
+
+.experience-section {
+    position: relative;
+}
+
+.experience-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(to bottom, 
+        #8B7A8E 0%, 
+        #8B7A8E 20%, 
+        #7c6b7f 20%, 
+        #7c6b7f 40%, 
+        #6b5a6e 40%, 
+        #6b5a6e 60%, 
+        #4a3a4d 60%, 
+        #4a3a4d 80%, 
+        var(--dark-bg) 80%, 
+        var(--dark-bg) 100%);
+}
+
+.projects-section {
+    position: relative;
+}
+
+.projects-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(to bottom, 
+        var(--dark-bg) 0%, 
+        var(--dark-bg) 20%, 
+        #4a3a4d 20%, 
+        #4a3a4d 40%, 
+        #6b5a6e 40%, 
+        #6b5a6e 60%, 
+        #7c6b7f 60%, 
+        #7c6b7f 80%, 
+        #8B7A8E 80%, 
+        #8B7A8E 100%);
+}
+
+.research-section {
+    position: relative;
+}
+
+.research-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(to bottom, 
+        #8B7A8E 0%, 
+        #8B7A8E 20%, 
+        #7c6b7f 20%, 
+        #7c6b7f 40%, 
+        #6b5a6e 40%, 
+        #6b5a6e 60%, 
+        #4a3a4d 60%, 
+        #4a3a4d 80%, 
+        var(--dark-bg) 80%, 
+        var(--dark-bg) 100%);
+}
+
+.gallery-section {
+    position: relative;
+}
+
+.gallery-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 10;
+    background: var(--dark-bg);
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
