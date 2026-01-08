@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   addLine(content, '  experience  - Show my work experience', 'output');
                   addLine(content, '  projects    - List my notable projects', 'output');
                   addLine(content, '  research    - View my research publications', 'output');
+                  addLine(content, '  media       - View media coverage and articles', 'output');
                   addLine(content, '  resume      - Download my resume', 'output');
                   addLine(content, '  contact     - Show my contact information', 'output');
                   addLine(content, '  clear       - Clear the terminal', 'output');
@@ -179,6 +180,14 @@ document.addEventListener('DOMContentLoaded', function() {
                   addLine(content, '  Co-Author, DOI: 10.1177/10711813241274425', 'output');
                   addLine(content, '• COVID-19 Misinformation Analysis (2021)', 'output');
                   addLine(content, '  Co-Author, Social Network Analysis and Mining 11, Springer', 'output');
+                  break;
+                  
+              case 'media':
+                  addLine(content, '━━━ MEDIA COVERAGE ━━━', 'heading');
+                  addLine(content, '• "Sharing the Peace Light" - Stars and Stripes Europe', 'output');
+                  addLine(content, '  By Nick Galeano, December 23, 2025', 'output');
+                  addLine(content, '  Featured article about Boy Scout Peace Light ceremony', 'output');
+                  addLine(content, '  Focus: Community service, international scouting, peace initiatives', 'output');
                   break;
                   
               case 'resume':

@@ -120,6 +120,7 @@
                 addTerminalLine('  experience  - Show work experience', 'output');
                 addTerminalLine('  projects    - List notable projects', 'output');
                 addTerminalLine('  research    - View research publications', 'output');
+                addTerminalLine('  media       - View media coverage and articles', 'output');
                 addTerminalLine('  contact     - Show contact information', 'output');
                 addTerminalLine('  resume      - Download resume', 'output');
                 addTerminalLine('  clear       - Clear the terminal', 'output');
@@ -160,6 +161,13 @@
                 addTerminalLine('• Human-AI Team Training (2024) - 25% efficiency improvement', 'output');
                 addTerminalLine('• COVID-19 Misinformation Analysis (2021) - 50+ citations', 'output');
                 addTerminalLine('• Privacy assessments for automotive industry (ongoing)', 'output');
+            },
+            media: () => {
+                addTerminalLine('━━━ MEDIA COVERAGE ━━━', 'heading');
+                addTerminalLine('• "Sharing the Peace Light" - Stars and Stripes Europe', 'output');
+                addTerminalLine('  By Nick Galeano, December 23, 2025', 'output');
+                addTerminalLine('  Featured article about Boy Scout Peace Light ceremony', 'output');
+                addTerminalLine('  URL: europe.stripes.com/kids/sharing-the-peace-light.html', 'output');
             },
             contact: () => {
                 addTerminalLine('━━━ CONTACT INFORMATION ━━━', 'heading');
