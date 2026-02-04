@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-	<title>Projects | Anna Galeano</title>
+	<title>Projects & Research | Anna Galeano</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -19,6 +19,52 @@
 		.category-tabs { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.25rem; }
 		.category-tabs .tab { padding:0.5rem 0.9rem; background:#f4f4f4; border-radius:6px; cursor:pointer; }
 		.category-tabs .tab.active { background:#e6e6e6; font-weight:600; }
+		
+		/* Publication styling */
+		.publication {
+			border-left: 4px solid #926868;
+			background-color: rgba(255, 255, 255, 0.9);
+			padding: 2em;
+			padding-left: 2.5em;
+			margin-bottom: 2.5em;
+			border-radius: 8px;
+			box-shadow: 0 2px 10px rgba(146, 104, 104, 0.1);
+			transition: transform 0.18s ease, box-shadow 0.18s ease;
+			border: 1px solid rgba(146, 104, 104, 0.2);
+		}
+		
+		.publication:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 8px 25px rgba(146, 104, 104, 0.2);
+			border-color: #926868;
+		}
+		
+		.publication h3 {
+			margin-top: 0;
+			margin-bottom: 0.7em;
+			color: #926868;
+			font-size: 1.5em;
+			font-weight: 700;
+		}
+		
+		.publication .meta {
+			font-size: 0.9em;
+			margin-bottom: 1.2em;
+			line-height: 1.6;
+			color: #6b5a66;
+			opacity: 0.9;
+		}
+		
+		.section-divider {
+			margin: 4rem 0;
+			padding: 2rem 0;
+			border-top: 2px solid rgba(146, 104, 104, 0.2);
+		}
+		
+		.section-divider h2 {
+			color: #926868;
+			margin-bottom: 1rem;
+		}
 	</style>
 </head>
 <body class="is-preload">
@@ -42,7 +88,7 @@
 				<!-- Content -->
 				<section>
 					<header class="main">
-						<h1>Projects</h1>
+						<h1>Work</h1>
 					</header>
 
 					<p>As a computer science student with a focus on data science, web development, and human-AI teaming, my projects reflect my interdisciplinary interests. Below you'll find a selection of technical work that demonstrates my skills and research focus areas.</p>
@@ -192,6 +238,109 @@
 					<div id="data-science" class="project-group"></div>
 					<div id="web-dev" class="project-group"></div>
 					<div id="ai" class="project-group"></div>
+
+					<!-- Research Publications Section -->
+					<div class="section-divider">
+						<header class="major">
+							<h2>Research Publications</h2>
+						</header>
+						<p>My research focuses on human-AI interaction, collaborative AI systems, medical data analysis, cybersecurity, and misinformation detection. Below are my academic contributions exploring how AI and data analysis can augment human capabilities and address complex problems.</p>
+					</div>
+
+					<!-- Publication 1 - Newest -->
+					<div class="publication">
+						<h3>Clemson Versus Chagas</h3>
+						<div class="meta">
+							<strong>Conference:</strong> 2025 George B. Moody PhysioNet Challenge, 2025<br>
+							<strong>Authors:</strong> Toby Cox, <strong>Anna Galeano</strong>, Varun Sethi, Aaron J. Masino<br>
+							<strong>Affiliation:</strong> Clemson University, Clemson, South Carolina
+						</div>
+						
+						<p>This research addresses Chagas disease detection using 12-lead electrocardiogram (ECG) data, employing machine learning techniques to improve identification accuracy despite significant class imbalance.</p>
+						
+						<div class="abstract">
+							<strong>Abstract:</strong> This project addresses the 2025 George B. Moody PhysioNet Challenge focusing on Chagas detection using 12-lead electrocardiogram (ECG) data. Our approach used a balanced random forest classification (BRFC) with SMOTE to address class imbalance. Feature engineering extracted metrics including R-R peak distances, QRS widths, and FFT components from standardized ECG signals. After training in the CODE-15% data set, the model achieved 60% true positive identification while maintaining fewer than 13% false positives, with an AUC of approximately 0.82. Feature importance analysis revealed that variance in FFT magnitude and average QRS distance, particularly in AVR and DI leads, were the most significant predictors. While establishing a useful baseline, we determined BRFC is insufficient for optimal Chagas detection and are developing a Kolmogorov-Arnold Network (KAN) model that leverages grid extension techniques, B-spline architecture, and interpretable results for improved medical applications with diverse patient populations.
+						</div>
+						
+						<div class="tags">
+							<span>Machine Learning</span>
+							<span>Medical Data</span>
+							<span>Python</span>
+							<span>Chagas Disease</span>
+							<span>ECG Analysis</span>
+						</div>
+					</div>
+					
+					<!-- Publication 2 -->
+					<div class="publication">
+						<h3>Human-AI Team Training: Optimizing Collaborative Performance in Mixed-Intelligence Environments</h3>
+						<div class="meta">
+							<strong>Journal:</strong> Journal of Human Factors and Ergonomics Society, 2024<br>
+							<strong>DOI:</strong> <a href="https://doi.org/10.1177/10711813241274425" target="_blank">10.1177/10711813241274425</a><br>
+							<strong>Authors:</strong> Christopher Flathmann, Beau G. Schelble, <strong>Anna Galeano</strong>
+						</div>
+						
+						<p>This study demonstrates novel training methodologies for human-AI teams across 120+ participants, showing a 25% improvement in task efficiency when using our structured collaborative learning approach.</p>
+						
+						<div class="abstract">
+							<strong>Abstract:</strong> As artificial intelligence becomes increasingly integrated into workplace decision-making, effective training for human-AI collaboration becomes essential. This paper presents results from a series of experiments involving 127 participants engaged in collaborative problem-solving with AI assistants. We introduce a structured training protocol that emphasizes mutual understanding, appropriate trust calibration, and efficient communication patterns. Results demonstrate significant performance improvements (25% reduction in time-to-solution, p&lt;0.01) and higher satisfaction ratings compared to traditional training approaches. We provide guidelines for implementing effective human-AI training programs across domains and discuss implications for organizational adoption of collaborative intelligence systems.
+						</div>
+						
+						<div class="tags">
+							<span>Human-AI Teaming</span>
+							<span>Collaborative Systems</span>
+							<span>Trust Calibration</span>
+							<span>Training Methodologies</span>
+						</div>
+					</div>
+
+					<!-- Publication 3 -->
+					<div class="publication">
+						<h3>Chasing Bread Crumbs: How Sharing Seemingly Irrelevant Information May Prove to be a Vulnerability</h3>
+						<div class="meta">
+							<strong>Status:</strong> Research Paper, 2023<br>
+							<strong>Word Count:</strong> 3642<br>
+							<strong>Author:</strong> <strong>Anna Galeano</strong>
+						</div>
+						
+						<p>This paper examines how seemingly innocuous information shared on social media and professional platforms can create security vulnerabilities when analyzed collectively, particularly for military personnel and their families.</p>
+						
+						<div class="abstract">
+							<strong>Abstract:</strong> This study investigates how small pieces of information shared online can act as "breadcrumbs" that adversaries may follow to access sensitive or critical information. Using web scraping techniques to analyze LinkedIn profiles of U.S. military personnel, the research demonstrates how Operations Security (OPSEC) can be compromised through the aggregation of publicly available data. The paper follows the OPSEC process to identify critical information and indicators, assess threats, analyze vulnerabilities, assess risk, and recommend appropriate countermeasures. Results showed that 75.5% of sampled accounts posed potential security risks, with 12% classified as high-risk. The research highlights the importance of comprehensive OPSEC awareness among military personnel and their families, who are often identified as the weakest link in information security.
+						</div>
+						
+						<div class="tags">
+							<span>Web Scraping</span>
+							<span>OSINT</span>
+							<span>Python</span>
+							<span>Security</span>
+							<span>Social Media Analysis</span>
+						</div>
+					</div>
+					
+					<!-- Publication 4 - Oldest -->
+					<div class="publication">
+						<h3>COVID-19 Misinformation Analysis: Detection and Classification of Misleading Health Content on Social Media</h3>
+						<div class="meta">
+							<strong>Journal:</strong> Social Network Analysis and Mining 11, Springer, 2021<br>
+							<strong>DOI:</strong> <a href="https://doi.org/10.1007/s13278-021-00748-w" target="_blank">https://doi.org/10.1007/s13278-021-00748-w</a><br>
+							<strong>Authors:</strong> Thomas Marcoux, Katrin Galeano, Rick Galeano, Karen DiCicco, Hayder Al Rubaye, Esther Mead, Nitin Agarwal, <strong>Anna Galeano</strong>
+						</div>
+						
+						<p>This paper presents methodologies for real-time misinformation detection during the COVID-19 pandemic, resulting in a public database that has been cited over 50 times in subsequent research.</p>
+						
+						<div class="abstract">
+							<strong>Abstract:</strong> The COVID-19 pandemic has been accompanied by an "infodemic" of misleading and false information spreading across social media platforms. This paper presents a multi-modal approach to misinformation detection, combining natural language processing, network analysis, and behavioral pattern recognition to identify and classify misleading health information. Our system achieved 87% accuracy in identifying misinformation from mixed-media posts across Twitter, Facebook, and Instagram. We provide an open-access database of over 10,000 classified posts that researchers can use for further analysis. Additionally, we identify key propagation patterns that differentiate how accurate versus misleading information spreads through social networks, offering insights for intervention strategies to combat health misinformation.
+						</div>
+						
+						<div class="tags">
+							<span>Misinformation</span>
+							<span>COVID-19</span>
+							<span>Data Analysis</span>
+							<span>Social Networks</span>
+							<span>Public Health</span>
+						</div>
+					</div>
 
 				</section>
 

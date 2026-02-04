@@ -724,10 +724,11 @@ a:hover {
     flex: 1;
     background: transparent;
     border: none;
-    color: #333333;
+    color: #261627 !important;
     font-family: inherit;
     font-size: 0.9rem;
     outline: none;
+    -webkit-text-fill-color: #261627;
 }
 
 .terminal-input::placeholder {
