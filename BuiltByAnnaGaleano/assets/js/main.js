@@ -20,20 +20,40 @@
     const modalPrev = document.getElementById('modal-prev');
     const modalNext = document.getElementById('modal-next');
     const contactForm = document.getElementById('contact-form');
-    const particlesContainer = document.getElementById('particles');
+    const siteLoader = document.getElementById('site-loader');
+    const loaderLogoShell = document.getElementById('loader-logo-shell');
+    const loaderLogoImage = document.getElementById('loader-logo-image');
+    const loaderLogoVideo = document.getElementById('loader-logo-video');
+    const navLogoMark = document.getElementById('nav-logo-mark');
 
     let currentGalleryIndex = 0;
 
     // Initialize when DOM is loaded
     document.addEventListener('DOMContentLoaded', function() {
+        forcePageTop();
+        document.body.classList.remove('is-preload');
+        initPageLoader();
         initNavigation();
         initTerminal();
         initGallery();
         initContactForm();
-        initParticles();
         initScrollEffects();
         initSmoothScroll();
     });
+
+    window.addEventListener('pageshow', function() {
+        forcePageTop();
+    });
+
+    function forcePageTop() {
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
+        }
+
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+    }
 
     /**
      * Navigation functionality
@@ -85,6 +105,103 @@
                 }
             });
         });
+    }
+
+
+    /**
+     * Full-screen loader that animates the logo from center to upper left navbar.
+     */
+    function initPageLoader() {
+        if (!siteLoader || !loaderLogoShell || !navLogoMark) return;
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let hasStartedExit = false;
+        let fadeTimer = null;
+
+        document.body.classList.add('is-loading');
+
+        if (loaderLogoVideo) {
+            loaderLogoVideo.loop = false;
+
+            loaderLogoVideo.addEventListener('loadeddata', function() {
+                loaderLogoVideo.style.opacity = '1';
+                if (loaderLogoImage) loaderLogoImage.style.opacity = '0';
+            }, { once: true });
+
+            loaderLogoVideo.addEventListener('error', function() {
+                if (loaderLogoImage) loaderLogoImage.style.opacity = '1';
+            }, { once: true });
+
+            const playPromise = loaderLogoVideo.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(() => {
+                    // Keep loader animation even if autoplay is blocked.
+                });
+            }
+        }
+
+        if (prefersReducedMotion) {
+            finishLoader();
+            return;
+        }
+
+        // Start animation after 2.5 seconds
+        window.setTimeout(startExitTransition, 2500);
+
+        function startExitTransition() {
+            if (hasStartedExit) return;
+            hasStartedExit = true;
+
+            // Force layout computation to ensure navbar is positioned
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    const startRect = loaderLogoShell.getBoundingClientRect();
+                    const targetRect = navLogoMark.getBoundingClientRect();
+
+                    // Fallback values if navbar hasn't rendered yet
+                    const targetWidth = targetRect.width > 0 ? targetRect.width : 42;
+                    const targetHeight = targetRect.height > 0 ? targetRect.height : 42;
+                    const targetX = targetRect.left > 0 ? targetRect.left : (window.innerWidth - targetWidth) / 2;
+                    const targetY = Math.max((targetRect.top > 50 ? targetRect.top : 30) - 20, 10);
+
+                    const startCenterX = startRect.left + (startRect.width / 2);
+                    const startCenterY = startRect.top + (startRect.height / 2);
+                    const targetCenterX = targetX + (targetWidth / 2);
+                    const targetCenterY = targetY + (targetHeight / 2);
+
+                    const deltaX = targetCenterX - startCenterX;
+                    const deltaY = targetCenterY - startCenterY;
+                    const targetScale = Math.min(
+                        targetWidth / startRect.width,
+                        targetHeight / startRect.height
+                    );
+
+                    loaderLogoShell.style.transition = 'transform 1.15s cubic-bezier(0.22, 1, 0.36, 1)';
+                    loaderLogoShell.style.opacity = '1';
+                    siteLoader.style.transition = 'none';
+
+                    requestAnimationFrame(function() {
+                        loaderLogoShell.style.transform = 'translate(' + deltaX + 'px, ' + deltaY + 'px) scale(' + targetScale + ')';
+
+                        fadeTimer = window.setTimeout(function() {
+                            siteLoader.style.transition = 'opacity 0.35s ease-out';
+                            siteLoader.classList.add('is-exiting');
+                        }, 1150);
+                    });
+
+                    window.setTimeout(finishLoader, 1550);
+                });
+            });
+        }
+
+        function finishLoader() {
+            document.body.classList.remove('is-loading');
+            forcePageTop();
+
+            if (siteLoader && siteLoader.parentNode) {
+                siteLoader.parentNode.removeChild(siteLoader);
+            }
+        }
     }
 
     /**
@@ -313,34 +430,6 @@
                 submitButton.textContent = 'Send Message';
             }, 2000);
         });
-    }
-
-    /**
-     * Floating particles animation
-     */
-    function initParticles() {
-        if (!particlesContainer) return;
-
-        const particleCount = 30;
-        
-        for (let i = 0; i < particleCount; i++) {
-            createParticle();
-        }
-
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            
-            // Random size and properties
-            const size = Math.random() * 4 + 2;
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
-            particle.style.animationDelay = Math.random() * 5 + 's';
-            
-            particlesContainer.appendChild(particle);
-        }
     }
 
     /**

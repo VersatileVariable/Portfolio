@@ -11,13 +11,27 @@
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body class="is-preload">
+    <div id="site-loader" class="site-loader" aria-hidden="true">
+        <div id="loader-logo-shell" class="loader-logo-shell">
+            <img id="loader-logo-image" class="loader-logo-image" src="files/LogoTrans.png" alt="Anna Galeano logo" aria-hidden="true">
+            <video
+                id="loader-logo-video"
+                class="loader-logo-video"
+                muted
+                playsinline
+                preload="auto"
+                aria-hidden="true"
+            >
+                <source src="files/AnnaLogo.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <div class="ascii-logo">      (
-        )
-     c[_]</div>
+                <img id="nav-logo-mark" class="nav-logo-mark" src="files/Logo.png" alt="Anna Galeano logo">
                 <a href="#hero">Anna Galeano</a>
             </div>
             <ul class="nav-menu">
@@ -106,6 +120,7 @@
             <div class="bg-shape-2"></div>
             <div class="bg-shape-3"></div>
         </div>
+        
     </section>
 
 

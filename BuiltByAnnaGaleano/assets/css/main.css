@@ -66,6 +66,82 @@ body {
     overflow-x: hidden;
 }
 
+/* ========================================
+   PAGE LOADER
+   ======================================== */
+body.is-loading {
+    overflow: hidden;
+}
+
+#nav-logo-mark {
+    transition: opacity 0.4s ease;
+}
+
+.nav-logo-mark {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    display: block;
+    margin-right: 1rem;
+    transform-origin: center center;
+}
+
+.site-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-bg);
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 1.5s ease-out;
+}
+
+.site-loader.is-exiting {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader-logo-shell {
+    width: min(48vw, 520px);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center center;
+    will-change: transform, opacity;
+    position: relative;
+}
+
+.loader-logo-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.loader-logo-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .loader-logo-shell {
+        width: min(68vw, 360px);
+    }
+}
+
 .container {
     max-width: var(--container-max-width);
     margin: 0 auto;
@@ -508,7 +584,6 @@ a:hover {
     background: linear-gradient(45deg, var(--accent-primary), var(--accent-light));
     border-radius: 30% 70% 70% 30%;
     opacity: 0.1;
-    animation: float 6s ease-in-out infinite;
 }
 
 .bg-shape-2 {
@@ -520,7 +595,6 @@ a:hover {
     background: var(--accent-light);
     border-radius: 50px;
     opacity: 0.1;
-    animation: float 8s ease-in-out infinite reverse;
 }
 
 .bg-shape-3 {
@@ -532,12 +606,6 @@ a:hover {
     background: var(--accent-primary);
     border-radius: 50%;
     opacity: 0.1;
-    animation: float 10s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(5deg); }
 }
 
 /* Hero Terminal */
@@ -554,44 +622,6 @@ a:hover {
     box-shadow: var(--shadow-heavy);
     font-family: var(--font-mono);
     max-width: none;
-}
-
-/* Particles Animation */
-.particles-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: var(--accent-light);
-    border-radius: 50%;
-    opacity: 0.6;
-    animation: float 20s infinite linear;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(100vh) translateX(0);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.6;
-    }
-    90% {
-        opacity: 0.6;
-    }
-    100% {
-        transform: translateY(-100px) translateX(100px);
-        opacity: 0;
-    }
 }
 
 /* ========================================
@@ -1769,25 +1799,6 @@ a:hover {
     transition: none !important;
 }
 
-	/* Spacing */
-	--spacing-xs: 0.5em;
-	--spacing-sm: 1em;
-	--spacing-md: 2em;
-	--spacing-lg: 3em;
-	--spacing-xl: 4em;
-
-	/* Border Radius */
-	--radius-sm: 0.375em;
-	--radius-md: 0.5em;
-	--radius-lg: 0.75em;
-	--radius-xl: 1em;
-
-	/* Transitions */
-	--transition-fast: 0.15s ease;
-	--transition-normal: 0.3s ease;
-	--transition-slow: 0.5s ease;
-}
-
 /* ========================================
    RESET
    ======================================== */
@@ -2146,7 +2157,6 @@ header.major h2::after {
 	opacity: 0.95;
 	letter-spacing: 0.8px;
 	font-weight: 500;
-}
 }
 
 header.main > :last-child {
