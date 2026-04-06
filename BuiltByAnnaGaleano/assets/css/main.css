@@ -1104,6 +1104,19 @@ a:hover {
     margin-top: 1rem;
 }
 
+.project-links .btn {
+    text-align: center;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.btn:focus-visible,
+.social-link:focus-visible {
+    outline: 3px solid var(--accent-light);
+    outline-offset: 2px;
+}
+
 /* ========================================
    RESEARCH SECTION
    ======================================== */
@@ -1667,6 +1680,14 @@ a:hover {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
+    .project-links {
+        flex-wrap: wrap;
+    }
+
+    .project-links .btn {
+        width: 100%;
+    }
     
     .project-card.featured {
         grid-column: span 1;
@@ -1691,6 +1712,16 @@ a:hover {
     
     .hero-cta {
         justify-content: center;
+    }
+
+    .hero-terminal {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-terminal .terminal-container {
+        width: 100%;
+        max-width: 100%;
     }
     
     /* Responsive timeline - collapse to single column */
@@ -1771,6 +1802,25 @@ a:hover {
     
     .terminal-content {
         padding: 1rem;
+    }
+
+    .terminal-input-wrapper {
+        align-items: flex-start;
+        gap: 0.5rem;
+        flex-direction: column;
+    }
+
+    .terminal-prompt {
+        margin-right: 0;
+        font-size: 0.8rem;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .terminal-input {
+        width: 100%;
+        min-width: 0;
+        font-size: 1rem;
     }
     
     .gallery-grid {

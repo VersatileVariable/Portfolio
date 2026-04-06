@@ -13,13 +13,13 @@
 <body class="is-preload">
     <div id="site-loader" class="site-loader" aria-hidden="true">
         <div id="loader-logo-shell" class="loader-logo-shell">
-            <img id="loader-logo-image" class="loader-logo-image" src="files/LogoTrans.png" alt="Anna Galeano logo" aria-hidden="true">
             <video
                 id="loader-logo-video"
                 class="loader-logo-video"
                 muted
                 playsinline
                 preload="auto"
+                poster="files/LogoTrans.png"
                 aria-hidden="true"
             >
                 <source src="files/AnnaLogo.mp4" type="video/mp4">
@@ -62,16 +62,16 @@
                     </p>
                     
                     <div class="hero-social">
-                        <a href="https://linkedin.com/in/connectedanna" target="_blank" class="social-link">
+                        <a href="https://linkedin.com/in/connectedanna" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Open LinkedIn profile">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com/VersatileVariable" target="_blank" class="social-link">
+                        <a href="https://github.com/VersatileVariable" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Open GitHub profile">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="mailto:agalean@clemson.edu" class="social-link">
+                        <a href="mailto:agalean@clemson.edu" class="social-link" aria-label="Send email to Anna Galeano">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="files/anna_galeano_resume.pdf" target="_blank" class="social-link">
+                        <a href="files/anna_galeano_resume.pdf" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Open resume PDF">
                             <i class="fas fa-file-alt"></i>
                         </a>
                     </div>
@@ -107,7 +107,7 @@
                         <div class="terminal-line">&nbsp;</div>
                         <div class="terminal-input-wrapper">
                             <span class="terminal-prompt">anna@portfolio:~$ </span>
-                            <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type a command...">
+                            <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type a command..." aria-label="Portfolio terminal command input">
                         </div>
                     </div>
                 </div>
@@ -136,15 +136,16 @@
                 <div class="about-text">
                     <div class="about-main">
                         <p>
-                            I'm a Computer Science student at Clemson University with a passion for human-centered 
-                            computing and autonomous systems. My work spans from developing autonomous vessels for 
-                            NATO exercises to conducting privacy assessments for automotive companies.
+                            I'm a Computer Science student at Clemson University who is happiest when I can build 
+                            technology around real people, not the other way around. Human-centered computing clicked 
+                            for me early because I saw how quickly "useful" systems fail when they ignore context,
+                            accessibility, or trust.
                         </p>
                         <p>
-                            Currently, I'm involved in cutting-edge research at TigerSec Laboratory focusing on 
-                            privacy assessments and data analysis. My experience includes internships with Special 
-                            Operations Command Europe, where I developed computer vision systems and autonomous 
-                            navigation solutions.
+                            That same perspective is what drew me into privacy research at TigerSec Laboratory. I care 
+                            about making data-driven systems safer and more transparent for the people affected by them,
+                            whether I am evaluating automotive data practices or prototyping autonomous systems for
+                            mission-critical environments.
                         </p>
                     </div>
                     <div class="about-highlights">
@@ -218,15 +219,15 @@
                     </div>
                     <div class="project-content">
                         <h3>NASA FLARESat</h3>
-                        <p>NASA Space Apps Challenge 2025 winner. Complete satellite constellation with CAD model, simulated data, and working dashboard comparing against NASA FIRMS satellites.</p>
+                        <p>NASA Space Apps Challenge 2025 winner. FLARESat helps students and citizen scientists explore wildfire activity through a satellite-inspired dashboard that compares simulated detections with NASA FIRMS data. The project combines a CAD-modeled constellation concept, data pipeline prototypes, and an interactive web interface for rapid situational awareness.</p>
                         <div class="project-tags">
                             <span class="tag">Satellite Systems</span>
                             <span class="tag">Data Visualization</span>
                             <span class="tag">CAD Design</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://versatilevariable.github.io/NASA_FLARE-Sat/" class="btn btn-primary">View Project</a>
-                            <a href="#" class="btn btn-secondary">GitHub</a>
+                            <a href="https://versatilevariable.github.io/NASA_FLARE-Sat/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
+                            <a href="https://github.com/VersatileVariable/NASA_FLARE-Sat" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -238,7 +239,7 @@
                     </div>
                     <div class="project-content">
                         <h3>NATO Autonomous USV</h3>
-                        <p>Autonomous vessel for NATO's Bold Machina 2025. Features YOLOv8 computer vision, LUA navigation, and Fusion 360 CAD design.</p>
+                        <p>Built for NATO Bold Machina 2025, this unmanned surface vessel prototype supports safer maritime testing by automating obstacle detection and waypoint navigation. It combines YOLOv8-based perception, LUA-driven mission logic, and Fusion 360 hardware modeling for a practical research platform used by defense innovation teams.</p>
                         <div class="project-tags">
                             <span class="tag">Autonomous Systems</span>
                             <span class="tag">Computer Vision</span>
@@ -257,7 +258,7 @@
                     </div>
                     <div class="project-content">
                         <h3>Automotive Privacy Assessment</h3>
-                        <p>TigerSec Laboratory research analyzing automotive data collection practices and security protocols for major automotive companies.</p>
+                        <p>This TigerSec Laboratory project evaluates what connected vehicles collect, how long data is retained, and where policy language can mislead everyday drivers. The analysis helps researchers and stakeholders compare privacy risk across manufacturers and identify concrete improvements for safer data governance.</p>
                         <div class="project-tags">
                             <span class="tag">Privacy Research</span>
                             <span class="tag">Data Analysis</span>
@@ -276,7 +277,7 @@
                     </div>
                     <div class="project-content">
                         <h3>Chagas Disease Detection</h3>
-                        <p>ML system using balanced random forest classification. Achieved 60% true positive rate with less than 13% false positives.</p>
+                        <p>Developed for the PhysioNet Challenge, this machine learning workflow screens 12-lead ECG data for signs of Chagas disease in settings where specialist review is limited. The model reached a 60% true positive rate with fewer than 13% false positives, providing a strong baseline for more interpretable clinical models.</p>
                         <div class="project-tags">
                             <span class="tag">Machine Learning</span>
                             <span class="tag">Healthcare</span>
@@ -295,14 +296,11 @@
                     </div>
                     <div class="project-content">
                         <h3>Death Valley Dash</h3>
-                        <p>AI-powered campus scavenger hunt with real-time GPS tracking and intelligent hint system for enhanced user experience.</p>
+                        <p>Death Valley Dash is an AI-assisted campus scavenger hunt that helps first-year students and event participants learn their way around Clemson through location-based challenges. Real-time GPS progression and adaptive hints keep teams moving while reducing the frustration of getting stuck at unfamiliar landmarks.</p>
                         <div class="project-tags">
                             <span class="tag">AI</span>
                             <span class="tag">GPS Tracking</span>
                             <span class="tag">Game Development</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-primary">View Demo</a>
                         </div>
                     </div>
                 </div>
@@ -314,7 +312,7 @@
                     </div>
                     <div class="project-content">
                         <h3>Security Breadcrumbs</h3>
-                        <p>OSINT research tool that found 75.5% of LinkedIn profiles posed security risks, with 12% classified as high-risk.</p>
+                        <p>Security Breadcrumbs is an OSINT workflow that shows how small public profile details can combine into actionable security exposure. It was used to classify LinkedIn-based risk patterns, finding that 75.5% of sampled profiles presented concerns and 12% met high-risk criteria relevant to OPSEC training.</p>
                         <div class="project-tags">
                             <span class="tag">OSINT</span>
                             <span class="tag">Security Research</span>
@@ -333,7 +331,7 @@
                     </div>
                     <div class="project-content">
                         <h3>PlotToPlate</h3>
-                        <p>Community-driven web platform reducing food waste through connection, sharing, and collaborative gardening. Features community donation forum, garden management system, and gamification.</p>
+                        <p>PlotToPlate is a community web platform that reduces local food waste by connecting gardeners, neighbors, and donation hubs in one workflow. Users can track what is growing, share surplus produce, and coordinate pickups through a forum and lightweight garden management tools.</p>
                         <div class="project-tags">
                             <span class="tag">Web Development</span>
                             <span class="tag">Sustainability</span>
@@ -404,13 +402,13 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <p>&copy; 2025 Anna Galeano. All rights reserved.</p>
+                    <p>&copy; 2026 Anna Galeano. All rights reserved.</p>
                 </div>
                 <div class="footer-right">
                     <div class="social-links">
-                        <a href="https://linkedin.com/in/connectedanna" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/VersatileVariable" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="mailto:agalean@clemson.edu"><i class="fas fa-envelope"></i></a>
+                        <a href="https://linkedin.com/in/connectedanna" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/VersatileVariable" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile"><i class="fab fa-github"></i></a>
+                        <a href="mailto:agalean@clemson.edu" aria-label="Send email to Anna Galeano"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
