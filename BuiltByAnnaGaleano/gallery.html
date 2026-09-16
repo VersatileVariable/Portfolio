@@ -9,29 +9,9 @@
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body class="is-preload">
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <div class="ascii-logo">      (
-        )
-     c[_]</div>
-                <a href="index.html">Anna Galeano</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="gallery.html" class="active">Gallery</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation (shared template: assets/js/site-template.js) -->
+    <script src="assets/js/site-template.js"></script>
+    <site-navbar id="navbar" active="gallery"></site-navbar>
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery-section">
@@ -176,23 +156,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p>&copy; 2026 Anna Galeano. All rights reserved.</p>
-                </div>
-                <div class="footer-right">
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/connectedanna" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/VersatileVariable" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="mailto:agalean@clemson.edu"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer (shared template: assets/js/site-template.js) -->
+    <site-footer class="footer"></site-footer>
 
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>

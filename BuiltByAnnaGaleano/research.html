@@ -91,29 +91,33 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<script src="assets/js/site-template.js"></script>
+		<site-navbar id="navbar" active="research"></site-navbar>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"><strong>Anna Galeano</strong> | Computer Science</a>
-									<ul class="icons">
-										<li><a href="https://github.com/VersatileVariable" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-										<li><a href="https://www.linkedin.com/in/connectedanna/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									</ul>
-								</header>
-
-							<!-- Content -->
-								<section>
-									<header class="major">
-									<h2 style="color: #261627;">Research Papers</h2>
-								</header>
+		<main class="page-content">
+			<div class="container">
+				<section>
+					<header class="major">
+						<h2 style="color: #261627;">Research Papers</h2>
+					</header>
 
 								<p style="color: #261627;">My research focuses on human-AI interaction, collaborative AI systems, medical data analysis, cybersecurity, and misinformation detection. I've contributed to publications in various conferences and journals, exploring how AI and data analysis can augment human capabilities and address complex problems in healthcare and security.</p>
+
+										<!-- Featured In: Clemson News -->
+										<div class="publication">
+											<h3>Featured in Clemson News: Automotive Data Privacy Research</h3>
+											<div class="meta">
+												<strong>Clemson News</strong> &middot; August 11, 2026 &middot; by Paul Alongi
+											</div>
+											<a href="https://news.clemson.edu/what-does-your-car-know-about-you-more-than-you-might-think-says-clemson-university-researcher/" target="_blank" rel="noopener noreferrer" class="image fit">
+												<img src="images/clemson-news-car-privacy.jpg" alt="Mert Pesé (standing) works with members of his research team (sitting, from left) Pedram MohajerAnsari, Yu-Wei (Sam) Liu and Anna Galeano." />
+											</a>
+											<p>Our automotive privacy research with Dr. Mert Pesé was featured in Clemson News, covering his NSF CAREER Award to study what data modern vehicles collect and how to give drivers more control over it.</p>
+											<ul class="actions">
+												<li><a href="https://news.clemson.edu/what-does-your-car-know-about-you-more-than-you-might-think-says-clemson-university-researcher/" target="_blank" rel="noopener noreferrer" class="button">Read the Full Article</a></li>
+											</ul>
+										</div>
+
 										<h3>Clemson Versus Chagas</h3>
 										<div class="meta">
 											<strong>Conference:</strong> 2025 George B. Moody PhysioNet Challenge, 2025<br>
@@ -206,122 +210,52 @@
 											<span>Public Health</span>
 										</div>
 									</div>
-								</section>
+					</div>
+				</section>
 
+				<!-- Research Focus Areas (moved from the old sidebar widget) -->
+				<section>
+					<header class="major">
+						<h2 style="color: #261627;">Research Focus Areas</h2>
+					</header>
+					<div class="row">
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="images/research-area1.jpg" alt="Human-AI Collaboration" /></span>
+							<p><strong>Human-AI Collaboration</strong><br>
+							Investigating effective interaction patterns and trust development between humans and AI systems.</p>
+						</div>
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="images/research-area2.jpg" alt="Medical AI" /></span>
+							<p><strong>Medical AI</strong><br>
+							Applying machine learning techniques to medical diagnostics and healthcare data analysis.</p>
+						</div>
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="images/research-area3.jpg" alt="Information Security" /></span>
+							<p><strong>Information Security</strong><br>
+							Exploring digital footprints and how publicly shared information can create security vulnerabilities.</p>
 						</div>
 					</div>
+				</section>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
-
-							<!-- ASCII Logo -->
-							<a href="index.html" class="ascii-logo"><div class="logo-content">   <span class="paren">(</span>
-    <span class="paren">)</span>
- <span class="cup">c[_]</span></div></a>
-
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">HOME</a></li>
-										<li><a href="index.html#about">ABOUT</a></li>
-										<li><a href="projects.html">PROJECTS</a></li>
-										<li><a href="research.html">RESEARCH</a></li>
-										<li><a href="gallery.html">GALLERY</a></li>
-									</ul>
-								</nav>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Research Focus Areas</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/research-area1.jpg" alt="Human-AI Collaboration" /></a>
-											<p><strong>Human-AI Collaboration</strong><br>
-											Investigating effective interaction patterns and trust development between humans and AI systems.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/research-area2.jpg" alt="Medical AI" /></a>
-											<p><strong>Medical AI</strong><br>
-											Applying machine learning techniques to medical diagnostics and healthcare data analysis.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/research-area3.jpg" alt="Information Security" /></a>
-											<p><strong>Information Security</strong><br>
-											Exploring digital footprints and how publicly shared information can create security vulnerabilities.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="research.html" class="button">All Research</a></li>
-									</ul>
-								</section>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in Touch</h2>
-									</header>
-									<p>I'm always open to discussing new projects, research opportunities, or potential collaborations.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="mailto:agalean@clemson.edu">agalean@clemson.edu</a></li>
-										<li class="icon solid fa-home">Clemson University<br />
-										Clemson, SC 29634</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Anna Galeano. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
-						</div>
-					</div>
-
+				<!-- Get in Touch (moved from the old sidebar widget) -->
+				<section>
+					<header class="major">
+						<h2 style="color: #261627;">Get in Touch</h2>
+					</header>
+					<p style="color: #261627;">I'm always open to discussing new projects, research opportunities, or potential collaborations.</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a href="mailto:agalean@clemson.edu">agalean@clemson.edu</a></li>
+						<li class="icon solid fa-home">Clemson University<br />
+						Clemson, SC 29634</li>
+					</ul>
+				</section>
 			</div>
+		</main>
+
+		<site-footer class="footer"></site-footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			
-			<!-- Added script for dropdown functionality -->
-			<script>
-				document.addEventListener('DOMContentLoaded', function() {
-					// Enhanced dropdown functionality
-					document.querySelectorAll('#menu ul li .opener').forEach(opener => {
-						opener.addEventListener('click', function(e) {
-							e.preventDefault();
-							const parent = this.parentNode;
-							
-							// Toggle active class
-							if (parent.classList.contains('active')) {
-								parent.classList.remove('active');
-							} else {
-								// Close any open dropdowns first
-								document.querySelectorAll('#menu ul li.active').forEach(item => {
-									if (item !== parent) {
-										item.classList.remove('active');
-									}
-								});
-								parent.classList.add('active');
-							}
-						});
-					});
-					
-					// ASCII logo click handler
-					document.querySelector('.ascii-logo').addEventListener('click', function(e) {
-						e.preventDefault();
-						window.location.href = 'index.html';
-					});
-				});
-			</script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
